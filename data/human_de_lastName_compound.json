@@ -1,0 +1,341 @@
+{
+  "nomen": {
+    "Frau": {
+      "wortart": "Nomen",
+      "genus": "feminin",
+      "position": {
+        "erst": true,
+        "zweit": true
+      },
+      "stamm": "frau",
+      "formen": {
+        "nom_sg": "Frau",
+        "gen_sg": "Frau",
+        "plural": "Frauen"
+      },
+      "fuge": {
+        "als_erst": [
+          "",
+          "en"
+        ],
+        "als_zweit": [
+          ""
+        ]
+      }
+    },
+    "Kind": {
+      "wortart": "Nomen",
+      "genus": "neutrum",
+      "position": {
+        "erst": true,
+        "zweit": true
+      },
+      "stamm": "kind",
+      "formen": {
+        "nom_sg": "Kind",
+        "gen_sg": "Kindes",
+        "plural": "Kinder"
+      },
+      "fuge": {
+        "als_erst": [
+          "",
+          "er"
+        ],
+        "als_zweit": [
+          ""
+        ]
+      }
+    },
+    "Stein": {
+      "wortart": "Nomen",
+      "genus": "maskulin",
+      "position": {
+        "erst": true,
+        "zweit": true
+      },
+      "stamm": "stein",
+      "formen": {
+        "nom_sg": "Stein",
+        "gen_sg": "Steins",
+        "plural": "Steine"
+      },
+      "fuge": {
+        "als_erst": [
+          ""
+        ],
+        "als_zweit": [
+          ""
+        ]
+      }
+    },
+    "Wolf": {
+      "wortart": "Nomen",
+      "genus": "maskulin",
+      "position": {
+        "erst": true,
+        "zweit": true
+      },
+      "stamm": "wolf",
+      "formen": {
+        "nom_sg": "Wolf",
+        "gen_sg": "Wolfs",
+        "plural": "Wölfe"
+      },
+      "fuge": {
+        "als_erst": [
+          "",
+          "s"
+        ],
+        "als_zweit": [
+          ""
+        ]
+      }
+    }
+  },
+  "verben": {
+    "brennen": {
+      "wortart": "Verb",
+      "position": {
+        "erst": true,
+        "zweit": false
+      },
+      "stamm": "brenn",
+      "formen": {
+        "infinitiv": "brennen",
+        "stamm": "brenn"
+      },
+      "fuge": {
+        "als_erst": [
+          "",
+          "e"
+        ],
+        "als_zweit": null
+      }
+    },
+    "laufen": {
+      "wortart": "Verb",
+      "position": {
+        "erst": true,
+        "zweit": false
+      },
+      "stamm": "lauf",
+      "formen": {
+        "infinitiv": "laufen",
+        "stamm": "lauf"
+      },
+      "fuge": {
+        "als_erst": [
+          "",
+          "e"
+        ],
+        "als_zweit": null
+      }
+    },
+    "singen": {
+      "wortart": "Verb",
+      "position": {
+        "erst": true,
+        "zweit": false
+      },
+      "stamm": "sing",
+      "formen": {
+        "infinitiv": "singen",
+        "stamm": "sing"
+      },
+      "fuge": {
+        "als_erst": [
+          "",
+          "e"
+        ],
+        "als_zweit": null
+      }
+    }
+  },
+  "adjektive": {
+    "dunkel": {
+      "wortart": "Adjektiv",
+      "position": {
+        "erst": true,
+        "zweit": false
+      },
+      "stamm": "dunkel",
+      "formen": {
+        "positiv": "dunkel",
+        "komparativ": "dunkler",
+        "superlativ": "dunkelst"
+      },
+      "fuge": {
+        "als_erst": [
+          "",
+          "e"
+        ],
+        "als_zweit": null
+      }
+    },
+    "groß": {
+      "wortart": "Adjektiv",
+      "position": {
+        "erst": true,
+        "zweit": false
+      },
+      "stamm": "groß",
+      "formen": {
+        "positiv": "groß",
+        "komparativ": "größer",
+        "superlativ": "größt"
+      },
+      "fuge": {
+        "als_erst": [
+          "",
+          "e"
+        ],
+        "als_zweit": null
+      }
+    },
+    "schnell": {
+      "wortart": "Adjektiv",
+      "position": {
+        "erst": true,
+        "zweit": false
+      },
+      "stamm": "schnell",
+      "formen": {
+        "positiv": "schnell",
+        "komparativ": "schneller",
+        "superlativ": "schnellst"
+      },
+      "fuge": {
+        "als_erst": [
+          "",
+          "e"
+        ],
+        "als_zweit": null
+      }
+    }
+  },
+  "präpositionen": {
+    "über": {
+      "wortart": "Präposition",
+      "position": {
+        "erst": true,
+        "zweit": false
+      },
+      "stamm": "über",
+      "formen": {
+        "grundform": "über"
+      },
+      "fuge": {
+        "als_erst": [
+          ""
+        ],
+        "als_zweit": null
+      }
+    },
+    "unter": {
+      "wortart": "Präposition",
+      "position": {
+        "erst": true,
+        "zweit": false
+      },
+      "stamm": "unter",
+      "formen": {
+        "grundform": "unter"
+      },
+      "fuge": {
+        "als_erst": [
+          ""
+        ],
+        "als_zweit": null
+      }
+    },
+    "vor": {
+      "wortart": "Präposition",
+      "position": {
+        "erst": true,
+        "zweit": false
+      },
+      "stamm": "vor",
+      "formen": {
+        "grundform": "vor"
+      },
+      "fuge": {
+        "als_erst": [
+          ""
+        ],
+        "als_zweit": null
+      }
+    }
+  },
+  "adverbien": {
+    "hoch": {
+      "wortart": "Adverb",
+      "position": {
+        "erst": true,
+        "zweit": false
+      },
+      "stamm": "hoch",
+      "formen": {
+        "grundform": "hoch"
+      },
+      "fuge": {
+        "als_erst": [
+          ""
+        ],
+        "als_zweit": null
+      }
+    },
+    "immer": {
+      "wortart": "Adverb",
+      "position": {
+        "erst": true,
+        "zweit": false
+      },
+      "stamm": "immer",
+      "formen": {
+        "grundform": "immer"
+      },
+      "fuge": {
+        "als_erst": [
+          ""
+        ],
+        "als_zweit": null
+      }
+    }
+  },
+  "partikel": {
+    "erz": {
+      "wortart": "Partikel",
+      "position": {
+        "erst": true,
+        "zweit": false
+      },
+      "stamm": "erz",
+      "formen": {
+        "grundform": "erz"
+      },
+      "fuge": {
+        "als_erst": [
+          ""
+        ],
+        "als_zweit": null
+      }
+    },
+    "ur": {
+      "wortart": "Partikel",
+      "position": {
+        "erst": true,
+        "zweit": false
+      },
+      "stamm": "ur",
+      "formen": {
+        "grundform": "ur"
+      },
+      "fuge": {
+        "als_erst": [
+          ""
+        ],
+        "als_zweit": null
+      }
+    }
+  }
+}

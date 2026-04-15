@@ -1,19 +1,26 @@
 /**
  * compoundBuilder.js — Strukturierte Komposita-Generierung
  *
- * Verarbeitet das erweiterte Compound-Datenformat:
- * {
- *   "Wolf": {
- *     "wortart": "Nomen",
- *     "position": { "erst": true, "zweit": true },
- *     "stamm": "wolf",
- *     "formen": { "nom_sg": "Wolf", "gen_sg": "Wolfs", "plural": "Wölfe" },
- *     "fuge": { "als_erst": ["", "s"], "als_zweit": [""] }
- *   },
- *   ...
- * }
+ * Unterstützt zwei JSON-Formate:
  *
- * Architekturentscheidungen:
+ * (A) FLACH (Altformat) — alle Einträge direkt auf oberster Ebene:
+ *   {
+ *     "Wolf": { "wortart": "Nomen", "position": {...}, ... },
+ *     "Kind": { ... }
+ *   }
+ *
+ * (B) GRUPPIERT (neues Format) — Einträge nach Wortart gebündelt:
+ *   {
+ *     "nomen":      { "Wolf": { "wortart": "Nomen", ... }, "Kind": { ... } },
+ *     "verben":     { "brennen": { "wortart": "Verb",  ... } },
+ *     "adjektive":  { "dunkel":  { "wortart": "Adjektiv", ... } },
+ *     ...
+ *   }
+ *
+ * Beide Formate werden durch flattenData() auf eine einheitliche flache Map
+ * normalisiert, bevor die eigentliche Kompositions-Logik greift.
+ *
+ * ── Architekturentscheidungen (unverändert) ─────────────────────────────────
  *
  * 1. REINES MODUL — keinerlei Abhängigkeit zu uiController, app oder DOM.
  *    Nur utils.js wird importiert (RNG, Hilfsfunktionen).
@@ -51,13 +58,6 @@ import { randomPick, normalizeName } from './utils.js';
 /**
  * Prioritätsliste: Welche Flexionsform wird als Zweitglied verwendet?
  * Erster Treffer aus entry.formen gewinnt; stamm ist absoluter Fallback.
- *
- * Reihenfolge bewusst wortart-agnostisch gewählt:
- *  nom_sg    → Nomen-Grundform    ("Wolf"   → Wolfsdunkel)
- *  grundform → unveränderliche WA ("über"   → Überwolf)
- *  infinitiv → Verbform           ("laufen" → Laufschuhe)
- *  positiv   → Adjektiv-Grundform ("dunkel" → Wolfsdunkel)
- *  stamm     → Absoluter Fallback (immer vorhanden)
  */
 const SECOND_FORM_PRIORITY = [
   'nom_sg',
@@ -68,30 +68,96 @@ const SECOND_FORM_PRIORITY = [
 ];
 
 // ═══════════════════════════════════════════════════
-// FORMAT-ERKENNUNG
+// FORMAT-NORMALISIERUNG  ← NEU
 // ═══════════════════════════════════════════════════
 
 /**
- * Prüft, ob `data` das strukturierte Compound-Format ist.
+ * Prüft, ob ein einzelner Wert ein gültiger Compound-Eintrag ist.
+ * Interne Hilfsfunktion für isStructuredCompoundData() und flattenData().
  *
- * Unterschied zum alten Format:
- *  - Alt:  { "Wolf": ["wolf", "wolfs"] }       → Wert ist Array
- *  - Neu:  { "Wolf": { "wortart": ..., ... } }  → Wert ist Objekt mit "wortart"
+ * @param {any} val
+ * @returns {boolean}
+ */
+function isCompoundEntry(val) {
+  return (
+    val !== null &&
+    typeof val === 'object' &&
+    !Array.isArray(val) &&
+    typeof val.wortart  === 'string' &&
+    typeof val.position === 'object'
+  );
+}
+
+/**
+ * Normalisiert beide JSON-Formate auf eine einheitliche flache Map
+ * { Lemma → Eintrag }.
+ *
+ * Logik:
+ *  - Ist der erste Wert bereits ein Compound-Eintrag (hat `wortart`) →
+ *    Altformat (flach) → unverändert zurückgeben.
+ *  - Anderenfalls: Wortart-Gruppen-Format → alle Untereinträge zusammenführen.
+ *
+ * Fehlertoleranz:
+ *  - Gruppen, die keine Objekte sind, werden übersprungen.
+ *  - Einträge ohne `wortart` / `position` werden übersprungen.
+ *
+ * @param {object} data — strukturiertes oder gruppiertes Compound-JSON
+ * @returns {object}    — flache Map { Lemma → Eintrag }
+ */
+function flattenData(data) {
+  if (!data || typeof data !== 'object' || Array.isArray(data)) return {};
+
+  const firstVal = Object.values(data)[0];
+
+  // Bereits flaches Format — keine Transformation nötig
+  if (isCompoundEntry(firstVal)) return data;
+
+  // Gruppiertes Format: { nomen: { Wolf: {...} }, verben: {...}, ... }
+  const flat = {};
+  for (const group of Object.values(data)) {
+    if (!group || typeof group !== 'object' || Array.isArray(group)) continue;
+    for (const [lemma, entry] of Object.entries(group)) {
+      if (isCompoundEntry(entry)) {
+        flat[lemma] = entry;
+      }
+    }
+  }
+  return flat;
+}
+
+// ═══════════════════════════════════════════════════
+// FORMAT-ERKENNUNG  ← GEÄNDERT
+// ═══════════════════════════════════════════════════
+
+/**
+ * Prüft, ob `data` ein strukturiertes Compound-Format ist — flach ODER gruppiert.
+ *
+ * Flach:       { "Wolf": { "wortart": ..., "position": ... } }
+ * Gruppiert:   { "nomen": { "Wolf": { "wortart": ..., "position": ... } } }
+ *
+ * Unterschied zum alten Array-Format:
+ *  Alt:  { "Wolf": ["wolf", "wolfs"] }  → Wert ist Array
  *
  * @param {any} data
  * @returns {boolean}
  */
 export function isStructuredCompoundData(data) {
   if (!data || typeof data !== 'object' || Array.isArray(data)) return false;
-  const keys = Object.keys(data);
-  if (keys.length === 0) return false;
-  const first = data[keys[0]];
-  return (
-    typeof first === 'object' &&
-    !Array.isArray(first) &&
-    typeof first.wortart === 'string' &&
-    typeof first.position === 'object'
-  );
+  const values = Object.values(data);
+  if (values.length === 0) return false;
+
+  const first = values[0];
+
+  // Flaches Format: erster Wert ist direkt ein Compound-Eintrag
+  if (isCompoundEntry(first)) return true;
+
+  // Gruppiertes Format: erster Wert ist ein Objekt, dessen erster Wert ein Eintrag ist
+  if (first && typeof first === 'object' && !Array.isArray(first)) {
+    const subValues = Object.values(first);
+    if (subValues.length > 0 && isCompoundEntry(subValues[0])) return true;
+  }
+
+  return false;
 }
 
 // ═══════════════════════════════════════════════════
@@ -100,30 +166,26 @@ export function isStructuredCompoundData(data) {
 
 /**
  * Alle Einträge, die als Erstglied erlaubt sind.
- *
  * Einzige Bedingung: position.erst === true
- * Die Wortart hat keinen Einfluss.
  *
- * @param {object} data
+ * @param {object} flat — bereits normalisierte flache Map
  * @returns {Array<[string, object]>}
  */
-function getErstglieder(data) {
-  return Object.entries(data).filter(([, entry]) =>
+function getErstglieder(flat) {
+  return Object.entries(flat).filter(([, entry]) =>
     entry.position?.erst === true
   );
 }
 
 /**
  * Alle Einträge, die als Zweitglied erlaubt sind.
- *
  * Einzige Bedingung: position.zweit === true
- * Die Wortart hat keinen Einfluss.
  *
- * @param {object} data
+ * @param {object} flat — bereits normalisierte flache Map
  * @returns {Array<[string, object]>}
  */
-function getZweitglieder(data) {
-  return Object.entries(data).filter(([, entry]) =>
+function getZweitglieder(flat) {
+  return Object.entries(flat).filter(([, entry]) =>
     entry.position?.zweit === true
   );
 }
@@ -179,39 +241,40 @@ function buildKompositum(stamm, fuge, zweitForm) {
  * Generiert ALLE gültigen Komposita aus dem Datensatz.
  *
  * Ablauf:
- * 1. Alle Erstglieder (position.erst=true) ermitteln
- * 2. Alle Zweitglieder (position.zweit=true) ermitteln
- * 3. Für jede erlaubte Erst+Zweit-Kombination alle Fugen-Varianten erzeugen
- * 4. Duplikate über Set entfernen
- * 5. Selbstreferenzen entfernen (Erst- und Zweitglied identisch)
+ * 1. data → flattenData() → einheitliche flache Map          ← GEÄNDERT
+ * 2. Alle Erstglieder (position.erst=true) ermitteln
+ * 3. Alle Zweitglieder (position.zweit=true) ermitteln
+ * 4. Für jede erlaubte Erst+Zweit-Kombination alle Fugen-Varianten erzeugen
+ * 5. Duplikate über Set entfernen
+ * 6. Selbstreferenzen entfernen (Erst- und Zweitglied identisch)
  *
- * @param {object} data        — strukturiertes Compound-JSON
+ * @param {object} data        — strukturiertes Compound-JSON (flach oder gruppiert)
  * @param {object} [options]
- * @param {boolean} [options.allowSameWord=false] — Erlaubt gleiche Wörter in Erst + Zweit?
- * @returns {string[]}         — deduplizierte Liste aller Komposita
+ * @param {boolean} [options.allowSameWord=false]
+ * @returns {string[]}
  */
 export function getAllValidComposita(data, options = {}) {
   const { allowSameWord = false } = options;
 
   if (!isStructuredCompoundData(data)) return [];
 
-  const erstglieder  = getErstglieder(data);
-  const zweitglieder = getZweitglieder(data);
+  const flat = flattenData(data); // ← NEU: Normalisierung vor Weiterverarbeitung
+
+  const erstglieder  = getErstglieder(flat);
+  const zweitglieder = getZweitglieder(flat);
 
   const seen   = new Set();
   const result = [];
 
   for (const [erstLemma, erst] of erstglieder) {
-    const stamm       = erst.stamm ?? '';
-    const fugen       = getFugenElemente(erst);
+    const stamm = erst.stamm ?? '';
+    const fugen = getFugenElemente(erst);
 
     for (const [zweitLemma, zweit] of zweitglieder) {
-      // Selbstreferenz vermeiden (optional konfigurierbar)
       if (!allowSameWord && erstLemma === zweitLemma) continue;
 
       const zweitForm = getZweitForm(zweit);
 
-      // Alle Fugen-Varianten erzeugen
       for (const fuge of fugen) {
         const kompositum = buildKompositum(stamm, fuge, zweitForm);
         if (kompositum && !seen.has(kompositum)) {
@@ -233,15 +296,15 @@ export function getAllValidComposita(data, options = {}) {
  * Generiert ein einzelnes zufälliges Kompositum.
  *
  * Strategie:
- * 1. Zufälliges Erstglied wählen (position.erst=true)
- * 2. Zufälliges Zweitglied wählen (position.zweit=true)
- * 3. Zufälliges Fugenelement aus fuge.als_erst wählen
- * 4. Kompositum bauen & normalisieren
+ * 1. data → flattenData() → einheitliche flache Map          ← GEÄNDERT
+ * 2. Zufälliges Erstglied wählen (position.erst=true)
+ * 3. Zufälliges Zweitglied wählen (position.zweit=true)
+ * 4. Zufälliges Fugenelement aus fuge.als_erst wählen
+ * 5. Kompositum bauen & normalisieren
  *
- * Gibt null zurück wenn keine gültige Kombination gefunden wurde
- * (z. B. Datensatz hat keine Zweitglieder).
+ * Gibt null zurück wenn keine gültige Kombination gefunden wurde.
  *
- * @param {object} data       — strukturiertes Compound-JSON
+ * @param {object} data       — strukturiertes Compound-JSON (flach oder gruppiert)
  * @param {object} [options]
  * @param {boolean} [options.allowSameWord=false]
  * @param {number}  [options.maxAttempts=50]
@@ -252,8 +315,10 @@ export function generateStructuredCompound(data, options = {}) {
 
   if (!isStructuredCompoundData(data)) return null;
 
-  const erstglieder  = getErstglieder(data);
-  const zweitglieder = getZweitglieder(data);
+  const flat = flattenData(data); // ← NEU: Normalisierung vor Weiterverarbeitung
+
+  const erstglieder  = getErstglieder(flat);
+  const zweitglieder = getZweitglieder(flat);
 
   if (erstglieder.length === 0 || zweitglieder.length === 0) return null;
 
@@ -291,14 +356,16 @@ export function generateStructuredCompound(data, options = {}) {
  *   zweitLemma: string,
  *   fuge:       string,
  *   kompositum: string,
- *   wortarten:  string,   — z. B. "Nomen + Nomen"
+ *   wortarten:  string,
  * }>}
  */
 export function explainComposita(data) {
   if (!isStructuredCompoundData(data)) return [];
 
-  const erstglieder  = getErstglieder(data);
-  const zweitglieder = getZweitglieder(data);
+  const flat = flattenData(data); // ← NEU: Normalisierung vor Weiterverarbeitung
+
+  const erstglieder  = getErstglieder(flat);
+  const zweitglieder = getZweitglieder(flat);
   const seen         = new Set();
   const result       = [];
 
