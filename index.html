@@ -1,30 +1,62 @@
 <!DOCTYPE html>
 <html lang="de" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Namensgenerator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
   <header class="app-nav">
     <div class="app-nav-brand">
-      <div class="app-nav-dot"></div>
-      <span class="app-nav-title">Namensgenerator</span>
-      <span class="app-nav-version">v1.0</span>
+      <span class="app-logo" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+          class="lucide lucide-id-card-icon lucide-id-card"  style="color:var(--color-accent)">
+          <path d="M16 10h2" />
+          <path d="M16 14h2" />
+          <path d="M6.17 15a3 3 0 0 1 5.66 0" />
+          <circle cx="9" cy="11" r="2" />
+          <rect x="2" y="5" width="20" height="14" rx="2" />
+        </svg>
+      </span>
+      <span class="app-title">Namensgenerator</span>
     </div>
     <div class="app-nav-right">
       <label class="btn btn-ghost btn-sm" for="importFile" title="Eigene JSON-Datei importieren">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+          <polyline points="17 8 12 3 7 8" />
+          <line x1="12" y1="3" x2="12" y2="15" />
+        </svg>
         JSON importieren
       </label>
       <input type="file" id="importFile" accept=".json" style="display:none">
       <button id="themeToggle" class="btn btn-ghost btn-icon btn-sm" aria-label="Dark Mode umschalten">
-        <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-        <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5" />
+          <line x1="12" y1="1" x2="12" y2="3" />
+          <line x1="12" y1="21" x2="12" y2="23" />
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+          <line x1="1" y1="12" x2="3" y2="12" />
+          <line x1="21" y1="12" x2="23" y2="12" />
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+        </svg>
+        <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" style="display:none">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
       </button>
     </div>
   </header>
@@ -76,7 +108,10 @@
       <details class="options-section options-section--collapsible" id="advancedOptions">
         <summary class="options-section-title options-section-summary">
           Erweiterte Optionen
-          <svg class="summary-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+          <svg class="summary-chevron" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
         </summary>
 
         <div class="advanced-inner">
@@ -84,7 +119,8 @@
           <div class="form-group">
             <label class="form-label" for="nameCount">Anzahl der Namen</label>
             <div class="input-with-check">
-              <input type="number" id="nameCount" class="form-input" value="10" min="1" style="width: 100px; flex-shrink: 0;">
+              <input type="number" id="nameCount" class="form-input" value="10" min="1"
+                style="width: 100px; flex-shrink: 0;">
               <label class="form-check">
                 <input type="checkbox" id="generateAll">
                 <span class="form-check-label">Alle möglichen Kombinationen</span>
@@ -153,38 +189,46 @@
               <span class="form-label-badge">reproduzierbar</span>
             </label>
             <div class="seed-row">
-              <input type="number" id="seedInput" class="form-input" placeholder="0 – 2147483647"
-                     min="0" max="2147483647" step="1">
+              <input type="number" id="seedInput" class="form-input" placeholder="0 – 2147483647" min="0"
+                max="2147483647" step="1">
               <button type="button" id="randomSeedBtn" class="btn btn-ghost btn-sm seed-random-btn"
-                      title="Zufälligen Seed generieren">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"
-                     fill="none" stroke="currentColor" stroke-width="2.5">
-                  <polyline points="16 3 21 3 21 8"/><polyline points="4 20 9 15 4 10"/>
-                  <path d="M21 3l-7 7M3 3l4 4M15 15l6 6"/>
+                title="Zufälligen Seed generieren">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <polyline points="16 3 21 3 21 8" />
+                  <polyline points="4 20 9 15 4 10" />
+                  <path d="M21 3l-7 7M3 3l4 4M15 15l6 6" />
                 </svg>
                 Zufällig
               </button>
             </div>
-            <div class="form-hint">Nur positive Ganzzahlen &le; 2147483647 &middot; Gleicher Seed &rarr; gleiche Namen</div>
+            <div class="form-hint">Nur positive Ganzzahlen &le; 2147483647 &middot; Gleicher Seed &rarr; gleiche Namen
+            </div>
           </div>
 
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label class="form-check">
               <input type="checkbox" id="favoritesEnabled">
               <span class="form-check-label">Favoritenliste aktivieren</span>
             </label>
-          </div>
+          </div> -->
 
         </div>
       </details>
 
       <div class="generate-actions">
         <button id="generateBtn" class="btn btn-primary btn-lg generate-btn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5">
+            <polygon points="5 3 19 12 5 21 5 3" />
+          </svg>
           Namen generieren
         </button>
         <button id="stopBtn" class="btn btn-danger btn-lg generate-btn" style="display:none">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5">
+            <rect x="3" y="3" width="18" height="18" rx="2" />
+          </svg>
           Generierung stoppen
         </button>
       </div>
@@ -207,20 +251,37 @@
           <span class="results-count" id="resultsCount">—</span>
         </div>
         <div class="results-actions" id="resultsActions">
-          <button id="clearFavBtn" class="btn btn-ghost btn-sm" style="display:none">
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          <!-- <button id="clearFavBtn" class="btn btn-ghost btn-sm" style="display:none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <polyline points="3 6 5 6 21 6" />
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+            </svg>
             Favoriten leeren
-          </button>
+          </button> -->
           <button id="copyBtn" class="btn btn-ghost btn-sm" disabled>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
             Kopieren
           </button>
           <button id="exportBtn" class="btn btn-ghost btn-sm" disabled>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
             Export .txt
           </button>
           <button id="exportPerLetterBtn" class="btn btn-ghost btn-sm" disabled>
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2">
+              <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z" />
+              <polyline points="13 2 13 9 20 9" />
+            </svg>
             Pro Buchstabe
           </button>
         </div>
@@ -231,9 +292,9 @@
           Ergebnisse
           <span class="tab-count" id="tabResultsCount">0</span>
         </button>
-        <button class="tab-btn" id="tabFavorites" role="tab" aria-selected="false" data-tab="favorites">
+        <!-- <button class="tab-btn" id="tabFavorites" role="tab" aria-selected="false" data-tab="favorites">
           Favoriten
-          <span class="tab-count" id="tabFavCount">0</span>
+          <span class="tab-count" id="tabFavCount">0</span> -->
         </button>
         <button class="tab-btn" id="tabHistory" role="tab" aria-selected="false" data-tab="history">
           Verlauf
@@ -258,14 +319,14 @@
         <div id="resultsOutput" class="results-output" style="display:none"></div>
       </div>
 
-      <div id="tabPanelFavorites" class="tab-panel" style="display:none">
+      <!-- <div id="tabPanelFavorites" class="tab-panel" style="display:none">
         <div id="favoritesOutput" class="results-output">
           <div class="state-container">
             <p class="empty-title">Keine Favoriten gespeichert</p>
             <p class="empty-subtitle">Rechtsklick auf einen Namen,<br>um ihn als Favorit zu markieren.</p>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div id="tabPanelHistory" class="tab-panel" style="display:none">
         <div id="historyOutput" class="history-list">
@@ -284,4 +345,5 @@
   <script type="module" src="js/app.js"></script>
 
 </body>
+
 </html>

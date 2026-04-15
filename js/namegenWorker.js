@@ -28,8 +28,8 @@ initSpecialGenerators({ generateSyllableName });
 // Konfiguration
 // ─────────────────────────────────────────────────
 
-const MAX_NAMES_PER_LETTER = 1_000;
-const MEMORY_LIMIT         = 50_000; // Maximale Namen im globalen Seen-Set
+export const MAX_NAMES_PER_LETTER = 5_000;
+const MEMORY_LIMIT         = 250_000; // Maximale Namen im globalen Seen-Set
 
 // ─────────────────────────────────────────────────
 // State

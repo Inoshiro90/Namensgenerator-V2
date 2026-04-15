@@ -13,7 +13,9 @@
  * Dies ist bei 500+ Namen sinnvoller als tausende nicht lesbare Chips.
  */
 
-export const VIRTUAL_THRESHOLD = 500;
+import { MAX_NAMES_PER_LETTER } from "./namegenWorker.js";
+export const VIRTUAL_THRESHOLD = MAX_NAMES_PER_LETTER + 1;
+
 
 export class VirtualList {
   /**
