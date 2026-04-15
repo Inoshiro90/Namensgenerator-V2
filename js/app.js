@@ -249,7 +249,7 @@ async function handleGenerate() {
 		console.error('[app] Generierungsfehler:', err);
 		const isNoMethodError = err.message?.includes('Keine geeignete Generierungsart');
 		const displayMessage = isNoMethodError
-			? 'Keine geeignete Generierungsart für die gewählten Einstellungen vorhanden.'
+			? 'Keine geeignete Generierungsart für die gewählten Einstellungen vorhanden:' + JSON.stringify(config)
 			: (err.message || 'Unbekannter Fehler bei der Generierung.');
 		showError(displayMessage);
 	} finally {
