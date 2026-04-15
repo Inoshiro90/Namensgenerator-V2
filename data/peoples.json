@@ -1,0 +1,199 @@
+[
+  {
+    "id": "dwarf",
+    "label": "Zwerg",
+    "files": {
+      "firstName": {
+        "male": "data/dwarf_firstName_male.json",
+        "female": "data/dwarf_firstName_female.json",
+        "neutral": "data/dwarf_firstName_male.json"
+      },
+      "lastName": "data/dwarf_lastName.json",
+      "compound": {
+        "firstName": null,
+        "lastName": "data/dwarf_lastName_compound.json"
+      }
+    }
+  },
+  {
+    "id": "elf",
+    "label": "Elf",
+    "files": {
+      "firstName": {
+        "male": "data/elf_firstName_male.json",
+        "female": "data/elf_firstName_female.json",
+        "neutral": "data/elf_firstName_neutral.json"
+      },
+      "lastName": "data/elf_lastName.json",
+      "compound": {
+        "firstName": null,
+        "lastName": "data/elf_lastName_compound.json"
+      }
+    }
+  },
+  {
+    "id": "orc",
+    "label": "Ork",
+    "files": {
+      "firstName": {
+        "male": "data/orc_firstName_male.json",
+        "female": "data/orc_firstName_female.json",
+        "neutral": "data/orc_firstName_male.json"
+      },
+      "lastName": "data/orc_lastName.json",
+      "compound": {
+        "firstName": "data/orc_firstName_compound.json",
+        "lastName": "data/orc_lastName_compound.json"
+      }
+    }
+  },
+  {
+    "id": "human",
+    "label": "Mensch",
+    "languageFamilies": [
+      {
+        "id": "human_de",
+        "label": "Mensch — Deutsch",
+        "files": {
+          "firstName": {
+            "male": "data/human_de_firstName_male.json",
+            "female": "data/human_de_firstName_female.json",
+            "neutral": "data/human_de_firstName_neutral.json"
+          },
+          "lastName": "data/human_de_lastName.json",
+          "compound": {
+            "firstName": null,
+            "lastName": "data/human_de_lastName_compound.json"
+          }
+        }
+      },
+      {
+        "id": "human_en",
+        "label": "Mensch — Englisch",
+        "files": {
+          "firstName": {
+            "male": "data/human_en_firstName_male.json",
+            "female": "data/human_en_firstName_female.json",
+            "neutral": "data/human_en_firstName_neutral.json"
+          },
+          "lastName": "data/human_en_lastName.json",
+          "compound": {
+            "firstName": null,
+            "lastName": "data/human_en_lastName_compound.json"
+          }
+        }
+      },
+      {
+        "id": "human_fr",
+        "label": "Mensch — Französisch",
+        "files": {
+          "firstName": {
+            "male": "data/human_fr_firstName_male.json",
+            "female": "data/human_fr_firstName_female.json",
+            "neutral": "data/human_fr_firstName_neutral.json"
+          },
+          "lastName": "data/human_fr_lastName.json",
+          "compound": {
+            "firstName": null,
+            "lastName": "data/human_fr_lastName_compound.json"
+          }
+        }
+      },
+      {
+        "id": "human_no",
+        "label": "Mensch — Nordisch",
+        "files": {
+          "firstName": {
+            "male": "data/human_no_firstName_male.json",
+            "female": "data/human_no_firstName_female.json",
+            "neutral": "data/human_no_firstName_neutral.json"
+          },
+          "lastName": "data/human_no_lastName.json",
+          "compound": {
+            "firstName": null,
+            "lastName": "data/human_no_lastName_compound.json"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "halfelf",
+    "label": "Halbelf",
+    "files": {
+      "firstName": {
+        "male": "data/halfelf_firstName_male.json",
+        "female": "data/halfelf_firstName_female.json",
+        "neutral": "data/halfelf_firstName_neutral.json"
+      },
+      "lastName": "data/halfelf_lastName.json",
+      "compound": {
+        "firstName": null,
+        "lastName": "data/halfelf_lastName_compound.json"
+      }
+    }
+  },
+  {
+    "id": "gnome",
+    "label": "Gnom",
+    "files": {
+      "firstName": {
+        "male": "data/gnome_firstName_male.json",
+        "female": "data/gnome_firstName_female.json",
+        "neutral": "data/gnome_firstName_male.json"
+      },
+      "lastName": "data/gnome_lastName.json",
+      "compound": {
+        "firstName": null,
+        "lastName": "data/gnome_lastName_compound.json"
+      }
+    }
+  },
+  {
+    "id": "warforged",
+    "label": "Kriegsgeschmiedete",
+    "specialType": "warforged",
+    "files": {
+      "firstName": "data/warforged_firstName.json",
+      "lastName": null,
+      "compound": {
+        "firstName": null,
+        "lastName": null
+      }
+    }
+  },
+  {
+    "id": "autognome",
+    "label": "Autognome",
+    "specialType": "autognome",
+    "files": {
+      "firstName": {
+        "male": "data/gnome_firstName_male.json",
+        "female": "data/gnome_firstName_female.json",
+        "neutral": "data/gnome_firstName_male.json"
+      },
+      "lastName": "data/gnome_lastName.json",
+      "compound": {
+        "firstName": null,
+        "lastName": "data/gnome_lastName_compound.json"
+      }
+    }
+  },
+  {
+    "id": "apostrophe",
+    "label": "Apostroph-Namen",
+    "specialType": "apostrophe",
+    "files": {
+      "firstName": {
+        "male":    "data/elf_firstName_male.json",
+        "female":  "data/elf_firstName_female.json",
+        "neutral": "data/elf_firstName_neutral.json"
+      },
+      "lastName": null,
+      "compound": {
+        "firstName": null,
+        "lastName":  null
+      }
+    }
+  }
+]
