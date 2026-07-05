@@ -2,7 +2,8 @@
  * generator.js — Kern-Generierungslogik des Namensgenerators
  *
  * Enthält:
- *  - Silbenbasierte Generierung  (generateSyllableName)
+ *  - Silbenbasierte Generierung  (generateSyllableName) — nutzt optional
+ *    CV-Patterns für Silbenanzahl & Sonderzeichen (Fallback ohne Patterns)
  *  - Clusterbasierte Generierung (generateClusterName)
  *  - Verbindungsnamen            (generateCompoundName) — dual-format
  *  - Komplett-zufällige Namen    (generateRandomName)
@@ -183,6 +184,147 @@ function endsWithValidSuffix(name, syllables) {
 // Fehlen benötigte Cluster → Versuch abbrechen oder Error werfen.
 
 // ═══════════════════════════════════════════════════
+// CV-PATTERN-HELFER (gemeinsam genutzt von Silben- UND Cluster-Generator)
+// ═══════════════════════════════════════════════════
+
+/**
+ * Klassifiziert ein einzelnes Pattern-Symbol.
+ *
+ * 'C'/'c' → Konsonant, 'V'/'v' → Vokal, alles andere → Sonderzeichen
+ * (wird wörtlich übernommen, z. B. Apostroph, Bindestrich, …).
+ *
+ * @param {string} ch - ein einzelnes Zeichen aus dem CV-Pattern
+ * @returns {'C'|'V'|'SPECIAL'}
+ */
+function getSymbolType(ch) {
+  if (ch === 'V' || ch === 'v') return 'V';
+  if (ch === 'C' || ch === 'c') return 'C';
+  return 'SPECIAL';
+}
+
+/**
+ * Zählt aufeinanderfolgende Symbole DESSELBEN TYPS (Konsonant/Vokal) ab
+ * Position `start` im Pattern — unabhängig von Groß-/Kleinschreibung.
+ * Beispiel: countTypedRun("CcVcvcvc", 0) → 2  ("Cc" ist ein Konsonanten-Run)
+ *
+ * Sonderzeichen werden NIE zu einem Block zusammengefasst — jedes
+ * Sonderzeichen bildet einen eigenen "Run" der Länge 1.
+ */
+function countTypedRun(pattern, start) {
+  const type = getSymbolType(pattern[start]);
+  if (type === 'SPECIAL') return 1;
+  let n = 0;
+  for (let i = start; i < pattern.length && getSymbolType(pattern[i]) === type; i++) n++;
+  return n;
+}
+
+/**
+ * Überträgt die Groß-/Kleinschreibung der Pattern-Symbole auf einen aus dem
+ * JSON gezogenen Cluster-String.
+ *
+ * Beispiel: Pattern-Run "Cc" + Cluster "th" → "Th"
+ * (erstes Zeichen groß, weil 'C' im Pattern groß war; zweites klein, weil 'c')
+ *
+ * Wird der Cluster kürzer als der Pattern-Run gewählt (Fallback auf kürzere
+ * Länge), wird nur für die tatsächlich vorhandenen Zeichen Case übernommen.
+ *
+ * @param {string} chunk    - Cluster-String aus dem JSON (z. B. "th")
+ * @param {string} pattern  - das vollständige CV-Pattern
+ * @param {number} start    - Startindex des Runs im Pattern
+ * @returns {string}
+ */
+function applyCasePattern(chunk, pattern, start) {
+  let out = '';
+  for (let i = 0; i < chunk.length; i++) {
+    const symCh      = pattern[start + i];
+    const wantsUpper = symCh === symCh.toUpperCase();
+    out += wantsUpper ? chunk[i].toUpperCase() : chunk[i].toLowerCase();
+  }
+  return out;
+}
+
+/**
+ * Wählt (gewichtet nach der im JSON hinterlegten Pattern-Wahrscheinlichkeit)
+ * ein CV-Pattern für die angegebene Ziellänge aus `data.cvPatterns`.
+ *
+ * Liefert `null`, wenn für diese Länge keine Patterns vorhanden sind — der
+ * aufrufende Generator fällt dann auf sein bisheriges, pattern-loses
+ * Verhalten zurück (volle Abwärtskompatibilität).
+ *
+ * Zusätzlich zum Pattern-String selbst werden zwei abgeleitete Infos
+ * geliefert, die der Silben-Generator nutzt, um Struktur und Sonderzeichen
+ * eines Silben-Namens am Pattern auszurichten:
+ *
+ *  - syllableCount: Anzahl der Vokal-Runs (V/v-Blöcke) im Pattern.
+ *    Linguistische Faustregel: jeder Vokal-Nukleus trägt eine Silbe.
+ *  - specials: Sonderzeichen im Pattern mit ihrer relativen Position
+ *    (0..1) innerhalb des Patterns, z. B. { char: "-", relPos: 0.375 }.
+ *
+ * @param {object} data
+ * @param {number} targetLength
+ * @returns {{pattern:string, syllableCount:number, specials:Array<{char:string, relPos:number}>}|null}
+ */
+function pickCvPatternForLength(data, targetLength) {
+  const patternMap = data?.cvPatterns?.[targetLength]?.patterns;
+  if (!patternMap) return null;
+
+  const entries = Object.entries(patternMap);
+  if (entries.length === 0) return null;
+
+  const picked = weightedRandom(entries, ([, prob]) => prob);
+  if (!picked) return null;
+  const pattern = picked[0];
+
+  let syllableCount = 0;
+  const specials    = [];
+  let idx = 0;
+  while (idx < pattern.length) {
+    const type    = getSymbolType(pattern[idx]);
+    const runLen  = countTypedRun(pattern, idx);
+    if (type === 'V') syllableCount++;
+    if (type === 'SPECIAL') specials.push({ char: pattern[idx], relPos: idx / pattern.length });
+    idx += runLen;
+  }
+
+  return { pattern, syllableCount: Math.max(1, syllableCount), specials };
+}
+
+/**
+ * Fügt Sonderzeichen aus einem CV-Pattern an ihren relativen Positionen
+ * (0..1) in einen bereits zusammengesetzten Silben-Namen ein.
+ *
+ * Die relative Position wird auf die aktuelle Namenslänge projiziert.
+ * Damit kein Sonderzeichen den Namen eröffnet, beendet oder einen
+ * bekannten Suffix zerschneidet, wird die Einfügeposition auf den
+ * Bereich [1, name.length - reservedTailLength] geklemmt.
+ *
+ * @param {string} name              - Silben-Name OHNE Sonderzeichen
+ * @param {Array<{char:string, relPos:number}>} specials
+ * @param {number} reservedTailLength - Länge des Suffix-Endes, das frei
+ *                                      von Sonderzeichen bleiben soll
+ * @returns {string}
+ */
+function insertSpecialsByRelativePosition(name, specials, reservedTailLength = 0) {
+  if (!specials || specials.length === 0) return name;
+
+  let result = name;
+  let offset = 0;
+  const baseLength = name.length;
+
+  for (const { char, relPos } of specials) {
+    const basePos = Math.round(relPos * baseLength) + offset;
+    const maxPos  = result.length - reservedTailLength;
+    if (maxPos < 1) continue; // Name zu kurz, um sicher einzufügen → überspringen
+
+    const insertPos = Math.min(maxPos, Math.max(1, basePos));
+    result = result.slice(0, insertPos) + char + result.slice(insertPos);
+    offset += char.length;
+  }
+
+  return result;
+}
+
+// ═══════════════════════════════════════════════════
 // GENERATOR 1: SILBENBASIERT
 // Prefix → Infix(e) → Suffix
 // ═══════════════════════════════════════════════════
@@ -191,9 +333,20 @@ function endsWithValidSuffix(name, syllables) {
  * Baut einen Namen aus vordefinierten Silben zusammen.
  *
  * Strategie:
- * - Wählt ein Prefix-Silbe
+ * - Wählt eine Prefix-Silbe
  * - Fügt Infix-Silben hinzu, bis die Ziellänge annähernd erreicht ist
  * - Schließt mit einem Suffix ab
+ *
+ * CV-Pattern-Anbindung (optional, mit Fallback):
+ * - Ist für die Ziellänge ein CV-Pattern vorhanden, wird daraus die
+ *   ungefähre Silbenanzahl (= Anzahl der Vokal-Runs im Pattern) abgeleitet
+ *   und begrenzt, wie viele Infixe maximal angehängt werden — der Aufbau
+ *   bleibt damit näher an der im Pattern vorgesehenen Struktur.
+ * - Enthält das Pattern Sonderzeichen (Apostroph, Bindestrich, …), werden
+ *   diese an ihrer relativen Pattern-Position in den fertigen Silben-Namen
+ *   eingefügt (Suffix-Ende bleibt dabei immer unangetastet).
+ * - Fehlt ein passendes Pattern für die Ziellänge, verhält sich der
+ *   Generator exakt wie zuvor — keine Pflicht-Abhängigkeit von cvPatterns.
  *
  * @param {object} data     - linguistische Daten
  * @param {object} options
@@ -212,6 +365,18 @@ export function generateSyllableName(data, options = {}) {
     throw new Error('[generateSyllableName] Keine Silbendaten (data.syllables) vorhanden.');
   }
 
+  // ── CV-Pattern für die Ziellänge ermitteln (optional) ────────────────
+  // Liefert null, wenn keine Patterns vorhanden sind → Generator arbeitet
+  // dann unverändert wie bisher (reine Längensteuerung, keine Sonderzeichen).
+  const patternInfo    = pickCvPatternForLength(data, targetLength);
+  const specialsCount  = patternInfo?.specials?.length ?? 0;
+  // Silben-Aufbau zielt auf (Ziellänge − Sonderzeichen), die Sonderzeichen
+  // werden danach separat eingefügt, um exakt auf targetLength zu kommen.
+  const syllableTarget = Math.max(1, targetLength - specialsCount);
+  // Maximal erlaubte Infix-Anzahl aus der Pattern-Silbenzahl (Prefix + Suffix
+  // zählen bereits als 2 Silben). Ohne Pattern: keine Begrenzung (Altverhalten).
+  const maxInfixes     = patternInfo ? Math.max(0, patternInfo.syllableCount - 2) : Infinity;
+
   // 20 Versuche (vorher: 8) — mehr Spielraum für kurze Silben-Pools,
   // bei denen Länge + Konsonant selten zusammentreffen.
   for (let attempt = 0; attempt < 20; attempt++) {
@@ -226,19 +391,34 @@ export function generateSyllableName(data, options = {}) {
 
     // 3. Infix einfügen bis (name + suffix) die Ziellänge EXAKT erreicht oder
     //    um max. 1 Zeichen unterschreitet (Suffix schließt dann ab).
+    //    Zusätzlich durch maxInfixes begrenzt, wenn ein CV-Pattern vorliegt.
     if (syl.infix) {
       let safety = 0;
-      while ((name.length + suffixCandidate.length) < targetLength && safety < 20) {
+      let infixesUsed = 0;
+      while (
+        (name.length + suffixCandidate.length) < syllableTarget &&
+        safety < 20 &&
+        infixesUsed < maxInfixes
+      ) {
         const infix = pickFromPositionBucket(syl.infix, probMode, null);
         if (!infix) break;
-        if (name.length + infix.length + suffixCandidate.length > targetLength + 1) break;
+        if (name.length + infix.length + suffixCandidate.length > syllableTarget + 1) break;
         name += infix;
         safety++;
+        infixesUsed++;
       }
     }
 
     // 4. Suffix anhängen
     name += suffixCandidate;
+
+    // 5. Sonderzeichen aus dem CV-Pattern einfügen (falls vorhanden).
+    //    reservedTailLength = suffixCandidate.length stellt sicher, dass
+    //    der Suffix am Namensende intakt bleibt (wichtig für Schritt c
+    //    der Validierung weiter unten).
+    if (specialsCount > 0) {
+      name = insertSpecialsByRelativePosition(name, patternInfo.specials, suffixCandidate.length);
+    }
 
     const normalized = normalizeName(name);
 
@@ -253,7 +433,8 @@ export function generateSyllableName(data, options = {}) {
     if (!/[bcdfghjklmnpqrstvwxyzß]/i.test(normalized)) continue;
 
     // c) Suffix-Validierung: Name MUSS mit einem bekannten Suffix enden.
-    //    Verhindert, dass Infixe oder Prefixe fälschlicherweise am Ende stehen.
+    //    Verhindert, dass Infixe, Prefixe oder Sonderzeichen fälschlicherweise
+    //    am Ende stehen.
     if (!endsWithValidSuffix(normalized, syl)) continue;
 
     return normalized;
@@ -262,6 +443,7 @@ export function generateSyllableName(data, options = {}) {
   // Alle Versuche fehlgeschlagen → Minimalname aus Prefix + Suffix,
   // aber NUR wenn er die vollen Validierungsregeln (Länge + Konsonant) besteht.
   // Kein stilles Return mehr bei reinen Vokal-Kombinationen wie "a" + "o" → "Ao".
+  // (Pattern-Anbindung greift hier bewusst nicht — reiner Notfall-Fallback.)
   if (syl?.prefix && syl?.suffix) {
     const allP = Object.values(syl.prefix).flatMap(b => Object.keys(b));
     const allS = Object.values(syl.suffix).flatMap(b => Object.keys(b));
@@ -294,16 +476,6 @@ export function generateSyllableName(data, options = {}) {
  * @param {object} options
  * @returns {string}
  */
-/**
- * Zählt aufeinanderfolgende gleiche Symbole ab Position `start` im Pattern.
- * Beispiel: countRun("CVCCC", 2, 'C') → 3
- */
-function countRun(pattern, start, symbol) {
-  let n = 0;
-  for (let i = start; i < pattern.length && pattern[i] === symbol; i++) n++;
-  return n;
-}
-
 /**
  * Clusterbasierte Generierung — strikt nach CV-Pattern.
  *
@@ -343,8 +515,9 @@ export function generateClusterName(data, options = {}) {
     throw new Error(`[generateClusterName] Keine CV-Patterns für Länge ${targetLength} und keine Silbendaten vorhanden.`);
   }
 
-  // Vokal-only Patterns herausfiltern (müssen mindestens ein C enthalten)
-  const validPatterns = Object.entries(patternMap).filter(([pat]) => pat.includes('C'));
+  // Vokal-only Patterns herausfiltern (müssen mindestens einen Konsonanten
+  // enthalten — Groß- ODER Kleinschreibung, also 'C' oder 'c').
+  const validPatterns = Object.entries(patternMap).filter(([pat]) => /[Cc]/.test(pat));
   if (validPatterns.length === 0) {
     if (data?.syllables) return generateSyllableName(data, options);
     throw new Error(`[generateClusterName] Keine gültigen CV-Patterns (mit Konsonant) für Länge ${targetLength}.`);
@@ -365,8 +538,19 @@ export function generateClusterName(data, options = {}) {
     let buildFailed = false;
 
     while (pIdx < pattern.length) {
-      const sym    = pattern[pIdx];
-      const runLen = countRun(pattern, pIdx, sym);
+      const sym  = pattern[pIdx];
+      const type = getSymbolType(sym);
+
+      // ── Sonderzeichen: wörtlich übernehmen, kein Cluster-Lookup ────────
+      // z. B. Apostroph, Bindestrich, … werden 1:1 aus dem Pattern in den
+      // Namen kopiert und brechen jeden laufenden C/V-Run ab.
+      if (type === 'SPECIAL') {
+        name += sym;
+        pIdx += 1;
+        continue;
+      }
+
+      const runLen = countTypedRun(pattern, pIdx);
       const patLen = pattern.length;
 
       const progress = pIdx / (patLen || 1);
@@ -374,7 +558,7 @@ export function generateClusterName(data, options = {}) {
 
       let chunk = null;
 
-      if (sym === 'V') {
+      if (type === 'V') {
         // Erst exakte Run-Länge, dann kürzer, dann andere Positionen
         for (let tryLen = runLen; tryLen >= 1 && !chunk; tryLen--) {
           chunk = pickFromPositionBucket(vowelMap?.[pos], probMode, tryLen, true);
@@ -404,7 +588,9 @@ export function generateClusterName(data, options = {}) {
         if (!chunk) { buildFailed = true; break; }
       }
 
-      name += chunk;
+      // Groß-/Kleinschreibung jedes Zeichens gemäß Pattern-Symbol übertragen
+      // (C/V → groß, c/v → klein) — zeichenweise über den Run hinweg.
+      name += applyCasePattern(chunk, pattern, pIdx);
       pIdx += runLen;
 
       // Frühzeitiger Abbruch wenn Name schon zu lang
