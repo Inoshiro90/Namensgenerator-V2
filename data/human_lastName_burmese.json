@@ -1,0 +1,1455 @@
+{
+  "_version": "2026-07-13/21-03-59",
+  "profile": "burmese",
+  "nameCount": 73,
+  "names": [
+    "Ag",
+    "Aung",
+    "Aye",
+    "Chit",
+    "Cho",
+    "Hein",
+    "Hla",
+    "Hlaing",
+    "Hline",
+    "Htay",
+    "Htet",
+    "Htin",
+    "Htun",
+    "Htut",
+    "Htway",
+    "Htwe",
+    "Khaing",
+    "Khin",
+    "Khine",
+    "Ko",
+    "Kyaw",
+    "Kyi",
+    "Kyine",
+    "Kywe",
+    "Lin",
+    "Lwin",
+    "Maung",
+    "Mg",
+    "Moe",
+    "Mon",
+    "Mya",
+    "Myaing",
+    "Myat",
+    "Myine",
+    "Myint",
+    "Myo",
+    "Naing",
+    "Nanda",
+    "Nwe",
+    "Nyein",
+    "Nyunt",
+    "Ohnmar",
+    "Oo",
+    "Phyo",
+    "Phyu",
+    "Sanda",
+    "Sandi",
+    "Sein",
+    "Shein",
+    "Shway",
+    "Shwe",
+    "Soe",
+    "Than",
+    "Thant",
+    "Thaung",
+    "Thein",
+    "Theingi",
+    "Thet",
+    "Thida",
+    "Thiri",
+    "Thu",
+    "Thura",
+    "Thurein",
+    "Thuya",
+    "Thuza",
+    "Tun",
+    "U",
+    "Win",
+    "Ye",
+    "Yi",
+    "Zaw",
+    "Zeya",
+    "Zeyar"
+  ],
+  "nameLengths": {
+    "1": {
+      "count": 1,
+      "probability": 1.37
+    },
+    "2": {
+      "count": 6,
+      "probability": 8.22
+    },
+    "3": {
+      "count": 15,
+      "probability": 20.55
+    },
+    "4": {
+      "count": 21,
+      "probability": 28.77
+    },
+    "5": {
+      "count": 23,
+      "probability": 31.51
+    },
+    "6": {
+      "count": 5,
+      "probability": 6.85
+    },
+    "7": {
+      "count": 2,
+      "probability": 2.74
+    }
+  },
+  "cvPatterns": {
+    "1": {
+      "total": 1,
+      "patterns": {
+        "V": 100
+      }
+    },
+    "2": {
+      "total": 6,
+      "patterns": {
+        "Cv": 50,
+        "Vc": 16.67,
+        "Cc": 16.67,
+        "Vv": 16.67
+      }
+    },
+    "3": {
+      "total": 15,
+      "patterns": {
+        "Ccv": 46.67,
+        "Cvc": 33.33,
+        "Cvv": 13.33,
+        "Vcv": 6.67
+      }
+    },
+    "4": {
+      "total": 21,
+      "patterns": {
+        "Ccvc": 57.14,
+        "Cccv": 23.81,
+        "Cvvc": 9.52,
+        "Vvcc": 4.76,
+        "Cvcv": 4.76
+      }
+    },
+    "5": {
+      "total": 23,
+      "patterns": {
+        "Ccvcv": 39.13,
+        "Ccvcc": 13.04,
+        "Cvccv": 13.04,
+        "Ccvvc": 13.04,
+        "Cccvc": 8.7,
+        "Cvvcc": 8.7,
+        "Cvcvc": 4.35
+      }
+    },
+    "6": {
+      "total": 5,
+      "patterns": {
+        "Ccvvcc": 80,
+        "Vcccvc": 20
+      }
+    },
+    "7": {
+      "total": 2,
+      "patterns": {
+        "Ccvvccv": 50,
+        "Ccvcvvc": 50
+      }
+    }
+  },
+  "vowelCombinations": {
+    "prefix": {
+      "1": {
+        "a": {
+          "cvPattern": "V",
+          "count": 1,
+          "probByLength": 33.33,
+          "probOverall": 33.33
+        },
+        "au": {
+          "cvPattern": "Vv",
+          "count": 1,
+          "probByLength": 33.33,
+          "probOverall": 33.33
+        },
+        "o": {
+          "cvPattern": "v",
+          "count": 1,
+          "probByLength": 33.33,
+          "probOverall": 33.33
+        }
+      }
+    },
+    "infix": {
+      "1": {
+        "i": {
+          "cvPattern": "v",
+          "count": 9,
+          "probByLength": 21.95,
+          "probOverall": 21.43
+        },
+        "a": {
+          "cvPattern": "V",
+          "count": 8,
+          "probByLength": 19.51,
+          "probOverall": 19.05
+        },
+        "ei": {
+          "cvPattern": "vv",
+          "count": 7,
+          "probByLength": 17.07,
+          "probOverall": 16.67
+        },
+        "u": {
+          "cvPattern": "v",
+          "count": 7,
+          "probByLength": 17.07,
+          "probOverall": 16.67
+        },
+        "ai": {
+          "cvPattern": "vv",
+          "count": 3,
+          "probByLength": 7.32,
+          "probOverall": 7.14
+        },
+        "au": {
+          "cvPattern": "Vv",
+          "count": 2,
+          "probByLength": 4.88,
+          "probOverall": 4.76
+        },
+        "e": {
+          "cvPattern": "v",
+          "count": 2,
+          "probByLength": 4.88,
+          "probOverall": 4.76
+        },
+        "o": {
+          "cvPattern": "v",
+          "count": 1,
+          "probByLength": 2.44,
+          "probOverall": 2.38
+        },
+        "ya": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 2.44,
+          "probOverall": 2.38
+        },
+        "yai": {
+          "cvPattern": "cvv",
+          "count": 1,
+          "probByLength": 2.44,
+          "probOverall": 2.38
+        }
+      },
+      "2": {
+        "eya": {
+          "cvPattern": "vcv",
+          "count": 1,
+          "probByLength": 100,
+          "probOverall": 2.38
+        }
+      }
+    },
+    "suffix": {
+      "1": {
+        "a": {
+          "cvPattern": "V",
+          "count": 6,
+          "probByLength": 19.35,
+          "probOverall": 18.18
+        },
+        "i": {
+          "cvPattern": "v",
+          "count": 5,
+          "probByLength": 16.13,
+          "probOverall": 15.15
+        },
+        "ine": {
+          "cvPattern": "vcv",
+          "count": 4,
+          "probByLength": 12.9,
+          "probOverall": 12.12
+        },
+        "e": {
+          "cvPattern": "v",
+          "count": 4,
+          "probByLength": 12.9,
+          "probOverall": 12.12
+        },
+        "ay": {
+          "cvPattern": "vc",
+          "count": 3,
+          "probByLength": 9.68,
+          "probOverall": 9.09
+        },
+        "o": {
+          "cvPattern": "v",
+          "count": 2,
+          "probByLength": 6.45,
+          "probOverall": 6.06
+        },
+        "u": {
+          "cvPattern": "v",
+          "count": 2,
+          "probByLength": 6.45,
+          "probOverall": 6.06
+        },
+        "oe": {
+          "cvPattern": "vv",
+          "count": 2,
+          "probByLength": 6.45,
+          "probOverall": 6.06
+        },
+        "yo": {
+          "cvPattern": "cv",
+          "count": 2,
+          "probByLength": 6.45,
+          "probOverall": 6.06
+        },
+        "ya": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 3.23,
+          "probOverall": 3.03
+        }
+      },
+      "2": {
+        "uya": {
+          "cvPattern": "vcv",
+          "count": 1,
+          "probByLength": 50,
+          "probOverall": 3.03
+        },
+        "eya": {
+          "cvPattern": "vcv",
+          "count": 1,
+          "probByLength": 50,
+          "probOverall": 3.03
+        }
+      }
+    }
+  },
+  "consonantCombinations": {
+    "prefix": {
+      "1": {
+        "m": {
+          "cvPattern": "C",
+          "count": 7,
+          "probByLength": 23.33,
+          "probOverall": 10.77
+        },
+        "s": {
+          "cvPattern": "C",
+          "count": 4,
+          "probByLength": 13.33,
+          "probOverall": 6.15
+        },
+        "ky": {
+          "cvPattern": "Cc",
+          "count": 3,
+          "probByLength": 10,
+          "probOverall": 4.62
+        },
+        "z": {
+          "cvPattern": "c",
+          "count": 3,
+          "probByLength": 10,
+          "probOverall": 4.62
+        },
+        "ch": {
+          "cvPattern": "Cc",
+          "count": 2,
+          "probByLength": 6.67,
+          "probOverall": 3.08
+        },
+        "n": {
+          "cvPattern": "c",
+          "count": 2,
+          "probByLength": 6.67,
+          "probOverall": 3.08
+        },
+        "ny": {
+          "cvPattern": "Cc",
+          "count": 2,
+          "probByLength": 6.67,
+          "probOverall": 3.08
+        },
+        "t": {
+          "cvPattern": "c",
+          "count": 1,
+          "probByLength": 3.33,
+          "probOverall": 1.54
+        },
+        "h": {
+          "cvPattern": "C",
+          "count": 1,
+          "probByLength": 3.33,
+          "probOverall": 1.54
+        },
+        "k": {
+          "cvPattern": "C",
+          "count": 1,
+          "probByLength": 3.33,
+          "probOverall": 1.54
+        },
+        "w": {
+          "cvPattern": "c",
+          "count": 1,
+          "probByLength": 3.33,
+          "probOverall": 1.54
+        },
+        "l": {
+          "cvPattern": "C",
+          "count": 1,
+          "probByLength": 3.33,
+          "probOverall": 1.54
+        },
+        "sh": {
+          "cvPattern": "Cc",
+          "count": 1,
+          "probByLength": 3.33,
+          "probOverall": 1.54
+        },
+        "y": {
+          "cvPattern": "C",
+          "count": 1,
+          "probByLength": 3.33,
+          "probOverall": 1.54
+        }
+      },
+      "2": {
+        "th": {
+          "cvPattern": "Cc",
+          "count": 13,
+          "probByLength": 40.63,
+          "probOverall": 20
+        },
+        "ht": {
+          "cvPattern": "Cc",
+          "count": 5,
+          "probByLength": 15.63,
+          "probOverall": 7.69
+        },
+        "hl": {
+          "cvPattern": "Cc",
+          "count": 3,
+          "probByLength": 9.38,
+          "probOverall": 4.62
+        },
+        "kh": {
+          "cvPattern": "Cc",
+          "count": 3,
+          "probByLength": 9.38,
+          "probOverall": 4.62
+        },
+        "my": {
+          "cvPattern": "Cc",
+          "count": 2,
+          "probByLength": 6.25,
+          "probOverall": 3.08
+        },
+        "shw": {
+          "cvPattern": "Ccc",
+          "count": 2,
+          "probByLength": 6.25,
+          "probOverall": 3.08
+        },
+        "kyw": {
+          "cvPattern": "Ccc",
+          "count": 1,
+          "probByLength": 3.13,
+          "probOverall": 1.54
+        },
+        "lw": {
+          "cvPattern": "Cc",
+          "count": 1,
+          "probByLength": 3.13,
+          "probOverall": 1.54
+        },
+        "nw": {
+          "cvPattern": "Cc",
+          "count": 1,
+          "probByLength": 3.13,
+          "probOverall": 1.54
+        },
+        "ph": {
+          "cvPattern": "Cc",
+          "count": 1,
+          "probByLength": 3.13,
+          "probOverall": 1.54
+        }
+      },
+      "3": {
+        "htw": {
+          "cvPattern": "Ccc",
+          "count": 2,
+          "probByLength": 66.67,
+          "probOverall": 3.08
+        },
+        "phy": {
+          "cvPattern": "Ccc",
+          "count": 1,
+          "probByLength": 33.33,
+          "probOverall": 1.54
+        }
+      }
+    },
+    "infix": {
+      "1": {
+        "r": {
+          "cvPattern": "c",
+          "count": 3,
+          "probByLength": 50,
+          "probOverall": 30
+        },
+        "ng": {
+          "cvPattern": "cc",
+          "count": 1,
+          "probByLength": 16.67,
+          "probOverall": 10
+        },
+        "d": {
+          "cvPattern": "c",
+          "count": 1,
+          "probByLength": 16.67,
+          "probOverall": 10
+        },
+        "z": {
+          "cvPattern": "c",
+          "count": 1,
+          "probByLength": 16.67,
+          "probOverall": 10
+        }
+      },
+      "2": {
+        "nd": {
+          "cvPattern": "cc",
+          "count": 3,
+          "probByLength": 75,
+          "probOverall": 30
+        },
+        "hnm": {
+          "cvPattern": "ccc",
+          "count": 1,
+          "probByLength": 25,
+          "probOverall": 10
+        }
+      }
+    },
+    "suffix": {
+      "1": {
+        "n": {
+          "cvPattern": "c",
+          "count": 15,
+          "probByLength": 46.88,
+          "probOverall": 42.86
+        },
+        "ng": {
+          "cvPattern": "cc",
+          "count": 7,
+          "probByLength": 21.88,
+          "probOverall": 20
+        },
+        "t": {
+          "cvPattern": "c",
+          "count": 5,
+          "probByLength": 15.63,
+          "probOverall": 14.29
+        },
+        "w": {
+          "cvPattern": "c",
+          "count": 2,
+          "probByLength": 6.25,
+          "probOverall": 5.71
+        },
+        "r": {
+          "cvPattern": "c",
+          "count": 2,
+          "probByLength": 6.25,
+          "probOverall": 5.71
+        },
+        "g": {
+          "cvPattern": "c",
+          "count": 1,
+          "probByLength": 3.13,
+          "probOverall": 2.86
+        }
+      },
+      "2": {
+        "nt": {
+          "cvPattern": "cc",
+          "count": 3,
+          "probByLength": 100,
+          "probOverall": 8.57
+        }
+      }
+    }
+  },
+  "syllables": {
+    "prefix": {
+      "1": {
+        "u": {
+          "cvPattern": "v",
+          "count": 1,
+          "probByLength": 100,
+          "probOverall": 1.37
+        }
+      },
+      "2": {
+        "ag": {
+          "cvPattern": "vc",
+          "count": 1,
+          "probByLength": 16.67,
+          "probOverall": 1.37
+        },
+        "ko": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 16.67,
+          "probOverall": 1.37
+        },
+        "mg": {
+          "cvPattern": "cc",
+          "count": 1,
+          "probByLength": 16.67,
+          "probOverall": 1.37
+        },
+        "oo": {
+          "cvPattern": "vv",
+          "count": 1,
+          "probByLength": 16.67,
+          "probOverall": 1.37
+        },
+        "ye": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 16.67,
+          "probOverall": 1.37
+        },
+        "yi": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 16.67,
+          "probOverall": 1.37
+        }
+      },
+      "3": {
+        "thu": {
+          "cvPattern": "ccv",
+          "count": 5,
+          "probByLength": 18.52,
+          "probOverall": 6.85
+        },
+        "san": {
+          "cvPattern": "cvc",
+          "count": 2,
+          "probByLength": 7.41,
+          "probOverall": 2.74
+        },
+        "thi": {
+          "cvPattern": "ccv",
+          "count": 2,
+          "probByLength": 7.41,
+          "probOverall": 2.74
+        },
+        "zey": {
+          "cvPattern": "cvc",
+          "count": 2,
+          "probByLength": 7.41,
+          "probOverall": 2.74
+        },
+        "aye": {
+          "cvPattern": "vcv",
+          "count": 1,
+          "probByLength": 3.7,
+          "probOverall": 1.37
+        },
+        "cho": {
+          "cvPattern": "ccv",
+          "count": 1,
+          "probByLength": 3.7,
+          "probOverall": 1.37
+        },
+        "hla": {
+          "cvPattern": "ccv",
+          "count": 1,
+          "probByLength": 3.7,
+          "probOverall": 1.37
+        },
+        "kyi": {
+          "cvPattern": "ccv",
+          "count": 1,
+          "probByLength": 3.7,
+          "probOverall": 1.37
+        },
+        "lin": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 3.7,
+          "probOverall": 1.37
+        },
+        "moe": {
+          "cvPattern": "cvv",
+          "count": 1,
+          "probByLength": 3.7,
+          "probOverall": 1.37
+        },
+        "mon": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 3.7,
+          "probOverall": 1.37
+        },
+        "mya": {
+          "cvPattern": "ccv",
+          "count": 1,
+          "probByLength": 3.7,
+          "probOverall": 1.37
+        },
+        "myo": {
+          "cvPattern": "ccv",
+          "count": 1,
+          "probByLength": 3.7,
+          "probOverall": 1.37
+        },
+        "nan": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 3.7,
+          "probOverall": 1.37
+        },
+        "nwe": {
+          "cvPattern": "ccv",
+          "count": 1,
+          "probByLength": 3.7,
+          "probOverall": 1.37
+        },
+        "ohn": {
+          "cvPattern": "vcc",
+          "count": 1,
+          "probByLength": 3.7,
+          "probOverall": 1.37
+        },
+        "soe": {
+          "cvPattern": "cvv",
+          "count": 1,
+          "probByLength": 3.7,
+          "probOverall": 1.37
+        },
+        "tun": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 3.7,
+          "probOverall": 1.37
+        },
+        "win": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 3.7,
+          "probOverall": 1.37
+        },
+        "zaw": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 3.7,
+          "probOverall": 1.37
+        }
+      },
+      "4": {
+        "aung": {
+          "cvPattern": "vvcc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "chit": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "hein": {
+          "cvPattern": "cvvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "htay": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "htet": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "htin": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "htun": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "htut": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "htwe": {
+          "cvPattern": "cccv",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "khin": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "kyaw": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "kywe": {
+          "cvPattern": "cccv",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "lwin": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "myat": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "phyo": {
+          "cvPattern": "cccv",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "phyu": {
+          "cvPattern": "cccv",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "sein": {
+          "cvPattern": "cvvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "shwe": {
+          "cvPattern": "cccv",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "than": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "thei": {
+          "cvPattern": "ccvv",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "thet": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        }
+      },
+      "5": {
+        "hline": {
+          "cvPattern": "ccvcv",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "htway": {
+          "cvPattern": "cccvc",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "khine": {
+          "cvPattern": "ccvcv",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "kyine": {
+          "cvPattern": "ccvcv",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "maung": {
+          "cvPattern": "cvvcc",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "myine": {
+          "cvPattern": "ccvcv",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "myint": {
+          "cvPattern": "ccvcc",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "naing": {
+          "cvPattern": "cvvcc",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "nyein": {
+          "cvPattern": "ccvvc",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "nyunt": {
+          "cvPattern": "ccvcc",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "shein": {
+          "cvPattern": "ccvvc",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "shway": {
+          "cvPattern": "cccvc",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "thant": {
+          "cvPattern": "ccvcc",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "thein": {
+          "cvPattern": "ccvvc",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        }
+      },
+      "6": {
+        "hlaing": {
+          "cvPattern": "ccvvcc",
+          "count": 1,
+          "probByLength": 25,
+          "probOverall": 1.37
+        },
+        "khaing": {
+          "cvPattern": "ccvvcc",
+          "count": 1,
+          "probByLength": 25,
+          "probOverall": 1.37
+        },
+        "myaing": {
+          "cvPattern": "ccvvcc",
+          "count": 1,
+          "probByLength": 25,
+          "probOverall": 1.37
+        },
+        "thaung": {
+          "cvPattern": "ccvvcc",
+          "count": 1,
+          "probByLength": 25,
+          "probOverall": 1.37
+        }
+      }
+    },
+    "infix": {},
+    "suffix": {
+      "1": {
+        "u": {
+          "cvPattern": "v",
+          "count": 1,
+          "probByLength": 50,
+          "probOverall": 1.37
+        },
+        "a": {
+          "cvPattern": "v",
+          "count": 1,
+          "probByLength": 50,
+          "probOverall": 1.37
+        }
+      },
+      "2": {
+        "da": {
+          "cvPattern": "cv",
+          "count": 3,
+          "probByLength": 20,
+          "probOverall": 4.11
+        },
+        "ag": {
+          "cvPattern": "vc",
+          "count": 1,
+          "probByLength": 6.67,
+          "probOverall": 1.37
+        },
+        "ko": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 6.67,
+          "probOverall": 1.37
+        },
+        "mg": {
+          "cvPattern": "cc",
+          "count": 1,
+          "probByLength": 6.67,
+          "probOverall": 1.37
+        },
+        "oo": {
+          "cvPattern": "vv",
+          "count": 1,
+          "probByLength": 6.67,
+          "probOverall": 1.37
+        },
+        "di": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 6.67,
+          "probOverall": 1.37
+        },
+        "ri": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 6.67,
+          "probOverall": 1.37
+        },
+        "ra": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 6.67,
+          "probOverall": 1.37
+        },
+        "ya": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 6.67,
+          "probOverall": 1.37
+        },
+        "za": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 6.67,
+          "probOverall": 1.37
+        },
+        "ye": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 6.67,
+          "probOverall": 1.37
+        },
+        "yi": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 6.67,
+          "probOverall": 1.37
+        },
+        "ar": {
+          "cvPattern": "vc",
+          "count": 1,
+          "probByLength": 6.67,
+          "probOverall": 1.37
+        }
+      },
+      "3": {
+        "aye": {
+          "cvPattern": "vcv",
+          "count": 1,
+          "probByLength": 5.88,
+          "probOverall": 1.37
+        },
+        "cho": {
+          "cvPattern": "ccv",
+          "count": 1,
+          "probByLength": 5.88,
+          "probOverall": 1.37
+        },
+        "hla": {
+          "cvPattern": "ccv",
+          "count": 1,
+          "probByLength": 5.88,
+          "probOverall": 1.37
+        },
+        "kyi": {
+          "cvPattern": "ccv",
+          "count": 1,
+          "probByLength": 5.88,
+          "probOverall": 1.37
+        },
+        "lin": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 5.88,
+          "probOverall": 1.37
+        },
+        "moe": {
+          "cvPattern": "cvv",
+          "count": 1,
+          "probByLength": 5.88,
+          "probOverall": 1.37
+        },
+        "mon": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 5.88,
+          "probOverall": 1.37
+        },
+        "mya": {
+          "cvPattern": "ccv",
+          "count": 1,
+          "probByLength": 5.88,
+          "probOverall": 1.37
+        },
+        "myo": {
+          "cvPattern": "ccv",
+          "count": 1,
+          "probByLength": 5.88,
+          "probOverall": 1.37
+        },
+        "nwe": {
+          "cvPattern": "ccv",
+          "count": 1,
+          "probByLength": 5.88,
+          "probOverall": 1.37
+        },
+        "mar": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 5.88,
+          "probOverall": 1.37
+        },
+        "soe": {
+          "cvPattern": "cvv",
+          "count": 1,
+          "probByLength": 5.88,
+          "probOverall": 1.37
+        },
+        "ngi": {
+          "cvPattern": "ccv",
+          "count": 1,
+          "probByLength": 5.88,
+          "probOverall": 1.37
+        },
+        "thu": {
+          "cvPattern": "ccv",
+          "count": 1,
+          "probByLength": 5.88,
+          "probOverall": 1.37
+        },
+        "tun": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 5.88,
+          "probOverall": 1.37
+        },
+        "win": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 5.88,
+          "probOverall": 1.37
+        },
+        "zaw": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 5.88,
+          "probOverall": 1.37
+        }
+      },
+      "4": {
+        "aung": {
+          "cvPattern": "vvcc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "chit": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "hein": {
+          "cvPattern": "cvvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "htay": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "htet": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "htin": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "htun": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "htut": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "htwe": {
+          "cvPattern": "cccv",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "khin": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "kyaw": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "kywe": {
+          "cvPattern": "cccv",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "lwin": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "myat": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "phyo": {
+          "cvPattern": "cccv",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "phyu": {
+          "cvPattern": "cccv",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "sein": {
+          "cvPattern": "cvvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "shwe": {
+          "cvPattern": "cccv",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "than": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "thet": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        },
+        "rein": {
+          "cvPattern": "cvvc",
+          "count": 1,
+          "probByLength": 4.76,
+          "probOverall": 1.37
+        }
+      },
+      "5": {
+        "hline": {
+          "cvPattern": "ccvcv",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "htway": {
+          "cvPattern": "cccvc",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "khine": {
+          "cvPattern": "ccvcv",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "kyine": {
+          "cvPattern": "ccvcv",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "maung": {
+          "cvPattern": "cvvcc",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "myine": {
+          "cvPattern": "ccvcv",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "myint": {
+          "cvPattern": "ccvcc",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "naing": {
+          "cvPattern": "cvvcc",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "nyein": {
+          "cvPattern": "ccvvc",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "nyunt": {
+          "cvPattern": "ccvcc",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "shein": {
+          "cvPattern": "ccvvc",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "shway": {
+          "cvPattern": "cccvc",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "thant": {
+          "cvPattern": "ccvcc",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        },
+        "thein": {
+          "cvPattern": "ccvvc",
+          "count": 1,
+          "probByLength": 7.14,
+          "probOverall": 1.37
+        }
+      },
+      "6": {
+        "hlaing": {
+          "cvPattern": "ccvvcc",
+          "count": 1,
+          "probByLength": 25,
+          "probOverall": 1.37
+        },
+        "khaing": {
+          "cvPattern": "ccvvcc",
+          "count": 1,
+          "probByLength": 25,
+          "probOverall": 1.37
+        },
+        "myaing": {
+          "cvPattern": "ccvvcc",
+          "count": 1,
+          "probByLength": 25,
+          "probOverall": 1.37
+        },
+        "thaung": {
+          "cvPattern": "ccvvcc",
+          "count": 1,
+          "probByLength": 25,
+          "probOverall": 1.37
+        }
+      }
+    }
+  }
+}
