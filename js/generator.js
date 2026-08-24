@@ -235,8 +235,15 @@ function countTypedRun(pattern, start) {
  */
 function applyCasePattern(chunk, pattern, start) {
   let out = '';
+  // Fallback-Symbol, falls der Cluster laenger ist als der Pattern-Run
+  // (z. B. bei inkonsistenten JSON-Daten, wo ein Cluster im falschen
+  // Laengen-Bucket abgelegt wurde). In diesem Fall wird die Gross-/
+  // Kleinschreibung des zuletzt bekannten Pattern-Symbols fortgesetzt,
+  // statt mit "Cannot read properties of undefined" abzustuerzen.
+  let lastSymCh = pattern[start] ?? 'c';
   for (let i = 0; i < chunk.length; i++) {
-    const symCh      = pattern[start + i];
+    const symCh = pattern[start + i] ?? lastSymCh;
+    lastSymCh = symCh;
     const wantsUpper = symCh === symCh.toUpperCase();
     out += wantsUpper ? chunk[i].toUpperCase() : chunk[i].toLowerCase();
   }
@@ -615,32 +622,40 @@ export function generateClusterName(data, options = {}) {
 
       let chunk = null;
 
+      // Verwirft Cluster, die trotz Bucket-Anfrage laenger sind als der
+      // Platz, der im Pattern ab pIdx tatsaechlich noch zur Verfuegung
+      // steht (Schutz gegen inkonsistente/zukuenftige JSON-Daten, bei
+      // denen ein Cluster im falschen Laengen-Bucket liegt).
+      const fitsRemainingPattern = (c) => !!c && (pIdx + c.length) <= patLen;
+
       if (type === 'V') {
         // Erst exakte Run-Länge, dann kürzer, dann andere Positionen
         for (let tryLen = runLen; tryLen >= 1 && !chunk; tryLen--) {
-          chunk = pickFromPositionBucket(vowelMap?.[pos], probMode, tryLen, true);
+          const candidate = pickFromPositionBucket(vowelMap?.[pos], probMode, tryLen, true);
+          if (fitsRemainingPattern(candidate)) chunk = candidate;
         }
         if (!chunk) {
           for (const fp of ['prefix', 'infix', 'suffix']) {
-            chunk = pickFromPositionBucket(vowelMap?.[fp], probMode, 1, true);
-            if (chunk) break;
+            const candidate = pickFromPositionBucket(vowelMap?.[fp], probMode, 1, true);
+            if (fitsRemainingPattern(candidate)) { chunk = candidate; break; }
           }
         }
-        // Kein Vokal-Cluster im JSON gefunden → Versuch abbrechen.
+        // Kein passender Vokal-Cluster im JSON gefunden → Versuch abbrechen.
         // FALLBACK_VOWELS entfernt: nur JSON-Daten erlaubt.
         if (!chunk) { buildFailed = true; break; }
 
       } else { // 'C'
         for (let tryLen = runLen; tryLen >= 1 && !chunk; tryLen--) {
-          chunk = pickFromPositionBucket(consonantMap?.[pos], probMode, tryLen, true);
+          const candidate = pickFromPositionBucket(consonantMap?.[pos], probMode, tryLen, true);
+          if (fitsRemainingPattern(candidate)) chunk = candidate;
         }
         if (!chunk) {
           for (const fp of ['prefix', 'infix', 'suffix']) {
-            chunk = pickFromPositionBucket(consonantMap?.[fp], probMode, 1, true);
-            if (chunk) break;
+            const candidate = pickFromPositionBucket(consonantMap?.[fp], probMode, 1, true);
+            if (fitsRemainingPattern(candidate)) { chunk = candidate; break; }
           }
         }
-        // Kein Konsonanten-Cluster im JSON gefunden → Versuch abbrechen.
+        // Kein passender Konsonanten-Cluster im JSON gefunden → Versuch abbrechen.
         // FALLBACK_CONSONANTS entfernt: nur JSON-Daten erlaubt.
         if (!chunk) { buildFailed = true; break; }
       }
