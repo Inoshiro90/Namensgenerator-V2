@@ -302,21 +302,66 @@ function pickCvPatternForLength(data, targetLength) {
  * @param {Array<{char:string, relPos:number}>} specials
  * @param {number} reservedTailLength - Länge des Suffix-Endes, das frei
  *                                      von Sonderzeichen bleiben soll
+ * @param {number[]} [syllableBoundaries] - Zeichenpositionen in `name`, an
+ *   denen eine Silbe endet/beginnt (z. B. nach dem Prefix, nach jedem
+ *   Infix). Wird NUR für das Leerzeichen-Sonderzeichen genutzt: ein
+ *   Leerzeichen darf ausschließlich an einer solchen Grenze landen, nie
+ *   mitten in einer Silbe — sonst entstehen Artefakte wie "Klei N" aus
+ *   "Klein" (das "van"/"de"-Leerzeichen aus mehrteiligen Quellnamen wie
+ *   "de Boer" traf sonst per Zufallsposition mitten ins Wort).
+ *   Andere Sonderzeichen (Apostroph, Bindestrich, …) sind davon nicht
+ *   betroffen und werden weiterhin frei positioniert — dort ist eine
+ *   Position mitten im Wort sprachlich normal (z. B. "O'Brien").
+ *
+ *   Zusätzlich gilt für Leerzeichen: die dadurch entstehenden Wortteile
+ *   (davor UND danach) müssen mindestens MIN_ISOLATED_SEGMENT_LENGTH
+ *   Zeichen lang sein — verhindert kosmetisch auffällige Einzelbuchstaben-
+ *   "Wörter" wie "E Brands" oder "Schoen De".
  * @returns {string}
  */
-function insertSpecialsByRelativePosition(name, specials, reservedTailLength = 0) {
+function insertSpecialsByRelativePosition(name, specials, reservedTailLength = 0, syllableBoundaries = null) {
   if (!specials || specials.length === 0) return name;
+
+  // Mindestlänge für ein isoliert (durch Leerzeichen abgetrennt) stehendes
+  // Namenssegment. Gilt für beide Seiten des Leerzeichens.
+  const MIN_ISOLATED_SEGMENT_LENGTH = 2;
 
   let result = name;
   let offset = 0;
   const baseLength = name.length;
+  // Position (im aktuellen `result`), ab der das laufende Segment beginnt —
+  // wird nach jedem eingefügten Leerzeichen aktualisiert.
+  let segmentStart = 0;
 
   for (const { char, relPos } of specials) {
     const basePos = Math.round(relPos * baseLength) + offset;
     const maxPos  = result.length - reservedTailLength;
     if (maxPos < 1) continue; // Name zu kurz, um sicher einzufügen → überspringen
 
-    const insertPos = Math.min(maxPos, Math.max(1, basePos));
+    let insertPos = Math.min(maxPos, Math.max(1, basePos));
+
+    // Leerzeichen dürfen nur an bekannten Silbengrenzen landen — sonst
+    // lieber ganz weglassen als eine Silbe zerschneiden. Zusätzlich müssen
+    // beide entstehenden Wortteile mindestens MIN_ISOLATED_SEGMENT_LENGTH
+    // Zeichen lang sein.
+    if (char === ' ') {
+      const validBoundaries = (syllableBoundaries ?? [])
+        .map(b => b + offset)
+        .filter(b =>
+          b >= 1 &&
+          b <= maxPos &&
+          (b - segmentStart) >= MIN_ISOLATED_SEGMENT_LENGTH &&
+          (result.length - b) >= MIN_ISOLATED_SEGMENT_LENGTH
+        );
+
+      if (validBoundaries.length === 0) continue; // kein sicherer Platz → überspringen
+
+      insertPos = validBoundaries.reduce((best, b) =>
+        Math.abs(b - insertPos) < Math.abs(best - insertPos) ? b : best
+      );
+      segmentStart = insertPos + 1; // +1: das eingefügte Leerzeichen selbst zählt nicht mit
+    }
+
     result = result.slice(0, insertPos) + char + result.slice(insertPos);
     offset += char.length;
   }
@@ -381,10 +426,16 @@ export function generateSyllableName(data, options = {}) {
   // bei denen Länge + Konsonant selten zusammentreffen.
   for (let attempt = 0; attempt < 20; attempt++) {
     let name = '';
+    // Positionen, an denen eine Silbe endet/beginnt (nach Prefix, nach
+    // jedem Infix). Wird nur gebraucht, damit ein Leerzeichen-Sonderzeichen
+    // niemals mitten in eine Silbe eingefügt wird — siehe
+    // insertSpecialsByRelativePosition().
+    const syllableBoundaries = [];
 
     // 1. Prefix
     const prefix = pickFromPositionBucket(syl.prefix, probMode, null);
     if (prefix) name += prefix;
+    syllableBoundaries.push(name.length);
 
     // 2. Suffix-Kandidat vorab bestimmen, damit der Platz reserviert wird
     const suffixCandidate = pickFromPositionBucket(syl.suffix, probMode, null) ?? '';
@@ -404,6 +455,7 @@ export function generateSyllableName(data, options = {}) {
         if (!infix) break;
         if (name.length + infix.length + suffixCandidate.length > syllableTarget + 1) break;
         name += infix;
+        syllableBoundaries.push(name.length);
         safety++;
         infixesUsed++;
       }
@@ -417,7 +469,12 @@ export function generateSyllableName(data, options = {}) {
     //    der Suffix am Namensende intakt bleibt (wichtig für Schritt c
     //    der Validierung weiter unten).
     if (specialsCount > 0) {
-      name = insertSpecialsByRelativePosition(name, patternInfo.specials, suffixCandidate.length);
+      name = insertSpecialsByRelativePosition(
+        name,
+        patternInfo.specials,
+        suffixCandidate.length,
+        syllableBoundaries
+      );
     }
 
     const normalized = normalizeName(name);
