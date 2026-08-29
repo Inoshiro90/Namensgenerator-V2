@@ -252,13 +252,13 @@
 				"label": "Mensch — Tschechisch/Slowakisch",
 				"files": {
 					"firstName": {
-						"male": "data/human_firstName_czech_slovak_male.json",
-						"female": "data/human_firstName_czech_slovak_female.json",
+						"male": "data/human_firstName_czech-slovak_male.json",
+						"female": "data/human_firstName_czech-slovak_female.json",
 						"neutral": null
 					},
 					"lastName": {
-						"male": "data/human_lastName_czech_slovak_male.json",
-						"female": "data/human_lastName_czech_slovak_female.json",
+						"male": "data/human_lastName_czech-slovak_male.json",
+						"female": "data/human_lastName_czech-slovak_female.json",
 						"neutral": null
 					},
 					"compound": {
@@ -320,11 +320,11 @@
 				"label": "Mensch — Englisch",
 				"files": {
 					"firstName": {
-						"male": "data/human_english_firstName_male.json",
-						"female": "data/human_english_firstName_female.json",
-						"neutral": "data/human_english_firstName_neutral.json"
+						"male": "data/human_firstName_english_male.json",
+						"female": "data/human_firstName_english_male.json",
+						"neutral": null
 					},
-					"lastName": "data/human_english_lastName.json",
+					"lastName": "data/human_lastName_english.json",
 					"compound": {
 						"firstName": null,
 						"lastName": "data/human_english_lastName_compound.json"

@@ -1,15 +1,15 @@
 {
-  "_version": "2026-07-13/20-55-18",
+  "_version": "2026-08-29/18-24-31",
   "profile": "bosnian",
   "nameCount": 262,
   "names": [
     "Adna",
     "Adrijana",
     "Aida",
-    "Aiša",
+    "Aisa",
     "Ajla",
     "Ajna",
-    "Ajša",
+    "Ajsa",
     "Aldina",
     "Aleksandra",
     "Alina",
@@ -31,7 +31,7 @@
     "Anica",
     "Anida",
     "Anka",
-    "Anđela",
+    "Andela",
     "Asija",
     "Asima",
     "Asja",
@@ -61,16 +61,16 @@
     "Dragana",
     "Dragica",
     "Dubravka",
-    "Dušanka",
-    "Dušica",
-    "Duška",
-    "Džana",
-    "Džejla",
-    "Dželila",
-    "Džemila",
-    "Dženana",
-    "Dženeta",
-    "Dževada",
+    "Dusanka",
+    "Dusica",
+    "Duska",
+    "Dzana",
+    "Dzejla",
+    "Dzelila",
+    "Dzemila",
+    "Dzenana",
+    "Dzeneta",
+    "Dzevada",
     "Edina",
     "Edna",
     "Ela",
@@ -171,9 +171,9 @@
     "Naila",
     "Najla",
     "Natalija",
-    "Nataša",
-    "Nađa",
-    "Nedžla",
+    "Natasa",
+    "Nada",
+    "Nedzla",
     "Nejla",
     "Nejra",
     "Nela",
@@ -184,11 +184,11 @@
     "Nikolina",
     "Nina",
     "Nisveta",
-    "Niđara",
-    "Nudžejma",
+    "Nidara",
+    "Nudzejma",
     "Nura",
     "Nusreta",
-    "Paša",
+    "Pasa",
     "Petra",
     "Radojka",
     "Ramiza",
@@ -197,7 +197,7 @@
     "Refija",
     "Refika",
     "Rukija",
-    "Ružica",
+    "Ruzica",
     "Sabira",
     "Sadeta",
     "Safeta",
@@ -218,9 +218,9 @@
     "Sevda",
     "Slavica",
     "Slavka",
-    "Slađana",
+    "Sladana",
     "Smiljana",
-    "Snežana",
+    "Snezana",
     "Sonja",
     "Stojanka",
     "Subha",
@@ -253,18 +253,18 @@
     "Zineta",
     "Zorana",
     "Zuhra",
-    "Ćamila",
-    "Ćerima",
-    "Đemila",
-    "Đula",
-    "Đurica",
-    "Šaha",
-    "Šefika",
-    "Šeherzada",
-    "Šejla",
-    "Šemsa",
-    "Ševala",
-    "Šuhreta"
+    "Camila",
+    "Cerima",
+    "Demila",
+    "Dula",
+    "Durica",
+    "Saha",
+    "Sefika",
+    "Seherzada",
+    "Sejla",
+    "Semsa",
+    "Sevala",
+    "Suhreta"
   ],
   "nameLengths": {
     "3": {
@@ -496,17 +496,17 @@
   "consonantCombinations": {
     "prefix": {
       "1": {
+        "s": {
+          "cvPattern": "c",
+          "count": 30,
+          "probByLength": 16.13,
+          "probOverall": 14.93
+        },
         "m": {
           "cvPattern": "c",
           "count": 28,
           "probByLength": 15.05,
           "probOverall": 13.93
-        },
-        "s": {
-          "cvPattern": "c",
-          "count": 23,
-          "probByLength": 12.37,
-          "probOverall": 11.44
         },
         "n": {
           "cvPattern": "c",
@@ -516,9 +516,9 @@
         },
         "d": {
           "cvPattern": "c",
-          "count": 16,
-          "probByLength": 8.6,
-          "probOverall": 7.96
+          "count": 19,
+          "probByLength": 10.22,
+          "probOverall": 9.45
         },
         "b": {
           "cvPattern": "C",
@@ -550,13 +550,7 @@
           "probByLength": 4.3,
           "probOverall": 3.98
         },
-        "š": {
-          "cvPattern": "c",
-          "count": 7,
-          "probByLength": 3.76,
-          "probOverall": 3.48
-        },
-        "dž": {
+        "dz": {
           "cvPattern": "Cc",
           "count": 7,
           "probByLength": 3.76,
@@ -598,11 +592,11 @@
           "probByLength": 1.61,
           "probOverall": 1.49
         },
-        "đ": {
+        "c": {
           "cvPattern": "c",
-          "count": 3,
-          "probByLength": 1.61,
-          "probOverall": 1.49
+          "count": 2,
+          "probByLength": 1.08,
+          "probOverall": 1
         },
         "g": {
           "cvPattern": "c",
@@ -611,12 +605,6 @@
           "probOverall": 1
         },
         "p": {
-          "cvPattern": "C",
-          "count": 2,
-          "probByLength": 1.08,
-          "probOverall": 1
-        },
-        "ć": {
           "cvPattern": "C",
           "count": 2,
           "probByLength": 1.08,
@@ -708,9 +696,9 @@
         },
         "d": {
           "cvPattern": "c",
-          "count": 28,
-          "probByLength": 8.16,
-          "probOverall": 6.29
+          "count": 31,
+          "probByLength": 9.04,
+          "probOverall": 6.97
         },
         "j": {
           "cvPattern": "c",
@@ -730,17 +718,17 @@
           "probByLength": 6.71,
           "probOverall": 5.17
         },
+        "s": {
+          "cvPattern": "c",
+          "count": 19,
+          "probByLength": 5.54,
+          "probOverall": 4.27
+        },
         "c": {
           "cvPattern": "c",
           "count": 15,
           "probByLength": 4.37,
           "probOverall": 3.37
-        },
-        "s": {
-          "cvPattern": "c",
-          "count": 14,
-          "probByLength": 4.08,
-          "probOverall": 3.15
         },
         "v": {
           "cvPattern": "c",
@@ -766,23 +754,17 @@
           "probByLength": 2.33,
           "probOverall": 1.8
         },
+        "z": {
+          "cvPattern": "c",
+          "count": 7,
+          "probByLength": 2.04,
+          "probOverall": 1.57
+        },
         "k": {
           "cvPattern": "C",
           "count": 6,
           "probByLength": 1.75,
           "probOverall": 1.35
-        },
-        "š": {
-          "cvPattern": "c",
-          "count": 5,
-          "probByLength": 1.46,
-          "probOverall": 1.12
-        },
-        "z": {
-          "cvPattern": "c",
-          "count": 5,
-          "probByLength": 1.46,
-          "probOverall": 1.12
         },
         "lj": {
           "cvPattern": "cc",
@@ -796,25 +778,13 @@
           "probByLength": 0.87,
           "probOverall": 0.67
         },
-        "đ": {
-          "cvPattern": "c",
-          "count": 3,
-          "probByLength": 0.87,
-          "probOverall": 0.67
-        },
-        "ž": {
-          "cvPattern": "c",
-          "count": 2,
-          "probByLength": 0.58,
-          "probOverall": 0.45
-        },
         "nj": {
           "cvPattern": "cc",
           "count": 2,
           "probByLength": 0.58,
           "probOverall": 0.45
         },
-        "dž": {
+        "dz": {
           "cvPattern": "Cc",
           "count": 1,
           "probByLength": 0.29,
@@ -936,7 +906,7 @@
           "probByLength": 1.02,
           "probOverall": 0.22
         },
-        "jš": {
+        "js": {
           "cvPattern": "cc",
           "count": 1,
           "probByLength": 1.02,
@@ -954,7 +924,7 @@
           "probByLength": 1.02,
           "probOverall": 0.22
         },
-        "nđ": {
+        "nd": {
           "cvPattern": "cc",
           "count": 1,
           "probByLength": 1.02,
@@ -990,7 +960,7 @@
           "probByLength": 1.02,
           "probOverall": 0.22
         },
-        "šk": {
+        "sk": {
           "cvPattern": "cc",
           "count": 1,
           "probByLength": 1.02,
@@ -1074,7 +1044,7 @@
           "probByLength": 1.02,
           "probOverall": 0.22
         },
-        "džl": {
+        "dzl": {
           "cvPattern": "ccc",
           "count": 1,
           "probByLength": 1.02,
@@ -1210,9 +1180,9 @@
       "2": {
         "sa": {
           "cvPattern": "cv",
-          "count": 9,
-          "probByLength": 5.66,
-          "probOverall": 3.44
+          "count": 10,
+          "probByLength": 6.29,
+          "probOverall": 3.82
         },
         "da": {
           "cvPattern": "cv",
@@ -1234,6 +1204,12 @@
         },
         "al": {
           "cvPattern": "vc",
+          "count": 5,
+          "probByLength": 3.14,
+          "probOverall": 1.91
+        },
+        "du": {
+          "cvPattern": "cv",
           "count": 5,
           "probByLength": 3.14,
           "probOverall": 1.91
@@ -1298,6 +1274,12 @@
           "probByLength": 2.52,
           "probOverall": 1.53
         },
+        "se": {
+          "cvPattern": "cv",
+          "count": 4,
+          "probByLength": 2.52,
+          "probOverall": 1.53
+        },
         "aj": {
           "cvPattern": "vc",
           "count": 3,
@@ -1310,7 +1292,7 @@
           "probByLength": 1.89,
           "probOverall": 1.15
         },
-        "du": {
+        "de": {
           "cvPattern": "cv",
           "count": 3,
           "probByLength": 1.89,
@@ -1328,6 +1310,12 @@
           "probByLength": 1.89,
           "probOverall": 1.15
         },
+        "su": {
+          "cvPattern": "cv",
+          "count": 3,
+          "probByLength": 1.89,
+          "probOverall": 1.15
+        },
         "ta": {
           "cvPattern": "cv",
           "count": 3,
@@ -1335,12 +1323,6 @@
           "probOverall": 1.15
         },
         "za": {
-          "cvPattern": "cv",
-          "count": 3,
-          "probByLength": 1.89,
-          "probOverall": 1.15
-        },
-        "še": {
           "cvPattern": "cv",
           "count": 3,
           "probByLength": 1.89,
@@ -1359,12 +1341,6 @@
           "probOverall": 0.76
         },
         "be": {
-          "cvPattern": "cv",
-          "count": 2,
-          "probByLength": 1.26,
-          "probOverall": 0.76
-        },
-        "de": {
           "cvPattern": "cv",
           "count": 2,
           "probByLength": 1.26,
@@ -1406,19 +1382,7 @@
           "probByLength": 1.26,
           "probOverall": 0.76
         },
-        "su": {
-          "cvPattern": "cv",
-          "count": 2,
-          "probByLength": 1.26,
-          "probOverall": 0.76
-        },
         "ve": {
-          "cvPattern": "cv",
-          "count": 2,
-          "probByLength": 1.26,
-          "probOverall": 0.76
-        },
-        "đu": {
           "cvPattern": "cv",
           "count": 2,
           "probByLength": 1.26,
@@ -1526,12 +1490,6 @@
           "probByLength": 0.63,
           "probOverall": 0.38
         },
-        "se": {
-          "cvPattern": "cv",
-          "count": 1,
-          "probByLength": 0.63,
-          "probOverall": 0.38
-        },
         "so": {
           "cvPattern": "cv",
           "count": 1,
@@ -1580,31 +1538,13 @@
           "probByLength": 0.63,
           "probOverall": 0.38
         },
-        "ća": {
+        "ca": {
           "cvPattern": "cv",
           "count": 1,
           "probByLength": 0.63,
           "probOverall": 0.38
         },
-        "će": {
-          "cvPattern": "cv",
-          "count": 1,
-          "probByLength": 0.63,
-          "probOverall": 0.38
-        },
-        "đe": {
-          "cvPattern": "cv",
-          "count": 1,
-          "probByLength": 0.63,
-          "probOverall": 0.38
-        },
-        "ša": {
-          "cvPattern": "cv",
-          "count": 1,
-          "probByLength": 0.63,
-          "probOverall": 0.38
-        },
-        "šu": {
+        "ce": {
           "cvPattern": "cv",
           "count": 1,
           "probByLength": 0.63,
@@ -1612,7 +1552,7 @@
         }
       },
       "3": {
-        "dže": {
+        "dze": {
           "cvPattern": "ccv",
           "count": 5,
           "probByLength": 7.94,
@@ -1696,13 +1636,13 @@
           "probByLength": 1.59,
           "probOverall": 0.38
         },
-        "duš": {
+        "dus": {
           "cvPattern": "cvc",
           "count": 1,
           "probByLength": 1.59,
           "probOverall": 0.38
         },
-        "dža": {
+        "dza": {
           "cvPattern": "ccv",
           "count": 1,
           "probByLength": 1.59,
@@ -1894,13 +1834,13 @@
           "probByLength": 1.59,
           "probOverall": 0.38
         },
-        "šej": {
+        "sej": {
           "cvPattern": "cvc",
           "count": 1,
           "probByLength": 1.59,
           "probOverall": 0.38
         },
-        "šem": {
+        "sem": {
           "cvPattern": "cvc",
           "count": 1,
           "probByLength": 1.59,
@@ -1908,7 +1848,7 @@
         }
       },
       "4": {
-        "džej": {
+        "dzej": {
           "cvPattern": "ccvc",
           "count": 1,
           "probByLength": 20,
@@ -1920,7 +1860,7 @@
           "probByLength": 20,
           "probOverall": 0.38
         },
-        "nedž": {
+        "nedz": {
           "cvPattern": "cvcc",
           "count": 1,
           "probByLength": 20,
@@ -1978,23 +1918,23 @@
           "probByLength": 5.19,
           "probOverall": 4.26
         },
+        "si": {
+          "cvPattern": "cv",
+          "count": 7,
+          "probByLength": 4.55,
+          "probOverall": 3.72
+        },
+        "da": {
+          "cvPattern": "cv",
+          "count": 7,
+          "probByLength": 4.55,
+          "probOverall": 3.72
+        },
         "ne": {
           "cvPattern": "cv",
           "count": 6,
           "probByLength": 3.9,
           "probOverall": 3.19
-        },
-        "si": {
-          "cvPattern": "cv",
-          "count": 6,
-          "probByLength": 3.9,
-          "probOverall": 3.19
-        },
-        "da": {
-          "cvPattern": "cv",
-          "count": 5,
-          "probByLength": 3.25,
-          "probOverall": 2.66
         },
         "hi": {
           "cvPattern": "cv",
@@ -2050,6 +1990,18 @@
           "probByLength": 1.95,
           "probOverall": 1.6
         },
+        "za": {
+          "cvPattern": "cv",
+          "count": 3,
+          "probByLength": 1.95,
+          "probOverall": 1.6
+        },
+        "de": {
+          "cvPattern": "cv",
+          "count": 2,
+          "probByLength": 1.3,
+          "probOverall": 1.06
+        },
         "gi": {
           "cvPattern": "cv",
           "count": 2,
@@ -2086,7 +2038,7 @@
           "probByLength": 1.3,
           "probOverall": 1.06
         },
-        "đa": {
+        "zi": {
           "cvPattern": "cv",
           "count": 2,
           "probByLength": 1.3,
@@ -2098,23 +2050,11 @@
           "probByLength": 1.3,
           "probOverall": 1.06
         },
-        "za": {
-          "cvPattern": "cv",
-          "count": 2,
-          "probByLength": 1.3,
-          "probOverall": 1.06
-        },
         "ra": {
           "cvPattern": "cv",
           "count": 2,
           "probByLength": 1.3,
           "probOverall": 1.06
-        },
-        "đe": {
-          "cvPattern": "cv",
-          "count": 1,
-          "probByLength": 0.65,
-          "probOverall": 0.53
         },
         "ba": {
           "cvPattern": "cv",
@@ -2129,12 +2069,6 @@
           "probOverall": 0.53
         },
         "ga": {
-          "cvPattern": "cv",
-          "count": 1,
-          "probByLength": 0.65,
-          "probOverall": 0.53
-        },
-        "ši": {
           "cvPattern": "cv",
           "count": 1,
           "probByLength": 0.65,
@@ -2176,31 +2110,7 @@
           "probByLength": 0.65,
           "probOverall": 0.53
         },
-        "zi": {
-          "cvPattern": "cv",
-          "count": 1,
-          "probByLength": 0.65,
-          "probOverall": 0.53
-        },
-        "ži": {
-          "cvPattern": "cv",
-          "count": 1,
-          "probByLength": 0.65,
-          "probOverall": 0.53
-        },
-        "de": {
-          "cvPattern": "cv",
-          "count": 1,
-          "probByLength": 0.65,
-          "probOverall": 0.53
-        },
         "vi": {
-          "cvPattern": "cv",
-          "count": 1,
-          "probByLength": 0.65,
-          "probOverall": 0.53
-        },
-        "ža": {
           "cvPattern": "cv",
           "count": 1,
           "probByLength": 0.65,
@@ -2226,6 +2136,12 @@
         }
       },
       "3": {
+        "san": {
+          "cvPattern": "cvc",
+          "count": 3,
+          "probByLength": 10,
+          "probOverall": 1.6
+        },
         "lja": {
           "cvPattern": "ccv",
           "count": 3,
@@ -2234,12 +2150,6 @@
         },
         "dri": {
           "cvPattern": "ccv",
-          "count": 2,
-          "probByLength": 6.67,
-          "probOverall": 1.06
-        },
-        "san": {
-          "cvPattern": "cvc",
           "count": 2,
           "probByLength": 6.67,
           "probOverall": 1.06
@@ -2270,12 +2180,6 @@
         },
         "bri": {
           "cvPattern": "ccv",
-          "count": 1,
-          "probByLength": 3.33,
-          "probOverall": 0.53
-        },
-        "šan": {
-          "cvPattern": "cvc",
           "count": 1,
           "probByLength": 3.33,
           "probOverall": 0.53
@@ -2390,7 +2294,7 @@
           "probByLength": 25,
           "probOverall": 0.53
         },
-        "džej": {
+        "dzej": {
           "cvPattern": "ccvc",
           "count": 1,
           "probByLength": 25,
@@ -2426,9 +2330,9 @@
         },
         "da": {
           "cvPattern": "cv",
-          "count": 18,
-          "probByLength": 7.41,
-          "probOverall": 6.87
+          "count": 19,
+          "probByLength": 7.82,
+          "probOverall": 7.25
         },
         "ja": {
           "cvPattern": "cv",
@@ -2456,15 +2360,9 @@
         },
         "sa": {
           "cvPattern": "cv",
-          "count": 7,
-          "probByLength": 2.88,
-          "probOverall": 2.67
-        },
-        "ša": {
-          "cvPattern": "cv",
-          "count": 4,
-          "probByLength": 1.65,
-          "probOverall": 1.53
+          "count": 11,
+          "probByLength": 4.53,
+          "probOverall": 4.2
         },
         "ba": {
           "cvPattern": "cv",
@@ -2495,12 +2393,6 @@
           "count": 2,
           "probByLength": 0.82,
           "probOverall": 0.76
-        },
-        "đa": {
-          "cvPattern": "cv",
-          "count": 1,
-          "probByLength": 0.41,
-          "probOverall": 0.38
         }
       },
       "3": {

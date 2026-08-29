@@ -1,5 +1,5 @@
 {
-  "_version": "2026-08-24/21-50-49",
+  "_version": "2026-08-29/18-50-15",
   "profile": "congolese",
   "nameCount": 291,
   "names": [
@@ -8,7 +8,7 @@
     "Adlain",
     "Adoula",
     "Akili",
-    "Akindélé",
+    "Akindele",
     "Amani",
     "Amisi",
     "Amsini",
@@ -35,7 +35,7 @@
     "Biduaya",
     "Bilenga",
     "Bilengi",
-    "Bilengé",
+    "Bilenge",
     "Bilonda",
     "Bilumbu",
     "Bisimwa",
@@ -71,15 +71,15 @@
     "Dongala",
     "Ebunga",
     "Egogo",
-    "Ekelé",
+    "Ekele",
     "Ekianga",
     "Epanza",
     "Esengo",
     "Etekiama",
     "Eyarmwen",
-    "Fungurumé",
+    "Fungurume",
     "Fwakulu",
-    "Fwambé",
+    "Fwambe",
     "Gizenga",
     "Gobeni",
     "Ikani",
@@ -91,15 +91,15 @@
     "Kabamba",
     "Kabanga",
     "Kabangu",
-    "Kabasélé",
+    "Kabasele",
     "Kabemba",
-    "Kabengélé",
+    "Kabengele",
     "Kabeya",
     "Kabila",
     "Kabiona",
     "Kabongo",
     "Kabuya",
-    "Kabwé",
+    "Kabwe",
     "Kadima",
     "Kakule",
     "Kalala",
@@ -108,8 +108,8 @@
     "Kalombo",
     "Kalond",
     "Kalonji",
-    "Kalumé",
-    "Kambalé",
+    "Kalume",
+    "Kambale",
     "Kamivanya",
     "Kanda",
     "Kanku",
@@ -124,7 +124,7 @@
     "Kasongo",
     "Kasusula",
     "Katembo",
-    "Kayembé",
+    "Kayembe",
     "Kazadi",
     "Kidiaba",
     "Kimba",
@@ -132,7 +132,7 @@
     "Kimbangui",
     "Kimwaki",
     "Kisimba",
-    "Kisombé",
+    "Kisombe",
     "Kiswaya",
     "Kitenge",
     "Kitoko",
@@ -155,7 +155,7 @@
     "Mabiala",
     "Mabidi",
     "Mabila",
-    "Mabélé",
+    "Mabele",
     "Makanga",
     "Makaya",
     "Makiadi",
@@ -183,9 +183,9 @@
     "Mbiya",
     "Mbombo",
     "Mbuyi",
-    "Mbwôl",
-    "Mbélu",
-    "Mbélé",
+    "Mbwol",
+    "Mbelu",
+    "Mbele",
     "Milongo",
     "Mirindi",
     "Moke",
@@ -210,7 +210,7 @@
     "Mukeba",
     "Mukendi",
     "Mukenga",
-    "Mukengé",
+    "Mukenge",
     "Mukuna",
     "Mulamba",
     "Mulongo",
@@ -227,15 +227,15 @@
     "Muyumba",
     "Mwamba",
     "Mwanza",
-    "Mwolewé",
+    "Mwolewe",
     "Ndango",
     "Ndemiye",
-    "Ndombé",
+    "Ndombe",
     "Ndonga",
     "Ngalula",
     "Ngandu",
     "Ngbendu",
-    "Ngoié",
+    "Ngoie",
     "Ngoma",
     "Ngongo",
     "Ngouabi",
@@ -253,12 +253,12 @@
     "Nlandu",
     "Nshombo",
     "Nsimba",
-    "Ntambwé",
+    "Ntambwe",
     "Ntela",
     "Ntumba",
     "Numbi",
     "Nyembo",
-    "Nyembwé",
+    "Nyembwe",
     "Nzambu",
     "Nzuzi",
     "Opango",
@@ -271,7 +271,7 @@
     "Senga",
     "Shabani",
     "Simbi",
-    "Tambwé",
+    "Tambwe",
     "Thombi",
     "Tshamala",
     "Tshibanda",
@@ -279,7 +279,7 @@
     "Tshilombo",
     "Tshimanga",
     "Tshisekedi",
-    "Tshombé",
+    "Tshombe",
     "Tsiba",
     "Tsibinda",
     "Umba",
@@ -487,47 +487,35 @@
         "a": {
           "cvPattern": "V",
           "count": 135,
-          "probByLength": 35.43,
-          "probOverall": 32.85
+          "probByLength": 35.53,
+          "probOverall": 32.93
         },
         "u": {
           "cvPattern": "v",
           "count": 71,
-          "probByLength": 18.64,
-          "probOverall": 17.27
+          "probByLength": 18.68,
+          "probOverall": 17.32
         },
         "o": {
           "cvPattern": "v",
-          "count": 61,
-          "probByLength": 16.01,
-          "probOverall": 14.84
+          "count": 62,
+          "probByLength": 16.32,
+          "probOverall": 15.12
         },
         "i": {
           "cvPattern": "v",
           "count": 57,
-          "probByLength": 14.96,
-          "probOverall": 13.87
+          "probByLength": 15,
+          "probOverall": 13.9
         },
         "e": {
           "cvPattern": "v",
-          "count": 49,
-          "probByLength": 12.86,
-          "probOverall": 11.92
-        },
-        "é": {
-          "cvPattern": "v",
-          "count": 6,
-          "probByLength": 1.57,
-          "probOverall": 1.46
+          "count": 54,
+          "probByLength": 14.21,
+          "probOverall": 13.17
         },
         "ya": {
           "cvPattern": "cv",
-          "count": 1,
-          "probByLength": 0.26,
-          "probOverall": 0.24
-        },
-        "ô": {
-          "cvPattern": "v",
           "count": 1,
           "probByLength": 0.26,
           "probOverall": 0.24
@@ -642,17 +630,11 @@
           "probByLength": 12.6,
           "probOverall": 11.66
         },
-        "é": {
-          "cvPattern": "v",
-          "count": 21,
-          "probByLength": 8.02,
-          "probOverall": 7.42
-        },
         "e": {
           "cvPattern": "v",
-          "count": 5,
-          "probByLength": 1.91,
-          "probOverall": 1.77
+          "count": 26,
+          "probByLength": 9.92,
+          "probOverall": 9.19
         }
       },
       "2": {
@@ -736,7 +718,7 @@
           "probByLength": 33.33,
           "probOverall": 0.35
         },
-        "oié": {
+        "oie": {
           "cvPattern": "vvv",
           "count": 1,
           "probByLength": 33.33,
@@ -1540,6 +1522,12 @@
           "probByLength": 6.25,
           "probOverall": 1.37
         },
+        "mbe": {
+          "cvPattern": "ccv",
+          "count": 3,
+          "probByLength": 4.69,
+          "probOverall": 1.03
+        },
         "ngu": {
           "cvPattern": "ccv",
           "count": 3,
@@ -1559,12 +1547,6 @@
           "probOverall": 0.69
         },
         "mbi": {
-          "cvPattern": "ccv",
-          "count": 2,
-          "probByLength": 3.13,
-          "probOverall": 0.69
-        },
-        "mbé": {
           "cvPattern": "ccv",
           "count": 2,
           "probByLength": 3.13,
@@ -1674,12 +1656,6 @@
         },
         "may": {
           "cvPattern": "cvc",
-          "count": 1,
-          "probByLength": 1.56,
-          "probOverall": 0.34
-        },
-        "mbe": {
-          "cvPattern": "ccv",
           "count": 1,
           "probByLength": 1.56,
           "probOverall": 0.34
@@ -1874,7 +1850,7 @@
         }
       },
       "5": {
-        "mbwôl": {
+        "mbwol": {
           "cvPattern": "cccvc",
           "count": 1,
           "probByLength": 33.33,
@@ -1990,9 +1966,9 @@
         },
         "be": {
           "cvPattern": "cv",
-          "count": 5,
-          "probByLength": 2.44,
-          "probOverall": 1.81
+          "count": 6,
+          "probByLength": 2.93,
+          "probOverall": 2.17
         },
         "ma": {
           "cvPattern": "cv",
@@ -2007,6 +1983,12 @@
           "probOverall": 1.81
         },
         "te": {
+          "cvPattern": "cv",
+          "count": 5,
+          "probByLength": 2.44,
+          "probOverall": 1.81
+        },
+        "se": {
           "cvPattern": "cv",
           "count": 5,
           "probByLength": 2.44,
@@ -2055,12 +2037,6 @@
           "probOverall": 1.45
         },
         "mu": {
-          "cvPattern": "cv",
-          "count": 4,
-          "probByLength": 1.95,
-          "probOverall": 1.45
-        },
-        "se": {
           "cvPattern": "cv",
           "count": 4,
           "probByLength": 1.95,
@@ -2222,12 +2198,6 @@
           "probByLength": 0.49,
           "probOverall": 0.36
         },
-        "sé": {
-          "cvPattern": "cv",
-          "count": 1,
-          "probByLength": 0.49,
-          "probOverall": 0.36
-        },
         "bo": {
           "cvPattern": "cv",
           "count": 1,
@@ -2241,12 +2211,6 @@
           "probOverall": 0.36
         },
         "re": {
-          "cvPattern": "cv",
-          "count": 1,
-          "probByLength": 0.49,
-          "probOverall": 0.36
-        },
-        "bé": {
           "cvPattern": "cv",
           "count": 1,
           "probByLength": 0.49,
@@ -2356,6 +2320,12 @@
           "probByLength": 4.88,
           "probOverall": 0.72
         },
+        "nge": {
+          "cvPattern": "ccv",
+          "count": 2,
+          "probByLength": 4.88,
+          "probOverall": 0.72
+        },
         "mbo": {
           "cvPattern": "ccv",
           "count": 2,
@@ -2368,7 +2338,7 @@
           "probByLength": 2.44,
           "probOverall": 0.36
         },
-        "ndé": {
+        "nde": {
           "cvPattern": "ccv",
           "count": 1,
           "probByLength": 2.44,
@@ -2388,12 +2358,6 @@
         },
         "pan": {
           "cvPattern": "cvc",
-          "count": 1,
-          "probByLength": 2.44,
-          "probOverall": 0.36
-        },
-        "ngé": {
-          "cvPattern": "ccv",
           "count": 1,
           "probByLength": 2.44,
           "probOverall": 0.36
@@ -2452,12 +2416,6 @@
           "probByLength": 2.44,
           "probOverall": 0.36
         },
-        "nge": {
-          "cvPattern": "ccv",
-          "count": 1,
-          "probByLength": 2.44,
-          "probOverall": 0.36
-        },
         "shi": {
           "cvPattern": "ccv",
           "count": 1,
@@ -2500,25 +2458,19 @@
           "probByLength": 17.65,
           "probOverall": 1.03
         },
+        "e": {
+          "cvPattern": "v",
+          "count": 2,
+          "probByLength": 11.76,
+          "probOverall": 0.69
+        },
         "u": {
           "cvPattern": "v",
           "count": 2,
           "probByLength": 11.76,
           "probOverall": 0.69
         },
-        "e": {
-          "cvPattern": "v",
-          "count": 1,
-          "probByLength": 5.88,
-          "probOverall": 0.34
-        },
         "o": {
-          "cvPattern": "v",
-          "count": 1,
-          "probByLength": 5.88,
-          "probOverall": 0.34
-        },
-        "é": {
           "cvPattern": "v",
           "count": 1,
           "probByLength": 5.88,
@@ -2538,11 +2490,11 @@
           "probByLength": 6.85,
           "probOverall": 3.44
         },
-        "lé": {
+        "le": {
           "cvPattern": "cv",
-          "count": 7,
-          "probByLength": 4.79,
-          "probOverall": 2.41
+          "count": 9,
+          "probByLength": 6.16,
+          "probOverall": 3.09
         },
         "ba": {
           "cvPattern": "cv",
@@ -2556,13 +2508,13 @@
           "probByLength": 4.11,
           "probOverall": 2.06
         },
-        "ma": {
+        "we": {
           "cvPattern": "cv",
-          "count": 5,
-          "probByLength": 3.42,
-          "probOverall": 1.72
+          "count": 6,
+          "probByLength": 4.11,
+          "probOverall": 2.06
         },
-        "wé": {
+        "ma": {
           "cvPattern": "cv",
           "count": 5,
           "probByLength": 3.42,
@@ -2670,13 +2622,7 @@
           "probByLength": 1.37,
           "probOverall": 0.69
         },
-        "mé": {
-          "cvPattern": "cv",
-          "count": 2,
-          "probByLength": 1.37,
-          "probOverall": 0.69
-        },
-        "le": {
+        "me": {
           "cvPattern": "cv",
           "count": 2,
           "probByLength": 1.37,
@@ -2761,12 +2707,6 @@
           "probOverall": 0.34
         },
         "ra": {
-          "cvPattern": "cv",
-          "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.34
-        },
-        "we": {
           "cvPattern": "cv",
           "count": 1,
           "probByLength": 0.68,
@@ -2870,7 +2810,7 @@
           "probByLength": 4.07,
           "probOverall": 1.72
         },
-        "mbé": {
+        "mbe": {
           "cvPattern": "ccv",
           "count": 5,
           "probByLength": 4.07,
@@ -2894,17 +2834,17 @@
           "probByLength": 2.44,
           "probOverall": 1.03
         },
-        "ndu": {
+        "nge": {
           "cvPattern": "ccv",
           "count": 3,
           "probByLength": 2.44,
           "probOverall": 1.03
         },
-        "ngé": {
+        "ndu": {
           "cvPattern": "ccv",
-          "count": 2,
-          "probByLength": 1.63,
-          "probOverall": 0.69
+          "count": 3,
+          "probByLength": 2.44,
+          "probOverall": 1.03
         },
         "nya": {
           "cvPattern": "ccv",
@@ -2920,12 +2860,6 @@
         },
         "man": {
           "cvPattern": "cvc",
-          "count": 1,
-          "probByLength": 0.81,
-          "probOverall": 0.34
-        },
-        "nge": {
-          "cvPattern": "ccv",
           "count": 1,
           "probByLength": 0.81,
           "probOverall": 0.34
@@ -2964,7 +2898,7 @@
         }
       },
       "5": {
-        "mbwôl": {
+        "mbwol": {
           "cvPattern": "cccvc",
           "count": 1,
           "probByLength": 100,
