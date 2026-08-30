@@ -52,6 +52,26 @@
 		"label": "Mensch",
 		"languageFamilies": [
 			{
+				"id": "human_akan",
+				"label": "Mensch — Akan",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_akan_male.json",
+						"female": "data/human_firstName_akan_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_akan.json",
+						"female": "data/human_lastName_akan.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
 				"id": "human_albanian",
 				"label": "Mensch — Albanisch",
 				"files": {
@@ -60,7 +80,11 @@
 						"female": "data/human_firstName_albanian_female.json",
 						"neutral": null
 					},
-					"lastName": "data/human_lastName_albanian.json",
+					"lastName": {
+						"male": "data/human_lastName_albanian.json",
+						"female": "data/human_lastName_albanian.json",
+						"neutral": null
+					},
 					"compound": {
 						"firstName": null,
 						"lastName": null
@@ -76,7 +100,11 @@
 						"female": "data/human_firstName_arabic_female.json",
 						"neutral": null
 					},
-					"lastName": "data/human_lastName_arabic.json",
+					"lastName": {
+						"male": "data/human_lastName_arabic.json",
+						"female": "data/human_lastName_arabic.json",
+						"neutral": null
+					},
 					"compound": {
 						"firstName": null,
 						"lastName": null
@@ -92,14 +120,18 @@
 						"female": "data/human_firstName_armenian_female.json",
 						"neutral": null
 					},
-					"lastName": "data/human_lastName_armenian.json",
+					"lastName": {
+						"male": "data/human_lastName_armenian.json",
+						"female": "data/human_lastName_armenian.json",
+						"neutral": null
+					},
 					"compound": {
 						"firstName": null,
 						"lastName": null
 					}
 				}
 			},
-			{
+						{
 				"id": "human_azeri",
 				"label": "Mensch — Aserbaidschanisch",
 				"files": {
@@ -108,7 +140,11 @@
 						"female": "data/human_firstName_azeri_female.json",
 						"neutral": null
 					},
-					"lastName": "data/human_lastName_azeri.json",
+					"lastName": {
+						"male": "data/human_lastName_azeri_male.json",
+						"female": "data/human_lastName_azeri_female.json",
+						"neutral": null
+					},
 					"compound": {
 						"firstName": null,
 						"lastName": null
@@ -117,14 +153,38 @@
 			},
 			{
 				"id": "human_bantu",
-				"label": "Mensch — Bantuisch",
+				"label": "Mensch — Bantu",
 				"files": {
 					"firstName": {
 						"male": "data/human_firstName_bantu_male.json",
 						"female": "data/human_firstName_bantu_female.json",
 						"neutral": null
 					},
-					"lastName": "data/human_lastName_bantu.json",
+					"lastName": {
+						"male": "data/human_lastName_bantu.json",
+						"female": "data/human_lastName_bantu.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_belgian",
+				"label": "Mensch — Belgisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_belgian_male.json",
+						"female": "data/human_firstName_belgian_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_belgian.json",
+						"female": "data/human_lastName_belgian.json",
+						"neutral": null
+					},
 					"compound": {
 						"firstName": null,
 						"lastName": null
@@ -140,7 +200,31 @@
 						"female": "data/human_firstName_bengali_female.json",
 						"neutral": null
 					},
-					"lastName": "data/human_lastName_bengali.json",
+					"lastName": {
+						"male": "data/human_lastName_bengali.json",
+						"female": "data/human_lastName_bengali.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_tamazight",
+				"label": "Mensch — Tamazight",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_tamazight_male.json",
+						"female": "data/human_firstName_tamazight_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_tamazight.json",
+						"female": "data/human_lastName_tamazight.json",
+						"neutral": null
+					},
 					"compound": {
 						"firstName": null,
 						"lastName": null
@@ -156,7 +240,11 @@
 						"female": "data/human_firstName_bosnian_female.json",
 						"neutral": null
 					},
-					"lastName": "data/human_lastName_bosnian.json",
+					"lastName": {
+						"male": "data/human_lastName_bosnian.json",
+						"female": "data/human_lastName_bosnian.json",
+						"neutral": null
+					},
 					"compound": {
 						"firstName": null,
 						"lastName": null
@@ -172,7 +260,11 @@
 						"female": "data/human_firstName_brazilian_female.json",
 						"neutral": null
 					},
-					"lastName": "data/human_lastName_brazilian.json",
+					"lastName": {
+						"male": "data/human_lastName_brazilian.json",
+						"female": "data/human_lastName_brazilian.json",
+						"neutral": null
+					},
 					"compound": {
 						"firstName": null,
 						"lastName": null
@@ -208,7 +300,11 @@
 						"female": "data/human_firstName_burmese_female.json",
 						"neutral": null
 					},
-					"lastName": "data/human_lastName_burmese.json",
+					"lastName": {
+						"male": "data/human_lastName_burmese.json",
+						"female": "data/human_lastName_burmese.json",
+						"neutral": null
+					},
 					"compound": {
 						"firstName": null,
 						"lastName": null
@@ -224,7 +320,11 @@
 						"female": "data/human_firstName_cameroonian_female.json",
 						"neutral": null
 					},
-					"lastName": "data/human_lastName_cameroonian.json",
+					"lastName": {
+						"male": "data/human_lastName_cameroonian.json",
+						"female": "data/human_lastName_cameroonian.json",
+						"neutral": null
+					},
 					"compound": {
 						"firstName": null,
 						"lastName": null
@@ -240,7 +340,11 @@
 						"female": "data/human_firstName_chinese_female.json",
 						"neutral": null
 					},
-					"lastName": "data/human_lastName_chinese.json",
+					"lastName": {
+						"male": "data/human_lastName_chinese.json",
+						"female": "data/human_lastName_chinese.json",
+						"neutral": null
+					},
 					"compound": {
 						"firstName": null,
 						"lastName": null
@@ -248,8 +352,28 @@
 				}
 			},
 			{
-				"id": "human_czech_slovak",
-				"label": "Mensch — Tschechisch/Slowakisch",
+				"id": "human_congolese",
+				"label": "Mensch — Kongolesisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_congolese_male.json",
+						"female": "data/human_firstName_congolese_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_congolese.json",
+						"female": "data/human_lastName_congolese.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_czech-slovak",
+				"label": "Mensch — Tschechisch-Slowakisch",
 				"files": {
 					"firstName": {
 						"male": "data/human_firstName_czech-slovak_male.json",
@@ -267,7 +391,7 @@
 					}
 				}
 			},
-      			{
+			{
 				"id": "human_danish",
 				"label": "Mensch — Dänisch",
 				"files": {
@@ -276,14 +400,18 @@
 						"female": "data/human_firstName_danish_female.json",
 						"neutral": null
 					},
-					"lastName": "data/human_lastName_danish.json",
+					"lastName": {
+						"male": "data/human_lastName_danish.json",
+						"female": "data/human_lastName_danish.json",
+						"neutral": null
+					},
 					"compound": {
 						"firstName": null,
 						"lastName": null
 					}
 				}
 			},
-      			{
+			{
 				"id": "human_dutch",
 				"label": "Mensch — Niederländisch",
 				"files": {
@@ -292,23 +420,11 @@
 						"female": "data/human_firstName_dutch_female.json",
 						"neutral": null
 					},
-					"lastName": "data/human_lastName_dutch.json",
-					"compound": {
-						"firstName": null,
-						"lastName": null
-					}
-				}
-			},
-			{
-				"id": "human_congolese",
-				"label": "Mensch — Kongolesisch",
-				"files": {
-					"firstName": {
-						"male": "data/human_firstName_congolese_male.json",
-						"female": "data/human_firstName_congolese_female.json",
+					"lastName": {
+						"male": "data/human_lastName_dutch.json",
+						"female": "data/human_lastName_dutch.json",
 						"neutral": null
 					},
-					"lastName": "data/human_lastName_congolese.json",
 					"compound": {
 						"firstName": null,
 						"lastName": null
@@ -316,18 +432,102 @@
 				}
 			},
 			{
-				"id": "human_englisch",
+				"id": "human_english",
 				"label": "Mensch — Englisch",
 				"files": {
 					"firstName": {
 						"male": "data/human_firstName_english_male.json",
-						"female": "data/human_firstName_english_male.json",
+						"female": "data/human_firstName_english_female.json",
 						"neutral": null
 					},
-					"lastName": "data/human_lastName_english.json",
+					"lastName": {
+						"male": "data/human_lastName_english.json",
+						"female": "data/human_lastName_english.json",
+						"neutral": null
+					},
 					"compound": {
 						"firstName": null,
-						"lastName": "data/human_english_lastName_compound.json"
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_estonian",
+				"label": "Mensch — Estnisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_estonian_male.json",
+						"female": "data/human_firstName_estonian_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_estonian.json",
+						"female": "data/human_lastName_estonian.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_ethiopian",
+				"label": "Mensch — Äthiopisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_ethiopian_male.json",
+						"female": "data/human_firstName_ethiopian_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_ethiopian.json",
+						"female": "data/human_lastName_ethiopian.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_filipino",
+				"label": "Mensch — Philippinisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_filipino_male.json",
+						"female": "data/human_firstName_filipino_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_filipino.json",
+						"female": "data/human_lastName_filipino.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_finnish",
+				"label": "Mensch — Finnisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_finnish_male.json",
+						"female": "data/human_firstName_finnish_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_finnish.json",
+						"female": "data/human_lastName_finnish.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
 					}
 				}
 			},
@@ -336,27 +536,35 @@
 				"label": "Mensch — Französisch",
 				"files": {
 					"firstName": {
-						"male": "data/human_french_firstName_male.json",
-						"female": "data/human_french_firstName_female.json",
-						"neutral": "data/human_french_firstName_neutral.json"
+						"male": "data/human_firstName_french_male.json",
+						"female": "data/human_firstName_french_female.json",
+						"neutral": null
 					},
-					"lastName": "data/human_french_lastName.json",
+					"lastName": {
+						"male": "data/human_lastName_french.json",
+						"female": "data/human_lastName_french.json",
+						"neutral": null
+					},
 					"compound": {
 						"firstName": null,
-						"lastName": "data/human_french_lastName_compound.json"
+						"lastName": null
 					}
 				}
 			},
 			{
-				"id": "human_akan",
-				"label": "Mensch — Akanisch",
+				"id": "human_georgian",
+				"label": "Mensch — Georgisch",
 				"files": {
 					"firstName": {
-						"male": "data/human_firstName_akan_male.json",
-						"female": "data/human_firstName_akan_female.json",
+						"male": "data/human_firstName_georgian_male.json",
+						"female": "data/human_firstName_georgian_female.json",
 						"neutral": null
 					},
-					"lastName": "data/human_lastName_akan.json",
+					"lastName": {
+						"male": "data/human_lastName_georgian.json",
+						"female": "data/human_lastName_georgian.json",
+						"neutral": null
+					},
 					"compound": {
 						"firstName": null,
 						"lastName": null
@@ -368,14 +576,858 @@
 				"label": "Mensch — Deutsch",
 				"files": {
 					"firstName": {
-						"male": "data/human_german_firstName_male.json",
-						"female": "data/human_german_firstName_female.json",
-						"neutral": "data/human_german_firstName_neutral.json"
+						"male": "data/human_firstName_german_male.json",
+						"female": "data/human_firstName_german_female.json",
+						"neutral": null
 					},
-					"lastName": "data/human_german_lastName.json",
+					"lastName": {
+						"male": "data/human_lastName_german.json",
+						"female": "data/human_lastName_german.json",
+						"neutral": null
+					},
 					"compound": {
 						"firstName": null,
-						"lastName": "data/human_german_lastName_compound.json"
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_greek",
+				"label": "Mensch — Griechisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_greek_male.json",
+						"female": "data/human_firstName_greek_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_greek_male.json",
+						"female": "data/human_lastName_greek_female.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_hindi",
+				"label": "Mensch — Hindi",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_hindi_male.json",
+						"female": "data/human_firstName_hindi_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_hindi.json",
+						"female": "data/human_lastName_hindi.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_hungarian",
+				"label": "Mensch — Ungarisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_hungarian_male.json",
+						"female": "data/human_firstName_hungarian_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_hungarian.json",
+						"female": "data/human_lastName_hungarian.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_icelandic",
+				"label": "Mensch — Isländisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_icelandic_male.json",
+						"female": "data/human_firstName_icelandic_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_icelandic_male.json",
+						"female": "data/human_lastName_icelandic_female.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_indonesian",
+				"label": "Mensch — Indonesisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_indonesian_male.json",
+						"female": "data/human_firstName_indonesian_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_indonesian.json",
+						"female": "data/human_lastName_indonesian.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_irish",
+				"label": "Mensch — Irisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_irish_male.json",
+						"female": "data/human_firstName_irish_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_irish.json",
+						"female": "data/human_lastName_irish.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_hebrew",
+				"label": "Mensch — Hebräisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_hebrew_male.json",
+						"female": "data/human_firstName_hebrew_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_hebrew.json",
+						"female": "data/human_lastName_hebrew.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_italian",
+				"label": "Mensch — Italienisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_italian_male.json",
+						"female": "data/human_firstName_italian_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_italian.json",
+						"female": "data/human_lastName_italian.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_japanese",
+				"label": "Mensch — Japanisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_japanese_male.json",
+						"female": "data/human_firstName_japanese_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_japanese.json",
+						"female": "data/human_lastName_japanese.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_kazakh",
+				"label": "Mensch — Kasachisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_kazakh_male.json",
+						"female": "data/human_firstName_kazakh_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_kazakh_male.json",
+						"female": "data/human_lastName_kazakh_female.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_khmer",
+				"label": "Mensch — Khmer",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_khmer_male.json",
+						"female": "data/human_firstName_khmer_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_khmer.json",
+						"female": "data/human_lastName_khmer.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_korean",
+				"label": "Mensch — Koreanisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_korean_male.json",
+						"female": "data/human_firstName_korean_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_korean.json",
+						"female": "data/human_lastName_korean.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_kurdish",
+				"label": "Mensch — Kurdisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_kurdish_male.json",
+						"female": "data/human_firstName_kurdish_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_kurdish.json",
+						"female": "data/human_lastName_kurdish.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_latvian",
+				"label": "Mensch — Lettisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_latvian_male.json",
+						"female": "data/human_firstName_latvian_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_latvian.json",
+						"female": "data/human_lastName_latvian.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_lithuanian",
+				"label": "Mensch — Litauisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_lithuanian_male.json",
+						"female": "data/human_firstName_lithuanian_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_lithuanian_male.json",
+						"female": "data/human_lastName_lithuanian_female.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_macedonian",
+				"label": "Mensch — Mazedonisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_macedonian_male.json",
+						"female": "data/human_firstName_macedonian_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_macedonian_male.json",
+						"female": "data/human_lastName_macedonian_female.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_malay",
+				"label": "Mensch — Malaysisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_malay_male.json",
+						"female": "data/human_firstName_malay_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_malay.json",
+						"female": "data/human_lastName_malay.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_maori",
+				"label": "Mensch — Māori",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_maori_male.json",
+						"female": "data/human_firstName_maori_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_maori.json",
+						"female": "data/human_lastName_maori.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_mongolian",
+				"label": "Mensch — Mongolisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_mongolian_male.json",
+						"female": "data/human_firstName_mongolian_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_mongolian.json",
+						"female": "data/human_lastName_mongolian.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_nigerian",
+				"label": "Mensch — Nigerianisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_nigerian_male.json",
+						"female": "data/human_firstName_nigerian_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_nigerian.json",
+						"female": "data/human_lastName_nigerian.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_norwegian",
+				"label": "Mensch — Norwegisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_norwegian_male.json",
+						"female": "data/human_firstName_norwegian_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_norwegian.json",
+						"female": "data/human_lastName_norwegian.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_pashtun",
+				"label": "Mensch — Paschtunisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_pashtun_male.json",
+						"female": "data/human_firstName_pashtun_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_pashtun.json",
+						"female": "data/human_lastName_pashtun.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_persian",
+				"label": "Mensch — Persisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_persian_male.json",
+						"female": "data/human_firstName_persian_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_persian.json",
+						"female": "data/human_lastName_persian.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_polish",
+				"label": "Mensch — Polnisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_polish_male.json",
+						"female": "data/human_firstName_polish_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_polish_male.json",
+						"female": "data/human_lastName_polish_female.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_portuguese",
+				"label": "Mensch — Portugiesisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_portuguese_male.json",
+						"female": "data/human_firstName_portuguese_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_portuguese.json",
+						"female": "data/human_lastName_portuguese.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_punjabi",
+				"label": "Mensch — Punjabi",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_punjabi_male.json",
+						"female": "data/human_firstName_punjabi_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_punjabi.json",
+						"female": "data/human_lastName_punjabi.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_romanian",
+				"label": "Mensch — Rumänisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_romanian_male.json",
+						"female": "data/human_firstName_romanian_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_romanian.json",
+						"female": "data/human_lastName_romanian.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_russian",
+				"label": "Mensch — Russisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_russian_male.json",
+						"female": "data/human_firstName_russian_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_russian_male.json",
+						"female": "data/human_lastName_russian_female.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_scottish",
+				"label": "Mensch — Schottisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_scottish_male.json",
+						"female": "data/human_firstName_scottish_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_scottish.json",
+						"female": "data/human_lastName_scottish.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_senegalese",
+				"label": "Mensch — Senegalesisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_senegalese_male.json",
+						"female": "data/human_firstName_senegalese_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_senegalese.json",
+						"female": "data/human_lastName_senegalese.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_serbo-croatian",
+				"label": "Mensch — Serbokroatisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_serbo-croatian_male.json",
+						"female": "data/human_firstName_serbo-croatian_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_serbo-croatian.json",
+						"female": "data/human_lastName_serbo-croatian.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_sinhalese",
+				"label": "Mensch — Singhalesisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_sinhalese_male.json",
+						"female": "data/human_firstName_sinhalese_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_sinhalese.json",
+						"female": "data/human_lastName_sinhalese.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_slovene",
+				"label": "Mensch — Slowenisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_slovene_male.json",
+						"female": "data/human_firstName_slovene_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_slovene.json",
+						"female": "data/human_lastName_slovene.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_south-african",
+				"label": "Mensch — Südafrikanisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_south-african_male.json",
+						"female": "data/human_firstName_south-african_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_south-african.json",
+						"female": "data/human_lastName_south-african.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_spanish",
+				"label": "Mensch — Spanisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_spanish_male.json",
+						"female": "data/human_firstName_spanish_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_spanish.json",
+						"female": "data/human_lastName_spanish.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_swahili",
+				"label": "Mensch — Swahili",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_swahili_male.json",
+						"female": "data/human_firstName_swahili_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_swahili.json",
+						"female": "data/human_lastName_swahili.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_swedish",
+				"label": "Mensch — Schwedisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_swedish_male.json",
+						"female": "data/human_firstName_swedish_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_swedish.json",
+						"female": "data/human_lastName_swedish.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_tajik-uzbek",
+				"label": "Mensch — Tadschikisch-Usbekisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_tajik-uzbek_male.json",
+						"female": "data/human_firstName_tajik-uzbek_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_tajik-uzbek_male.json",
+						"female": "data/human_lastName_tajik-uzbek_female.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_thai-lao",
+				"label": "Mensch — Thailändisch-Laotisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_thai-lao_male.json",
+						"female": "data/human_firstName_thai-lao_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_thai-lao.json",
+						"female": "data/human_lastName_thai-lao.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_turkish",
+				"label": "Mensch — Türkisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_turkish_male.json",
+						"female": "data/human_firstName_turkish_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_turkish.json",
+						"female": "data/human_lastName_turkish.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_ukrainian",
+				"label": "Mensch — Ukrainisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_ukrainian_male.json",
+						"female": "data/human_firstName_ukrainian_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_ukrainian.json",
+						"female": "data/human_lastName_ukrainian.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
+					}
+				}
+			},
+			{
+				"id": "human_vietnamese",
+				"label": "Mensch — Vietnamesisch",
+				"files": {
+					"firstName": {
+						"male": "data/human_firstName_vietnamese_male.json",
+						"female": "data/human_firstName_vietnamese_female.json",
+						"neutral": null
+					},
+					"lastName": {
+						"male": "data/human_lastName_vietnamese.json",
+						"female": "data/human_lastName_vietnamese.json",
+						"neutral": null
+					},
+					"compound": {
+						"firstName": null,
+						"lastName": null
 					}
 				}
 			}
