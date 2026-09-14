@@ -1,5 +1,5 @@
 {
-  "_version": "2026-08-30/23-35-18",
+  "_version": "2026-09-14/22-16-08",
   "profile": "icelandic",
   "nameCount": 357,
   "names": [
@@ -438,16 +438,15 @@
       "patterns": {
         "Vcvcccvc": 18.03,
         "Cvccccvc": 18.03,
+        "Cvccvcvc": 13.11,
         "Ccvcccvc": 13.11,
-        "Cvccvcvc": 11.48,
         "Ccvcvcvc": 8.2,
         "Cvvcccvc": 6.56,
+        "Vcccvcvc": 4.92,
         "Cvvcvcvc": 4.92,
         "Cvcvccvc": 4.92,
-        "Vcccvcvc": 3.28,
-        "Ccccvcvc": 3.28,
         "Vcvvccvc": 1.64,
-        "Ccccccvc": 1.64,
+        "Ccvvccvc": 1.64,
         "Cvcvvcvc": 1.64,
         "Vccvccvc": 1.64,
         "Vvvcccvc": 1.64
@@ -456,7 +455,7 @@
     "9": {
       "total": 59,
       "patterns": {
-        "Vccvcccvc": 23.73,
+        "Vccvcccvc": 25.42,
         "Cvccvccvc": 13.56,
         "Cvcvcccvc": 13.56,
         "Ccvccvcvc": 10.17,
@@ -469,26 +468,27 @@
         "Cvvvcccvc": 3.39,
         "Vcccvccvc": 1.69,
         "Cvvccccvc": 1.69,
-        "Cvcvcvcvc": 1.69,
-        "Vccccccvc": 1.69
+        "Cvcvcvcvc": 1.69
       }
     },
     "10": {
       "total": 78,
       "patterns": {
         "Cvccvcccvc": 24.36,
-        "Vccvccccvc": 12.82,
-        "Cvvcvcccvc": 7.69,
+        "Vccvccccvc": 10.26,
+        "Cvvcvcccvc": 8.97,
         "Cvcvccccvc": 6.41,
         "Cvcvvcccvc": 5.13,
-        "Vcccvcccvc": 5.13,
         "Ccvccvccvc": 5.13,
         "Ccvcvcccvc": 5.13,
         "Vccvvcccvc": 5.13,
+        "Vcccvcccvc": 3.85,
+        "Vvcvccccvc": 2.56,
         "Cvccvvccvc": 2.56,
         "Cvcvcvccvc": 2.56,
         "Vcccvvccvc": 1.28,
         "Vvvvccccvc": 1.28,
+        "Vvccvcccvc": 1.28,
         "Vvcvcvccvc": 1.28,
         "Cvccvvvcvc": 1.28,
         "Cvvvvcccvc": 1.28,
@@ -497,8 +497,7 @@
         "Cvccvcvcvc": 1.28,
         "Vcvcvcccvc": 1.28,
         "Ccvvccvcvc": 1.28,
-        "Ccccccvcvc": 1.28,
-        "Cvccccccvc": 1.28,
+        "Ccvcccvcvc": 1.28,
         "Cccvvcccvc": 1.28,
         "Ccvcvvccvc": 1.28
       }
@@ -506,8 +505,8 @@
     "11": {
       "total": 60,
       "patterns": {
+        "Ccvccvcccvc": 15,
         "Cvccvccccvc": 11.67,
-        "Ccvccvcccvc": 11.67,
         "Cvcccvcccvc": 10,
         "Cvccvvcccvc": 10,
         "Ccvvcvcccvc": 8.33,
@@ -515,10 +514,9 @@
         "Vccccvcccvc": 6.67,
         "Cvccvcvccvc": 5,
         "Cvvcvccccvc": 5,
-        "Cccccvcccvc": 3.33,
         "Ccvcvccccvc": 3.33,
         "Cvvcvvcccvc": 3.33,
-        "Vcccvvcccvc": 1.67,
+        "Vvccvvcccvc": 1.67,
         "Ccvvvvcccvc": 1.67,
         "Vccvcvcccvc": 1.67,
         "Cvcvccvccvc": 1.67,
@@ -532,25 +530,22 @@
     "12": {
       "total": 46,
       "patterns": {
+        "Ccvccvccccvc": 13.04,
         "Ccvcccvcccvc": 10.87,
-        "Ccvccvvcccvc": 8.7,
-        "Ccvccvccccvc": 8.7,
+        "Ccvccvvcccvc": 10.87,
+        "Cvcccvccccvc": 8.7,
         "Cvccccvcccvc": 6.52,
-        "Cvcccvccccvc": 6.52,
         "Cvcccvvcccvc": 6.52,
         "Cvvccvccccvc": 6.52,
         "Cvccvcvcccvc": 4.35,
-        "Cccccvccccvc": 4.35,
         "Vccvcvccccvc": 4.35,
         "Cvcvccvcccvc": 4.35,
         "Vvvccvvcccvc": 2.17,
         "Vvvccvccccvc": 2.17,
         "Cvcvcvccccvc": 2.17,
-        "Cccccvvcccvc": 2.17,
         "Cvcccvcvccvc": 2.17,
         "Ccvvcvvcccvc": 2.17,
         "Vccvcvvcccvc": 2.17,
-        "Cvccccccccvc": 2.17,
         "Ccvvccvcccvc": 2.17,
         "Vccccvvcccvc": 2.17,
         "Vccvccvcccvc": 2.17,
@@ -603,52 +598,70 @@
         "a": {
           "cvPattern": "V",
           "count": 33,
-          "probByLength": 40.74,
-          "probOverall": 35.48
-        },
-        "e": {
-          "cvPattern": "v",
-          "count": 16,
-          "probByLength": 19.75,
-          "probOverall": 17.2
+          "probByLength": 39.29,
+          "probOverall": 35.11
         },
         "i": {
           "cvPattern": "v",
           "count": 14,
-          "probByLength": 17.28,
-          "probOverall": 15.05
+          "probByLength": 16.67,
+          "probOverall": 14.89
+        },
+        "e": {
+          "cvPattern": "v",
+          "count": 12,
+          "probByLength": 14.29,
+          "probOverall": 12.77
         },
         "o": {
           "cvPattern": "v",
           "count": 11,
-          "probByLength": 13.58,
-          "probOverall": 11.83
+          "probByLength": 13.1,
+          "probOverall": 11.7
         },
         "u": {
           "cvPattern": "v",
           "count": 4,
-          "probByLength": 4.94,
-          "probOverall": 4.3
+          "probByLength": 4.76,
+          "probOverall": 4.26
+        },
+        "ey": {
+          "cvPattern": "Vv",
+          "count": 4,
+          "probByLength": 4.76,
+          "probOverall": 4.26
         },
         "ö": {
           "cvPattern": "v",
           "count": 3,
-          "probByLength": 3.7,
-          "probOverall": 3.23
-        }
-      },
-      "2": {
+          "probByLength": 3.57,
+          "probOverall": 3.19
+        },
         "ei": {
           "cvPattern": "vv",
           "count": 2,
-          "probByLength": 66.67,
-          "probOverall": 2.15
+          "probByLength": 2.38,
+          "probOverall": 2.13
         },
+        "y": {
+          "cvPattern": "v",
+          "count": 1,
+          "probByLength": 1.19,
+          "probOverall": 1.06
+        }
+      },
+      "2": {
         "eo": {
           "cvPattern": "vv",
           "count": 1,
-          "probByLength": 33.33,
-          "probOverall": 1.08
+          "probByLength": 50,
+          "probOverall": 1.06
+        },
+        "eio": {
+          "cvPattern": "Vvv",
+          "count": 1,
+          "probByLength": 50,
+          "probOverall": 1.06
         }
       },
       "3": {
@@ -656,27 +669,19 @@
           "cvPattern": "Vvv",
           "count": 6,
           "probByLength": 75,
-          "probOverall": 6.45
+          "probOverall": 6.38
         },
-        "eio": {
-          "cvPattern": "Vvv",
+        "auou": {
+          "cvPattern": "Vvvv",
           "count": 1,
           "probByLength": 12.5,
-          "probOverall": 1.08
+          "probOverall": 1.06
         },
         "ooi": {
           "cvPattern": "Vvv",
           "count": 1,
           "probByLength": 12.5,
-          "probOverall": 1.08
-        }
-      },
-      "4": {
-        "auou": {
-          "cvPattern": "Vvvv",
-          "count": 1,
-          "probByLength": 100,
-          "probOverall": 1.08
+          "probOverall": 1.06
         }
       }
     },
@@ -685,141 +690,153 @@
         "o": {
           "cvPattern": "v",
           "count": 357,
-          "probByLength": 49.11,
-          "probOverall": 43.22
+          "probByLength": 45.71,
+          "probOverall": 42.65
         },
         "a": {
           "cvPattern": "V",
           "count": 171,
-          "probByLength": 23.52,
-          "probOverall": 20.7
+          "probByLength": 21.9,
+          "probOverall": 20.43
         },
         "i": {
           "cvPattern": "v",
           "count": 89,
-          "probByLength": 12.24,
-          "probOverall": 10.77
+          "probByLength": 11.4,
+          "probOverall": 10.63
         },
         "u": {
           "cvPattern": "v",
           "count": 45,
-          "probByLength": 6.19,
-          "probOverall": 5.45
+          "probByLength": 5.76,
+          "probOverall": 5.38
         },
         "e": {
           "cvPattern": "v",
-          "count": 42,
-          "probByLength": 5.78,
-          "probOverall": 5.08
+          "count": 40,
+          "probByLength": 5.12,
+          "probOverall": 4.78
+        },
+        "ei": {
+          "cvPattern": "vv",
+          "count": 37,
+          "probByLength": 4.74,
+          "probOverall": 4.42
         },
         "ö": {
           "cvPattern": "v",
           "count": 23,
-          "probByLength": 3.16,
-          "probOverall": 2.78
-        }
-      },
-      "2": {
-        "ei": {
-          "cvPattern": "vv",
-          "count": 37,
-          "probByLength": 41.11,
-          "probOverall": 4.48
+          "probByLength": 2.94,
+          "probOverall": 2.75
         },
-        "uo": {
-          "cvPattern": "vv",
-          "count": 10,
-          "probByLength": 11.11,
-          "probOverall": 1.21
-        },
-        "io": {
-          "cvPattern": "vv",
-          "count": 7,
-          "probByLength": 7.78,
-          "probOverall": 0.85
+        "y": {
+          "cvPattern": "v",
+          "count": 11,
+          "probByLength": 1.41,
+          "probOverall": 1.31
         },
         "au": {
           "cvPattern": "vv",
           "count": 6,
-          "probByLength": 6.67,
-          "probOverall": 0.73
+          "probByLength": 0.77,
+          "probOverall": 0.72
+        },
+        "ey": {
+          "cvPattern": "Vv",
+          "count": 2,
+          "probByLength": 0.26,
+          "probOverall": 0.24
+        }
+      },
+      "2": {
+        "uo": {
+          "cvPattern": "vv",
+          "count": 10,
+          "probByLength": 21.28,
+          "probOverall": 1.19
+        },
+        "io": {
+          "cvPattern": "vv",
+          "count": 7,
+          "probByLength": 14.89,
+          "probOverall": 0.84
         },
         "ae": {
           "cvPattern": "vv",
           "count": 6,
-          "probByLength": 6.67,
-          "probOverall": 0.73
+          "probByLength": 12.77,
+          "probOverall": 0.72
         },
         "oa": {
           "cvPattern": "vv",
           "count": 5,
-          "probByLength": 5.56,
-          "probOverall": 0.61
+          "probByLength": 10.64,
+          "probOverall": 0.6
         },
         "eo": {
           "cvPattern": "vv",
           "count": 4,
-          "probByLength": 4.44,
+          "probByLength": 8.51,
           "probOverall": 0.48
         },
         "ia": {
           "cvPattern": "vv",
           "count": 4,
-          "probByLength": 4.44,
+          "probByLength": 8.51,
           "probOverall": 0.48
         },
         "öo": {
           "cvPattern": "vv",
           "count": 2,
-          "probByLength": 2.22,
+          "probByLength": 4.26,
           "probOverall": 0.24
         },
         "ie": {
           "cvPattern": "vv",
           "count": 2,
-          "probByLength": 2.22,
+          "probByLength": 4.26,
           "probOverall": 0.24
         },
         "oe": {
           "cvPattern": "vv",
           "count": 1,
-          "probByLength": 1.11,
+          "probByLength": 2.13,
           "probOverall": 0.12
         },
         "ua": {
           "cvPattern": "vv",
           "count": 1,
-          "probByLength": 1.11,
+          "probByLength": 2.13,
           "probOverall": 0.12
         },
         "iu": {
           "cvPattern": "vv",
           "count": 1,
-          "probByLength": 1.11,
+          "probByLength": 2.13,
           "probOverall": 0.12
         },
         "ao": {
           "cvPattern": "vv",
           "count": 1,
-          "probByLength": 1.11,
+          "probByLength": 2.13,
           "probOverall": 0.12
         },
         "ue": {
           "cvPattern": "vv",
           "count": 1,
-          "probByLength": 1.11,
+          "probByLength": 2.13,
           "probOverall": 0.12
         },
         "ai": {
           "cvPattern": "vv",
           "count": 1,
-          "probByLength": 1.11,
+          "probByLength": 2.13,
           "probOverall": 0.12
         },
         "oo": {
           "cvPattern": "vv",
           "count": 1,
-          "probByLength": 1.11,
+          "probByLength": 2.13,
           "probOverall": 0.12
         }
       },
@@ -827,34 +844,32 @@
         "ioa": {
           "cvPattern": "vvv",
           "count": 3,
-          "probByLength": 42.86,
+          "probByLength": 33.33,
           "probOverall": 0.36
+        },
+        "eioa": {
+          "cvPattern": "vvvv",
+          "count": 2,
+          "probByLength": 22.22,
+          "probOverall": 0.24
         },
         "eoi": {
           "cvPattern": "vvv",
           "count": 2,
-          "probByLength": 28.57,
+          "probByLength": 22.22,
           "probOverall": 0.24
         },
         "aoa": {
           "cvPattern": "Vvv",
           "count": 1,
-          "probByLength": 14.29,
+          "probByLength": 11.11,
           "probOverall": 0.12
         },
         "ioi": {
           "cvPattern": "vvv",
           "count": 1,
-          "probByLength": 14.29,
+          "probByLength": 11.11,
           "probOverall": 0.12
-        }
-      },
-      "4": {
-        "eioa": {
-          "cvPattern": "vvvv",
-          "count": 2,
-          "probByLength": 100,
-          "probOverall": 0.24
         }
       }
     },
@@ -866,107 +881,107 @@
         "h": {
           "cvPattern": "C",
           "count": 27,
-          "probByLength": 15.25,
-          "probOverall": 10.23
+          "probByLength": 15.08,
+          "probOverall": 10.27
         },
         "g": {
           "cvPattern": "c",
-          "count": 24,
-          "probByLength": 13.56,
-          "probOverall": 9.09
+          "count": 25,
+          "probByLength": 13.97,
+          "probOverall": 9.51
         },
         "s": {
           "cvPattern": "c",
           "count": 21,
-          "probByLength": 11.86,
-          "probOverall": 7.95
+          "probByLength": 11.73,
+          "probOverall": 7.98
         },
         "v": {
           "cvPattern": "c",
           "count": 17,
-          "probByLength": 9.6,
-          "probOverall": 6.44
+          "probByLength": 9.5,
+          "probOverall": 6.46
         },
         "b": {
           "cvPattern": "C",
           "count": 13,
-          "probByLength": 7.34,
-          "probOverall": 4.92
+          "probByLength": 7.26,
+          "probOverall": 4.94
         },
         "m": {
           "cvPattern": "c",
           "count": 13,
-          "probByLength": 7.34,
-          "probOverall": 4.92
+          "probByLength": 7.26,
+          "probOverall": 4.94
         },
         "j": {
           "cvPattern": "c",
           "count": 13,
-          "probByLength": 7.34,
-          "probOverall": 4.92
+          "probByLength": 7.26,
+          "probOverall": 4.94
         },
         "r": {
           "cvPattern": "c",
           "count": 8,
-          "probByLength": 4.52,
-          "probOverall": 3.03
+          "probByLength": 4.47,
+          "probOverall": 3.04
         },
         "d": {
           "cvPattern": "c",
           "count": 6,
-          "probByLength": 3.39,
-          "probOverall": 2.27
+          "probByLength": 3.35,
+          "probOverall": 2.28
         },
         "l": {
           "cvPattern": "c",
           "count": 6,
-          "probByLength": 3.39,
-          "probOverall": 2.27
+          "probByLength": 3.35,
+          "probOverall": 2.28
         },
         "k": {
           "cvPattern": "c",
           "count": 6,
-          "probByLength": 3.39,
-          "probOverall": 2.27
+          "probByLength": 3.35,
+          "probOverall": 2.28
         },
         "hr": {
           "cvPattern": "Cc",
           "count": 6,
-          "probByLength": 3.39,
-          "probOverall": 2.27
+          "probByLength": 3.35,
+          "probOverall": 2.28
         },
         "p": {
           "cvPattern": "C",
           "count": 6,
-          "probByLength": 3.39,
-          "probOverall": 2.27
+          "probByLength": 3.35,
+          "probOverall": 2.28
         },
         "f": {
           "cvPattern": "C",
           "count": 3,
-          "probByLength": 1.69,
+          "probByLength": 1.68,
           "probOverall": 1.14
         },
         "t": {
           "cvPattern": "c",
           "count": 3,
-          "probByLength": 1.69,
+          "probByLength": 1.68,
           "probOverall": 1.14
         },
         "n": {
           "cvPattern": "c",
           "count": 2,
-          "probByLength": 1.13,
+          "probByLength": 1.12,
+          "probOverall": 0.76
+        },
+        "hl": {
+          "cvPattern": "Cc",
+          "count": 2,
+          "probByLength": 1.12,
           "probOverall": 0.76
         },
         "c": {
           "cvPattern": "C",
-          "count": 1,
-          "probByLength": 0.56,
-          "probOverall": 0.38
-        },
-        "hl": {
-          "cvPattern": "Cc",
           "count": 1,
           "probByLength": 0.56,
           "probOverall": 0.38
@@ -982,177 +997,127 @@
         "th": {
           "cvPattern": "cc",
           "count": 21,
-          "probByLength": 26.92,
-          "probOverall": 7.95
+          "probByLength": 25,
+          "probOverall": 7.98
+        },
+        "st": {
+          "cvPattern": "cc",
+          "count": 9,
+          "probByLength": 10.71,
+          "probOverall": 3.42
         },
         "fr": {
           "cvPattern": "Cc",
           "count": 8,
-          "probByLength": 10.26,
-          "probOverall": 3.03
+          "probByLength": 9.52,
+          "probOverall": 3.04
         },
-        "st": {
-          "cvPattern": "cc",
-          "count": 8,
-          "probByLength": 10.26,
-          "probOverall": 3.03
+        "br": {
+          "cvPattern": "Cc",
+          "count": 6,
+          "probByLength": 7.14,
+          "probOverall": 2.28
         },
         "hj": {
           "cvPattern": "Cc",
           "count": 6,
-          "probByLength": 7.69,
-          "probOverall": 2.27
+          "probByLength": 7.14,
+          "probOverall": 2.28
         },
         "kr": {
           "cvPattern": "Cc",
           "count": 6,
-          "probByLength": 7.69,
-          "probOverall": 2.27
+          "probByLength": 7.14,
+          "probOverall": 2.28
         },
         "bj": {
           "cvPattern": "Cc",
           "count": 5,
-          "probByLength": 6.41,
-          "probOverall": 1.89
+          "probByLength": 5.95,
+          "probOverall": 1.9
         },
         "sv": {
           "cvPattern": "Cc",
           "count": 5,
-          "probByLength": 6.41,
-          "probOverall": 1.89
-        },
-        "br": {
-          "cvPattern": "Cc",
-          "count": 2,
-          "probByLength": 2.56,
-          "probOverall": 0.76
+          "probByLength": 5.95,
+          "probOverall": 1.9
         },
         "gr": {
           "cvPattern": "Cc",
           "count": 2,
-          "probByLength": 2.56,
+          "probByLength": 2.38,
           "probOverall": 0.76
         },
         "sk": {
           "cvPattern": "cc",
           "count": 2,
-          "probByLength": 2.56,
+          "probByLength": 2.38,
+          "probOverall": 0.76
+        },
+        "tr": {
+          "cvPattern": "cc",
+          "count": 2,
+          "probByLength": 2.38,
           "probOverall": 0.76
         },
         "sn": {
           "cvPattern": "Cc",
           "count": 2,
-          "probByLength": 2.56,
+          "probByLength": 2.38,
           "probOverall": 0.76
         },
         "thr": {
           "cvPattern": "Ccc",
           "count": 2,
-          "probByLength": 2.56,
+          "probByLength": 2.38,
           "probOverall": 0.76
         },
         "nj": {
           "cvPattern": "cc",
           "count": 1,
-          "probByLength": 1.28,
+          "probByLength": 1.19,
           "probOverall": 0.38
         },
         "fj": {
           "cvPattern": "Cc",
           "count": 1,
-          "probByLength": 1.28,
+          "probByLength": 1.19,
           "probOverall": 0.38
         },
         "fl": {
           "cvPattern": "Cc",
           "count": 1,
-          "probByLength": 1.28,
+          "probByLength": 1.19,
           "probOverall": 0.38
         },
         "kj": {
           "cvPattern": "Cc",
           "count": 1,
-          "probByLength": 1.28,
+          "probByLength": 1.19,
           "probOverall": 0.38
         },
         "kn": {
           "cvPattern": "Cc",
           "count": 1,
-          "probByLength": 1.28,
-          "probOverall": 0.38
-        },
-        "tr": {
-          "cvPattern": "cc",
-          "count": 1,
-          "probByLength": 1.28,
+          "probByLength": 1.19,
           "probOverall": 0.38
         },
         "sm": {
           "cvPattern": "Cc",
           "count": 1,
-          "probByLength": 1.28,
+          "probByLength": 1.19,
           "probOverall": 0.38
         },
         "äg": {
           "cvPattern": "Cc",
           "count": 1,
-          "probByLength": 1.28,
+          "probByLength": 1.19,
           "probOverall": 0.38
         },
         "äv": {
           "cvPattern": "Cc",
           "count": 1,
-          "probByLength": 1.28,
-          "probOverall": 0.38
-        }
-      },
-      "3": {
-        "yngv": {
-          "cvPattern": "Cccc",
-          "count": 1,
-          "probByLength": 100,
-          "probOverall": 0.38
-        }
-      },
-      "4": {
-        "gylf": {
-          "cvPattern": "Cccc",
-          "count": 1,
-          "probByLength": 100,
-          "probOverall": 0.38
-        }
-      },
-      "5": {
-        "brynj": {
-          "cvPattern": "Ccccc",
-          "count": 3,
-          "probByLength": 50,
-          "probOverall": 1.14
-        },
-        "brynl": {
-          "cvPattern": "Ccccc",
-          "count": 1,
-          "probByLength": 16.67,
-          "probOverall": 0.38
-        },
-        "hlynss": {
-          "cvPattern": "Cccccc",
-          "count": 1,
-          "probByLength": 16.67,
-          "probOverall": 0.38
-        },
-        "styrm": {
-          "cvPattern": "Ccccc",
-          "count": 1,
-          "probByLength": 16.67,
-          "probOverall": 0.38
-        }
-      },
-      "6": {
-        "tryggv": {
-          "cvPattern": "Cccccc",
-          "count": 1,
-          "probByLength": 100,
+          "probByLength": 1.19,
           "probOverall": 0.38
         }
       }
@@ -1162,97 +1127,97 @@
         "s": {
           "cvPattern": "c",
           "count": 50,
-          "probByLength": 28.57,
-          "probOverall": 7.29
+          "probByLength": 28.09,
+          "probOverall": 7.16
         },
         "r": {
           "cvPattern": "c",
           "count": 29,
-          "probByLength": 16.57,
-          "probOverall": 4.23
+          "probByLength": 16.29,
+          "probOverall": 4.15
         },
         "g": {
           "cvPattern": "c",
           "count": 17,
-          "probByLength": 9.71,
-          "probOverall": 2.48
+          "probByLength": 9.55,
+          "probOverall": 2.44
         },
         "m": {
           "cvPattern": "c",
           "count": 13,
-          "probByLength": 7.43,
-          "probOverall": 1.9
+          "probByLength": 7.3,
+          "probOverall": 1.86
         },
         "n": {
           "cvPattern": "c",
-          "count": 11,
-          "probByLength": 6.29,
-          "probOverall": 1.6
+          "count": 12,
+          "probByLength": 6.74,
+          "probOverall": 1.72
         },
         "l": {
           "cvPattern": "c",
           "count": 11,
-          "probByLength": 6.29,
-          "probOverall": 1.6
+          "probByLength": 6.18,
+          "probOverall": 1.58
         },
         "v": {
           "cvPattern": "c",
-          "count": 10,
-          "probByLength": 5.71,
-          "probOverall": 1.46
+          "count": 11,
+          "probByLength": 6.18,
+          "probOverall": 1.58
         },
         "k": {
           "cvPattern": "c",
           "count": 6,
-          "probByLength": 3.43,
-          "probOverall": 0.87
+          "probByLength": 3.37,
+          "probOverall": 0.86
         },
         "t": {
           "cvPattern": "c",
           "count": 6,
-          "probByLength": 3.43,
-          "probOverall": 0.87
+          "probByLength": 3.37,
+          "probOverall": 0.86
         },
         "ng": {
           "cvPattern": "cc",
           "count": 6,
-          "probByLength": 3.43,
-          "probOverall": 0.87
+          "probByLength": 3.37,
+          "probOverall": 0.86
         },
         "d": {
           "cvPattern": "c",
           "count": 4,
-          "probByLength": 2.29,
-          "probOverall": 0.58
+          "probByLength": 2.25,
+          "probOverall": 0.57
         },
         "b": {
           "cvPattern": "C",
           "count": 3,
-          "probByLength": 1.71,
-          "probOverall": 0.44
+          "probByLength": 1.69,
+          "probOverall": 0.43
+        },
+        "j": {
+          "cvPattern": "c",
+          "count": 3,
+          "probByLength": 1.69,
+          "probOverall": 0.43
         },
         "f": {
           "cvPattern": "C",
           "count": 3,
-          "probByLength": 1.71,
-          "probOverall": 0.44
+          "probByLength": 1.69,
+          "probOverall": 0.43
         },
         "x": {
           "cvPattern": "c",
           "count": 2,
-          "probByLength": 1.14,
-          "probOverall": 0.29
-        },
-        "j": {
-          "cvPattern": "c",
-          "count": 2,
-          "probByLength": 1.14,
+          "probByLength": 1.12,
           "probOverall": 0.29
         },
         "h": {
           "cvPattern": "C",
           "count": 2,
-          "probByLength": 1.14,
+          "probByLength": 1.12,
           "probOverall": 0.29
         }
       },
@@ -1260,838 +1225,804 @@
         "ss": {
           "cvPattern": "cc",
           "count": 35,
-          "probByLength": 18.23,
-          "probOverall": 5.1
+          "probByLength": 17.41,
+          "probOverall": 5.01
         },
         "rs": {
           "cvPattern": "cc",
-          "count": 11,
-          "probByLength": 5.73,
-          "probOverall": 1.6
+          "count": 12,
+          "probByLength": 5.97,
+          "probOverall": 1.72
         },
         "lm": {
           "cvPattern": "cc",
           "count": 10,
-          "probByLength": 5.21,
-          "probOverall": 1.46
+          "probByLength": 4.98,
+          "probOverall": 1.43
         },
         "st": {
           "cvPattern": "cc",
+          "count": 9,
+          "probByLength": 4.48,
+          "probOverall": 1.29
+        },
+        "rl": {
+          "cvPattern": "cc",
           "count": 8,
-          "probByLength": 4.17,
-          "probOverall": 1.17
+          "probByLength": 3.98,
+          "probOverall": 1.15
         },
         "rn": {
           "cvPattern": "cc",
           "count": 7,
-          "probByLength": 3.65,
-          "probOverall": 1.02
-        },
-        "rl": {
-          "cvPattern": "cc",
-          "count": 7,
-          "probByLength": 3.65,
-          "probOverall": 1.02
+          "probByLength": 3.48,
+          "probOverall": 1
         },
         "gn": {
           "cvPattern": "cc",
           "count": 6,
-          "probByLength": 3.13,
-          "probOverall": 0.87
+          "probByLength": 2.99,
+          "probOverall": 0.86
         },
         "rg": {
           "cvPattern": "cc",
           "count": 6,
-          "probByLength": 3.13,
-          "probOverall": 0.87
+          "probByLength": 2.99,
+          "probOverall": 0.86
         },
         "nn": {
           "cvPattern": "cc",
           "count": 6,
-          "probByLength": 3.13,
-          "probOverall": 0.87
+          "probByLength": 2.99,
+          "probOverall": 0.86
         },
         "lg": {
           "cvPattern": "cc",
           "count": 5,
-          "probByLength": 2.6,
-          "probOverall": 0.73
+          "probByLength": 2.49,
+          "probOverall": 0.72
         },
         "rv": {
           "cvPattern": "cc",
           "count": 5,
-          "probByLength": 2.6,
-          "probOverall": 0.73
+          "probByLength": 2.49,
+          "probOverall": 0.72
         },
         "nd": {
           "cvPattern": "cc",
           "count": 4,
-          "probByLength": 2.08,
-          "probOverall": 0.58
+          "probByLength": 1.99,
+          "probOverall": 0.57
+        },
+        "nj": {
+          "cvPattern": "cc",
+          "count": 4,
+          "probByLength": 1.99,
+          "probOverall": 0.57
         },
         "rk": {
           "cvPattern": "cc",
           "count": 4,
-          "probByLength": 2.08,
-          "probOverall": 0.58
+          "probByLength": 1.99,
+          "probOverall": 0.57
         },
         "bj": {
           "cvPattern": "Cc",
           "count": 4,
-          "probByLength": 2.08,
-          "probOverall": 0.58
+          "probByLength": 1.99,
+          "probOverall": 0.57
         },
         "rr": {
           "cvPattern": "cc",
           "count": 4,
-          "probByLength": 2.08,
-          "probOverall": 0.58
+          "probByLength": 1.99,
+          "probOverall": 0.57
+        },
+        "rm": {
+          "cvPattern": "cc",
+          "count": 4,
+          "probByLength": 1.99,
+          "probOverall": 0.57
         },
         "rt": {
           "cvPattern": "cc",
           "count": 4,
-          "probByLength": 2.08,
-          "probOverall": 0.58
+          "probByLength": 1.99,
+          "probOverall": 0.57
         },
         "lb": {
           "cvPattern": "cc",
           "count": 3,
-          "probByLength": 1.56,
-          "probOverall": 0.44
+          "probByLength": 1.49,
+          "probOverall": 0.43
         },
         "tss": {
           "cvPattern": "ccc",
           "count": 3,
-          "probByLength": 1.56,
-          "probOverall": 0.44
+          "probByLength": 1.49,
+          "probOverall": 0.43
         },
         "ld": {
           "cvPattern": "cc",
           "count": 3,
-          "probByLength": 1.56,
-          "probOverall": 0.44
+          "probByLength": 1.49,
+          "probOverall": 0.43
+        },
+        "lf": {
+          "cvPattern": "cc",
+          "count": 3,
+          "probByLength": 1.49,
+          "probOverall": 0.43
         },
         "nr": {
           "cvPattern": "cc",
           "count": 3,
-          "probByLength": 1.56,
-          "probOverall": 0.44
+          "probByLength": 1.49,
+          "probOverall": 0.43
         },
-        "rm": {
-          "cvPattern": "cc",
+        "ngv": {
+          "cvPattern": "ccc",
           "count": 3,
-          "probByLength": 1.56,
-          "probOverall": 0.44
+          "probByLength": 1.49,
+          "probOverall": 0.43
         },
         "gm": {
           "cvPattern": "cc",
           "count": 3,
-          "probByLength": 1.56,
-          "probOverall": 0.44
+          "probByLength": 1.49,
+          "probOverall": 0.43
         },
         "br": {
           "cvPattern": "Cc",
           "count": 2,
-          "probByLength": 1.04,
-          "probOverall": 0.29
-        },
-        "lf": {
-          "cvPattern": "cc",
-          "count": 2,
-          "probByLength": 1.04,
+          "probByLength": 1,
           "probOverall": 0.29
         },
         "ll": {
           "cvPattern": "cc",
           "count": 2,
-          "probByLength": 1.04,
+          "probByLength": 1,
           "probOverall": 0.29
         },
         "lv": {
           "cvPattern": "cc",
           "count": 2,
-          "probByLength": 1.04,
+          "probByLength": 1,
+          "probOverall": 0.29
+        },
+        "th": {
+          "cvPattern": "cc",
+          "count": 2,
+          "probByLength": 1,
           "probOverall": 0.29
         },
         "sl": {
           "cvPattern": "cc",
           "count": 2,
-          "probByLength": 1.04,
+          "probByLength": 1,
           "probOverall": 0.29
         },
         "rb": {
           "cvPattern": "cc",
           "count": 2,
-          "probByLength": 1.04,
+          "probByLength": 1,
+          "probOverall": 0.29
+        },
+        "lt": {
+          "cvPattern": "cc",
+          "count": 2,
+          "probByLength": 1,
           "probOverall": 0.29
         },
         "sk": {
           "cvPattern": "cc",
           "count": 2,
-          "probByLength": 1.04,
-          "probOverall": 0.29
-        },
-        "ngv": {
-          "cvPattern": "ccc",
-          "count": 2,
-          "probByLength": 1.04,
+          "probByLength": 1,
           "probOverall": 0.29
         },
         "tt": {
           "cvPattern": "cc",
           "count": 2,
-          "probByLength": 1.04,
+          "probByLength": 1,
           "probOverall": 0.29
         },
         "tr": {
           "cvPattern": "cc",
           "count": 2,
-          "probByLength": 1.04,
+          "probByLength": 1,
           "probOverall": 0.29
         },
         "gf": {
           "cvPattern": "cc",
           "count": 2,
-          "probByLength": 1.04,
+          "probByLength": 1,
           "probOverall": 0.29
         },
         "rf": {
           "cvPattern": "cc",
           "count": 2,
-          "probByLength": 1.04,
+          "probByLength": 1,
           "probOverall": 0.29
         },
         "nt": {
           "cvPattern": "cc",
           "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
+          "probByLength": 0.5,
+          "probOverall": 0.14
         },
-        "nj": {
+        "nl": {
           "cvPattern": "cc",
           "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
+          "probByLength": 0.5,
+          "probOverall": 0.14
         },
         "dv": {
           "cvPattern": "cc",
           "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
-        },
-        "yj": {
-          "cvPattern": "cc",
-          "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
-        },
-        "yv": {
-          "cvPattern": "cc",
-          "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
+          "probByLength": 0.5,
+          "probOverall": 0.14
         },
         "ln": {
           "cvPattern": "cc",
           "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
+          "probByLength": 0.5,
+          "probOverall": 0.14
         },
         "fl": {
           "cvPattern": "Cc",
           "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
-        },
-        "lt": {
-          "cvPattern": "cc",
-          "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
+          "probByLength": 0.5,
+          "probOverall": 0.14
         },
         "fnk": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
+          "probByLength": 0.5,
+          "probOverall": 0.14
         },
         "nh": {
           "cvPattern": "cc",
           "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
-        },
-        "yn": {
-          "cvPattern": "cc",
-          "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
+          "probByLength": 0.5,
+          "probOverall": 0.14
         },
         "kh": {
           "cvPattern": "cc",
           "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
+          "probByLength": 0.5,
+          "probOverall": 0.14
         },
         "ghv": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
+          "probByLength": 0.5,
+          "probOverall": 0.14
         },
         "rj": {
           "cvPattern": "cc",
           "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
+          "probByLength": 0.5,
+          "probOverall": 0.14
         },
         "gv": {
           "cvPattern": "cc",
           "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
+          "probByLength": 0.5,
+          "probOverall": 0.14
         },
         "sm": {
           "cvPattern": "Cc",
           "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
+          "probByLength": 0.5,
+          "probOverall": 0.14
         },
         "ngr": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
-        },
-        "th": {
-          "cvPattern": "cc",
-          "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
+          "probByLength": 0.5,
+          "probOverall": 0.14
         },
         "ct": {
           "cvPattern": "cc",
           "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
+          "probByLength": 0.5,
+          "probOverall": 0.14
         },
         "gg": {
           "cvPattern": "cc",
           "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
+          "probByLength": 0.5,
+          "probOverall": 0.14
         },
         "kt": {
           "cvPattern": "cc",
           "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
+          "probByLength": 0.5,
+          "probOverall": 0.14
         },
         "lh": {
           "cvPattern": "cc",
           "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
+          "probByLength": 0.5,
+          "probOverall": 0.14
         },
         "sg": {
           "cvPattern": "cc",
           "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
+          "probByLength": 0.5,
+          "probOverall": 0.14
         },
         "rh": {
           "cvPattern": "cc",
           "count": 1,
-          "probByLength": 0.52,
-          "probOverall": 0.15
+          "probByLength": 0.5,
+          "probOverall": 0.14
         }
       },
       "3": {
         "rss": {
           "cvPattern": "ccc",
-          "count": 84,
-          "probByLength": 35.15,
-          "probOverall": 12.24
+          "count": 85,
+          "probByLength": 35.27,
+          "probOverall": 12.18
         },
         "nss": {
           "cvPattern": "ccc",
-          "count": 36,
-          "probByLength": 15.06,
-          "probOverall": 5.25
+          "count": 37,
+          "probByLength": 15.35,
+          "probOverall": 5.3
         },
         "lss": {
           "cvPattern": "ccc",
           "count": 17,
-          "probByLength": 7.11,
-          "probOverall": 2.48
+          "probByLength": 7.05,
+          "probOverall": 2.44
         },
         "fss": {
           "cvPattern": "ccc",
           "count": 11,
-          "probByLength": 4.6,
-          "probOverall": 1.6
+          "probByLength": 4.56,
+          "probOverall": 1.58
         },
         "kss": {
           "cvPattern": "ccc",
           "count": 10,
-          "probByLength": 4.18,
-          "probOverall": 1.46
+          "probByLength": 4.15,
+          "probOverall": 1.43
         },
         "mss": {
           "cvPattern": "ccc",
           "count": 8,
-          "probByLength": 3.35,
-          "probOverall": 1.17
+          "probByLength": 3.32,
+          "probOverall": 1.15
         },
         "rtss": {
           "cvPattern": "cccc",
           "count": 7,
-          "probByLength": 2.93,
-          "probOverall": 1.02
+          "probByLength": 2.9,
+          "probOverall": 1
+        },
+        "gss": {
+          "cvPattern": "ccc",
+          "count": 5,
+          "probByLength": 2.07,
+          "probOverall": 0.72
         },
         "ndr": {
           "cvPattern": "ccc",
           "count": 4,
-          "probByLength": 1.67,
-          "probOverall": 0.58
-        },
-        "gss": {
-          "cvPattern": "ccc",
-          "count": 4,
-          "probByLength": 1.67,
-          "probOverall": 0.58
+          "probByLength": 1.66,
+          "probOverall": 0.57
         },
         "nbj": {
           "cvPattern": "ccc",
           "count": 3,
-          "probByLength": 1.26,
-          "probOverall": 0.44
+          "probByLength": 1.24,
+          "probOverall": 0.43
         },
         "lbj": {
           "cvPattern": "ccc",
           "count": 2,
-          "probByLength": 0.84,
+          "probByLength": 0.83,
           "probOverall": 0.29
         },
         "ngss": {
           "cvPattern": "cccc",
           "count": 2,
-          "probByLength": 0.84,
+          "probByLength": 0.83,
           "probOverall": 0.29
         },
         "stss": {
           "cvPattern": "cccc",
           "count": 2,
-          "probByLength": 0.84,
+          "probByLength": 0.83,
           "probOverall": 0.29
         },
         "nnl": {
           "cvPattern": "ccc",
           "count": 2,
-          "probByLength": 0.84,
+          "probByLength": 0.83,
           "probOverall": 0.29
         },
         "fnss": {
           "cvPattern": "cccc",
           "count": 2,
-          "probByLength": 0.84,
+          "probByLength": 0.83,
           "probOverall": 0.29
         },
         "stm": {
           "cvPattern": "ccc",
           "count": 2,
-          "probByLength": 0.84,
+          "probByLength": 0.83,
           "probOverall": 0.29
         },
         "rbj": {
           "cvPattern": "ccc",
           "count": 2,
-          "probByLength": 0.84,
+          "probByLength": 0.83,
           "probOverall": 0.29
         },
         "rst": {
           "cvPattern": "ccc",
           "count": 2,
-          "probByLength": 0.84,
+          "probByLength": 0.83,
           "probOverall": 0.29
         },
         "lfr": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "rnf": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "rngr": {
           "cvPattern": "cccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "rnm": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "lst": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "ldv": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "ktss": {
           "cvPattern": "cccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "rtm": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "rgv": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "gbj": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
-        },
-        "yst": {
-          "cvPattern": "ccc",
-          "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
-        },
-        "yth": {
-          "cvPattern": "ccc",
-          "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "nnb": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
-        },
-        "yrs": {
-          "cvPattern": "ccc",
-          "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "thj": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "ttsk": {
           "cvPattern": "cccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "vss": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "fst": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "fth": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "lld": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "lfd": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "ngth": {
           "cvPattern": "cccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "bss": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "stj": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "ftss": {
           "cvPattern": "cccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "tth": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "kkv": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "ckss": {
           "cvPattern": "cccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "gnv": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
+        },
+        "gtr": {
+          "cvPattern": "ccc",
+          "count": 1,
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "rth": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "gth": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "rph": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "nth": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
+        },
+        "ggv": {
+          "cvPattern": "ccc",
+          "count": 1,
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "lhj": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "sbj": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "sgr": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "stv": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "sth": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         },
         "rgr": {
           "cvPattern": "ccc",
           "count": 1,
-          "probByLength": 0.42,
-          "probOverall": 0.15
+          "probByLength": 0.41,
+          "probOverall": 0.14
         }
       },
       "4": {
         "nnss": {
           "cvPattern": "cccc",
           "count": 15,
-          "probByLength": 19.48,
-          "probOverall": 2.19
+          "probByLength": 19.23,
+          "probOverall": 2.15
         },
         "rnss": {
           "cvPattern": "cccc",
           "count": 12,
-          "probByLength": 15.58,
-          "probOverall": 1.75
+          "probByLength": 15.38,
+          "probOverall": 1.72
         },
         "ndss": {
           "cvPattern": "cccc",
           "count": 11,
-          "probByLength": 14.29,
-          "probOverall": 1.6
+          "probByLength": 14.1,
+          "probOverall": 1.58
         },
         "lfss": {
           "cvPattern": "cccc",
           "count": 9,
-          "probByLength": 11.69,
-          "probOverall": 1.31
+          "probByLength": 11.54,
+          "probOverall": 1.29
         },
         "ldss": {
           "cvPattern": "cccc",
           "count": 6,
-          "probByLength": 7.79,
-          "probOverall": 0.87
+          "probByLength": 7.69,
+          "probOverall": 0.86
         },
         "rgss": {
           "cvPattern": "cccc",
           "count": 5,
-          "probByLength": 6.49,
-          "probOverall": 0.73
+          "probByLength": 6.41,
+          "probOverall": 0.72
         },
         "llss": {
           "cvPattern": "cccc",
           "count": 3,
-          "probByLength": 3.9,
-          "probOverall": 0.44
+          "probByLength": 3.85,
+          "probOverall": 0.43
         },
         "rkss": {
           "cvPattern": "cccc",
           "count": 2,
-          "probByLength": 2.6,
+          "probByLength": 2.56,
           "probOverall": 0.29
         },
         "rlss": {
           "cvPattern": "cccc",
           "count": 2,
-          "probByLength": 2.6,
+          "probByLength": 2.56,
           "probOverall": 0.29
         },
         "lmss": {
           "cvPattern": "cccc",
           "count": 2,
-          "probByLength": 2.6,
+          "probByLength": 2.56,
           "probOverall": 0.29
         },
         "rnlj": {
           "cvPattern": "cccc",
           "count": 1,
-          "probByLength": 1.3,
-          "probOverall": 0.15
+          "probByLength": 1.28,
+          "probOverall": 0.14
         },
         "rnth": {
           "cvPattern": "cccc",
           "count": 1,
-          "probByLength": 1.3,
-          "probOverall": 0.15
+          "probByLength": 1.28,
+          "probOverall": 0.14
         },
         "rgst": {
           "cvPattern": "cccc",
           "count": 1,
-          "probByLength": 1.3,
-          "probOverall": 0.15
+          "probByLength": 1.28,
+          "probOverall": 0.14
         },
         "rgth": {
           "cvPattern": "cccc",
           "count": 1,
-          "probByLength": 1.3,
-          "probOverall": 0.15
+          "probByLength": 1.28,
+          "probOverall": 0.14
         },
         "lkss": {
           "cvPattern": "cccc",
           "count": 1,
-          "probByLength": 1.3,
-          "probOverall": 0.15
+          "probByLength": 1.28,
+          "probOverall": 0.14
         },
         "nnth": {
           "cvPattern": "cccc",
           "count": 1,
-          "probByLength": 1.3,
-          "probOverall": 0.15
+          "probByLength": 1.28,
+          "probOverall": 0.14
         },
         "llgr": {
           "cvPattern": "cccc",
           "count": 1,
-          "probByLength": 1.3,
-          "probOverall": 0.15
+          "probByLength": 1.28,
+          "probOverall": 0.14
         },
         "stbj": {
           "cvPattern": "cccc",
           "count": 1,
-          "probByLength": 1.3,
-          "probOverall": 0.15
+          "probByLength": 1.28,
+          "probOverall": 0.14
         },
         "ddss": {
           "cvPattern": "cccc",
           "count": 1,
-          "probByLength": 1.3,
-          "probOverall": 0.15
+          "probByLength": 1.28,
+          "probOverall": 0.14
+        },
+        "ggss": {
+          "cvPattern": "cccc",
+          "count": 1,
+          "probByLength": 1.28,
+          "probOverall": 0.14
         },
         "nnst": {
           "cvPattern": "cccc",
           "count": 1,
-          "probByLength": 1.3,
-          "probOverall": 0.15
-        }
-      },
-      "6": {
-        "rlygss": {
-          "cvPattern": "cccccc",
-          "count": 1,
-          "probByLength": 50,
-          "probOverall": 0.15
-        },
-        "ltyrss": {
-          "cvPattern": "cccccc",
-          "count": 1,
-          "probByLength": 50,
-          "probOverall": 0.15
-        }
-      },
-      "8": {
-        "gtryggss": {
-          "cvPattern": "cccccccc",
-          "count": 1,
-          "probByLength": 100,
-          "probOverall": 0.15
+          "probByLength": 1.28,
+          "probOverall": 0.14
         }
       }
     },
@@ -2111,32 +2042,32 @@
       "1": {
         "a": {
           "cvPattern": "v",
-          "count": 18,
-          "probByLength": 41.86,
-          "probOverall": 5.04
+          "count": 17,
+          "probByLength": 43.59,
+          "probOverall": 4.76
         },
         "i": {
           "cvPattern": "v",
           "count": 10,
-          "probByLength": 23.26,
+          "probByLength": 25.64,
           "probOverall": 2.8
         },
         "e": {
           "cvPattern": "v",
-          "count": 9,
-          "probByLength": 20.93,
-          "probOverall": 2.52
+          "count": 6,
+          "probByLength": 15.38,
+          "probOverall": 1.68
         },
         "o": {
           "cvPattern": "v",
           "count": 5,
-          "probByLength": 11.63,
+          "probByLength": 12.82,
           "probOverall": 1.4
         },
         "ö": {
           "cvPattern": "v",
           "count": 1,
-          "probByLength": 2.33,
+          "probByLength": 2.56,
           "probOverall": 0.28
         }
       },
@@ -2144,319 +2075,319 @@
         "si": {
           "cvPattern": "cv",
           "count": 10,
-          "probByLength": 8.47,
+          "probByLength": 8.7,
           "probOverall": 2.8
         },
         "gu": {
           "cvPattern": "cv",
           "count": 9,
-          "probByLength": 7.63,
+          "probByLength": 7.83,
           "probOverall": 2.52
         },
         "jo": {
           "cvPattern": "cv",
           "count": 7,
-          "probByLength": 5.93,
+          "probByLength": 6.09,
           "probOverall": 1.96
         },
         "ar": {
           "cvPattern": "vc",
           "count": 6,
-          "probByLength": 5.08,
+          "probByLength": 5.22,
           "probOverall": 1.68
         },
         "ma": {
           "cvPattern": "cv",
           "count": 6,
-          "probByLength": 5.08,
+          "probByLength": 5.22,
           "probOverall": 1.68
         },
         "el": {
           "cvPattern": "vc",
           "count": 4,
-          "probByLength": 3.39,
-          "probOverall": 1.12
-        },
-        "ha": {
-          "cvPattern": "cv",
-          "count": 4,
-          "probByLength": 3.39,
+          "probByLength": 3.48,
           "probOverall": 1.12
         },
         "sa": {
           "cvPattern": "cv",
           "count": 4,
-          "probByLength": 3.39,
+          "probByLength": 3.48,
           "probOverall": 1.12
         },
         "vi": {
           "cvPattern": "cv",
           "count": 4,
-          "probByLength": 3.39,
+          "probByLength": 3.48,
           "probOverall": 1.12
         },
         "al": {
           "cvPattern": "vc",
           "count": 3,
-          "probByLength": 2.54,
+          "probByLength": 2.61,
           "probOverall": 0.84
         },
         "an": {
           "cvPattern": "vc",
           "count": 3,
-          "probByLength": 2.54,
+          "probByLength": 2.61,
           "probOverall": 0.84
         },
         "da": {
           "cvPattern": "cv",
           "count": 3,
-          "probByLength": 2.54,
+          "probByLength": 2.61,
           "probOverall": 0.84
         },
-        "ga": {
-          "cvPattern": "cv",
+        "ei": {
+          "cvPattern": "vv",
           "count": 3,
-          "probByLength": 2.54,
+          "probByLength": 2.61,
           "probOverall": 0.84
         },
-        "he": {
+        "ha": {
           "cvPattern": "cv",
           "count": 3,
-          "probByLength": 2.54,
+          "probByLength": 2.61,
           "probOverall": 0.84
         },
         "as": {
           "cvPattern": "vc",
           "count": 3,
-          "probByLength": 2.54,
+          "probByLength": 2.61,
           "probOverall": 0.84
         },
         "er": {
           "cvPattern": "vc",
           "count": 2,
-          "probByLength": 1.69,
+          "probByLength": 1.74,
           "probOverall": 0.56
         },
         "ey": {
-          "cvPattern": "vc",
+          "cvPattern": "vv",
           "count": 2,
-          "probByLength": 1.69,
+          "probByLength": 1.74,
           "probOverall": 0.56
         },
-        "ge": {
+        "ga": {
           "cvPattern": "cv",
           "count": 2,
-          "probByLength": 1.69,
+          "probByLength": 1.74,
           "probOverall": 0.56
         },
         "hö": {
           "cvPattern": "cv",
           "count": 2,
-          "probByLength": 1.69,
+          "probByLength": 1.74,
           "probOverall": 0.56
         },
-        "le": {
-          "cvPattern": "cv",
+        "or": {
+          "cvPattern": "vc",
           "count": 2,
-          "probByLength": 1.69,
+          "probByLength": 1.74,
           "probOverall": 0.56
         },
         "ot": {
           "cvPattern": "vc",
           "count": 2,
-          "probByLength": 1.69,
+          "probByLength": 1.74,
           "probOverall": 0.56
         },
         "pa": {
           "cvPattern": "cv",
           "count": 2,
-          "probByLength": 1.69,
+          "probByLength": 1.74,
           "probOverall": 0.56
         },
         "ru": {
           "cvPattern": "cv",
           "count": 2,
-          "probByLength": 1.69,
+          "probByLength": 1.74,
           "probOverall": 0.56
+        },
+        "au": {
+          "cvPattern": "vv",
+          "count": 1,
+          "probByLength": 0.87,
+          "probOverall": 0.28
         },
         "be": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "bo": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "ba": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "bö": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "ed": {
           "cvPattern": "vc",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
+          "probOverall": 0.28
+        },
+        "ge": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "gi": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "hu": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
+          "probOverall": 0.28
+        },
+        "he": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "in": {
           "cvPattern": "vc",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "ja": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "jö": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "ju": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "ke": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "ka": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
+          "probOverall": 0.28
+        },
+        "le": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "lo": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "la": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "lu": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "mi": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "ni": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "ol": {
           "cvPattern": "vc",
           "count": 1,
-          "probByLength": 0.85,
-          "probOverall": 0.28
-        },
-        "or": {
-          "cvPattern": "vc",
-          "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "pe": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "ro": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "se": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.85,
-          "probOverall": 0.28
-        },
-        "te": {
-          "cvPattern": "cv",
-          "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "to": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "un": {
           "cvPattern": "vc",
           "count": 1,
-          "probByLength": 0.85,
-          "probOverall": 0.28
-        },
-        "ve": {
-          "cvPattern": "cv",
-          "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "os": {
           "cvPattern": "vc",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "ör": {
           "cvPattern": "vc",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         },
         "ul": {
           "cvPattern": "vc",
           "count": 1,
-          "probByLength": 0.85,
+          "probByLength": 0.87,
           "probOverall": 0.28
         }
       },
@@ -2464,337 +2395,355 @@
         "fri": {
           "cvPattern": "ccv",
           "count": 6,
-          "probByLength": 6.45,
+          "probByLength": 6.52,
           "probOverall": 1.68
         },
-        "ste": {
-          "cvPattern": "ccv",
-          "count": 6,
-          "probByLength": 6.45,
-          "probOverall": 1.68
+        "val": {
+          "cvPattern": "cvc",
+          "count": 5,
+          "probByLength": 5.43,
+          "probOverall": 1.4
         },
         "mar": {
           "cvPattern": "cvc",
           "count": 4,
-          "probByLength": 4.3,
+          "probByLength": 4.35,
           "probOverall": 1.12
         },
-        "val": {
+        "sig": {
           "cvPattern": "cvc",
           "count": 4,
-          "probByLength": 4.3,
+          "probByLength": 4.35,
           "probOverall": 1.12
         },
         "tho": {
           "cvPattern": "ccv",
           "count": 4,
-          "probByLength": 4.3,
+          "probByLength": 4.35,
           "probOverall": 1.12
-        },
-        "sig": {
-          "cvPattern": "cvc",
-          "count": 3,
-          "probByLength": 3.23,
-          "probOverall": 0.84
         },
         "arn": {
           "cvPattern": "vcc",
           "count": 2,
-          "probByLength": 2.15,
+          "probByLength": 2.17,
           "probOverall": 0.56
         },
         "bir": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 2.15,
+          "probByLength": 2.17,
           "probOverall": 0.56
         },
         "dag": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 2.15,
+          "probByLength": 2.17,
           "probOverall": 0.56
         },
         "gus": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 2.15,
+          "probByLength": 2.17,
           "probOverall": 0.56
         },
         "han": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 2.15,
+          "probByLength": 2.17,
+          "probOverall": 0.56
+        },
+        "hei": {
+          "cvPattern": "cvv",
+          "count": 2,
+          "probByLength": 2.17,
           "probOverall": 0.56
         },
         "her": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 2.15,
+          "probByLength": 2.17,
           "probOverall": 0.56
         },
         "hil": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 2.15,
-          "probOverall": 0.56
-        },
-        "hre": {
-          "cvPattern": "ccv",
-          "count": 2,
-          "probByLength": 2.15,
+          "probByLength": 2.17,
           "probOverall": 0.56
         },
         "ing": {
           "cvPattern": "vcc",
           "count": 2,
-          "probByLength": 2.15,
+          "probByLength": 2.17,
           "probOverall": 0.56
         },
         "jon": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 2.15,
+          "probByLength": 2.17,
           "probOverall": 0.56
         },
         "kol": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 2.15,
+          "probByLength": 2.17,
           "probOverall": 0.56
         },
         "pal": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 2.15,
-          "probOverall": 0.56
-        },
-        "sve": {
-          "cvPattern": "ccv",
-          "count": 2,
-          "probByLength": 2.15,
+          "probByLength": 2.17,
           "probOverall": 0.56
         },
         "vig": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 2.15,
+          "probByLength": 2.17,
           "probOverall": 0.56
         },
         "vil": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 2.15,
+          "probByLength": 2.17,
           "probOverall": 0.56
         },
         "ast": {
           "cvPattern": "vcc",
           "count": 2,
-          "probByLength": 2.15,
+          "probByLength": 2.17,
           "probOverall": 0.56
         },
         "ben": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "bra": {
           "cvPattern": "ccv",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "bre": {
           "cvPattern": "ccv",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "dar": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "eys": {
-          "cvPattern": "vcc",
+          "cvPattern": "vvc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "eyt": {
-          "cvPattern": "vcc",
+          "cvPattern": "vvc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "fan": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "flo": {
           "cvPattern": "ccv",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
+          "probOverall": 0.28
+        },
+        "gau": {
+          "cvPattern": "cvv",
+          "count": 1,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "gis": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "gre": {
           "cvPattern": "ccv",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
+          "probOverall": 0.28
+        },
+        "gyl": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "hel": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "hen": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "hin": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "hlö": {
           "cvPattern": "ccv",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "hol": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "hös": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "jen": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "kon": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "odd": {
           "cvPattern": "vcc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "rey": {
-          "cvPattern": "cvc",
+          "cvPattern": "cvv",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "rik": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "sin": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "sku": {
           "cvPattern": "ccv",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "sma": {
           "cvPattern": "ccv",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "sna": {
           "cvPattern": "ccv",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
+          "probOverall": 0.28
+        },
+        "ste": {
+          "cvPattern": "ccv",
+          "count": 1,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "sva": {
           "cvPattern": "ccv",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
+          "probOverall": 0.28
+        },
+        "tei": {
+          "cvPattern": "cvv",
+          "count": 1,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "the": {
           "cvPattern": "ccv",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "tor": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
-        "tra": {
-          "cvPattern": "ccv",
+        "vei": {
+          "cvPattern": "cvv",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "vic": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "vik": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "wil": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
+          "probOverall": 0.28
+        },
+        "yng": {
+          "cvPattern": "vcc",
+          "count": 1,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "örn": {
           "cvPattern": "vcc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         },
         "ulf": {
           "cvPattern": "vcc",
           "count": 1,
-          "probByLength": 1.08,
+          "probByLength": 1.09,
           "probOverall": 0.28
         }
       },
@@ -2802,441 +2751,449 @@
         "thor": {
           "cvPattern": "ccvc",
           "count": 15,
-          "probByLength": 19.48,
+          "probByLength": 17.24,
           "probOverall": 4.2
+        },
+        "bryn": {
+          "cvPattern": "ccvc",
+          "count": 4,
+          "probByLength": 4.6,
+          "probOverall": 1.12
         },
         "gunn": {
           "cvPattern": "cvcc",
           "count": 4,
-          "probByLength": 5.19,
+          "probByLength": 4.6,
           "probOverall": 1.12
         },
         "kris": {
           "cvPattern": "ccvc",
           "count": 4,
-          "probByLength": 5.19,
+          "probByLength": 4.6,
           "probOverall": 1.12
         },
         "bjar": {
           "cvPattern": "ccvc",
           "count": 3,
-          "probByLength": 3.9,
+          "probByLength": 3.45,
           "probOverall": 0.84
         },
         "hall": {
           "cvPattern": "cvcc",
           "count": 3,
-          "probByLength": 3.9,
+          "probByLength": 3.45,
           "probOverall": 0.84
         },
         "bald": {
           "cvPattern": "cvcc",
           "count": 2,
-          "probByLength": 2.6,
+          "probByLength": 2.3,
           "probOverall": 0.56
         },
         "finn": {
           "cvPattern": "cvcc",
           "count": 2,
-          "probByLength": 2.6,
+          "probByLength": 2.3,
           "probOverall": 0.56
         },
         "hjal": {
           "cvPattern": "ccvc",
           "count": 2,
-          "probByLength": 2.6,
+          "probByLength": 2.3,
           "probOverall": 0.56
         },
         "hjör": {
           "cvPattern": "ccvc",
           "count": 2,
-          "probByLength": 2.6,
+          "probByLength": 2.3,
           "probOverall": 0.56
         },
         "stur": {
           "cvPattern": "ccvc",
           "count": 2,
-          "probByLength": 2.6,
+          "probByLength": 2.3,
           "probOverall": 0.56
         },
         "arng": {
           "cvPattern": "vccc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "arnl": {
           "cvPattern": "vccc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "arnt": {
           "cvPattern": "vccc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "berg": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "börk": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "carl": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "fjöl": {
           "cvPattern": "ccvc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "fros": {
           "cvPattern": "ccvc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
+          "probOverall": 0.28
+        },
+        "geir": {
+          "cvPattern": "cvvc",
+          "count": 1,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "gest": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "grim": {
           "cvPattern": "ccvc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "hafs": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "haft": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
+          "probOverall": 0.28
+        },
+        "hauk": {
+          "cvPattern": "cvvc",
+          "count": 1,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "hjar": {
           "cvPattern": "ccvc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "hlyn": {
-          "cvPattern": "cccc",
+          "cvPattern": "ccvc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "hran": {
           "cvPattern": "ccvc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
+          "probOverall": 0.28
+        },
+        "hrei": {
+          "cvPattern": "ccvv",
+          "count": 1,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "half": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "ingt": {
           "cvPattern": "vccc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "karl": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "kjar": {
           "cvPattern": "ccvc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "knut": {
           "cvPattern": "ccvc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
+          "probOverall": 0.28
+        },
+        "leif": {
+          "cvPattern": "cvvc",
+          "count": 1,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "loft": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "mark": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "matt": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "njal": {
           "cvPattern": "ccvc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "nökk": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "pall": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "rafn": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "ragn": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "rögn": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "sigt": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "snor": {
           "cvPattern": "ccvc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
+          "probOverall": 0.28
+        },
+        "stei": {
+          "cvPattern": "ccvv",
+          "count": 1,
+          "probByLength": 1.15,
+          "probOverall": 0.28
+        },
+        "styr": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "svan": {
           "cvPattern": "ccvc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "sver": {
           "cvPattern": "ccvc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "unns": {
           "cvPattern": "vccc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "vilh": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "ägir": {
           "cvPattern": "ccvc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "ävar": {
           "cvPattern": "ccvc",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         },
         "thra": {
           "cvPattern": "cccv",
           "count": 1,
-          "probByLength": 1.3,
+          "probByLength": 1.15,
           "probOverall": 0.28
         }
       },
       "5": {
+        "stein": {
+          "cvPattern": "ccvvc",
+          "count": 3,
+          "probByLength": 13.04,
+          "probOverall": 0.84
+        },
         "hrafn": {
           "cvPattern": "ccvcc",
           "count": 2,
-          "probByLength": 11.11,
+          "probByLength": 8.7,
           "probOverall": 0.56
         },
         "krist": {
           "cvPattern": "ccvcc",
           "count": 2,
-          "probByLength": 11.11,
+          "probByLength": 8.7,
+          "probOverall": 0.56
+        },
+        "svein": {
+          "cvPattern": "ccvvc",
+          "count": 2,
+          "probByLength": 8.7,
           "probOverall": 0.56
         },
         "bergs": {
           "cvPattern": "cvccc",
           "count": 1,
-          "probByLength": 5.56,
+          "probByLength": 4.35,
           "probOverall": 0.28
         },
         "bergt": {
           "cvPattern": "cvccc",
           "count": 1,
-          "probByLength": 5.56,
+          "probByLength": 4.35,
           "probOverall": 0.28
         },
         "björg": {
           "cvPattern": "ccvcc",
           "count": 1,
-          "probByLength": 5.56,
+          "probByLength": 4.35,
           "probOverall": 0.28
         },
         "björn": {
           "cvPattern": "ccvcc",
           "count": 1,
-          "probByLength": 5.56,
+          "probByLength": 4.35,
           "probOverall": 0.28
         },
         "freyr": {
-          "cvPattern": "ccvcc",
+          "cvPattern": "ccvvc",
           "count": 1,
-          "probByLength": 5.56,
+          "probByLength": 4.35,
           "probOverall": 0.28
         },
         "gotts": {
           "cvPattern": "cvccc",
           "count": 1,
-          "probByLength": 5.56,
-          "probOverall": 0.28
-        },
-        "gylfa": {
-          "cvPattern": "ccccv",
-          "count": 1,
-          "probByLength": 5.56,
+          "probByLength": 4.35,
           "probOverall": 0.28
         },
         "hjört": {
           "cvPattern": "ccvcc",
           "count": 1,
-          "probByLength": 5.56,
+          "probByLength": 4.35,
+          "probOverall": 0.28
+        },
+        "hrein": {
+          "cvPattern": "ccvvc",
+          "count": 1,
+          "probByLength": 4.35,
           "probOverall": 0.28
         },
         "hrolf": {
           "cvPattern": "ccvcc",
           "count": 1,
-          "probByLength": 5.56,
-          "probOverall": 0.28
-        },
-        "orlyg": {
-          "cvPattern": "vcccc",
-          "count": 1,
-          "probByLength": 5.56,
+          "probByLength": 4.35,
           "probOverall": 0.28
         },
         "skarp": {
           "cvPattern": "ccvcc",
           "count": 1,
-          "probByLength": 5.56,
+          "probByLength": 4.35,
           "probOverall": 0.28
         },
-        "yngva": {
-          "cvPattern": "ccccv",
+        "traus": {
+          "cvPattern": "ccvvc",
           "count": 1,
-          "probByLength": 5.56,
+          "probByLength": 4.35,
+          "probOverall": 0.28
+        },
+        "trygg": {
+          "cvPattern": "ccvcc",
+          "count": 1,
+          "probByLength": 4.35,
           "probOverall": 0.28
         },
         "thras": {
           "cvPattern": "cccvc",
           "count": 1,
-          "probByLength": 5.56,
+          "probByLength": 4.35,
           "probOverall": 0.28
         },
         "thors": {
           "cvPattern": "ccvcc",
           "count": 1,
-          "probByLength": 5.56,
+          "probByLength": 4.35,
           "probOverall": 0.28
         }
       },
       "6": {
-        "brynle": {
-          "cvPattern": "cccccv",
+        "steing": {
+          "cvPattern": "ccvvcc",
           "count": 1,
-          "probByLength": 50,
-          "probOverall": 0.28
-        },
-        "valtyr": {
-          "cvPattern": "cvcccc",
-          "count": 1,
-          "probByLength": 50,
-          "probOverall": 0.28
-        }
-      },
-      "7": {
-        "brynjar": {
-          "cvPattern": "cccccvc",
-          "count": 1,
-          "probByLength": 33.33,
-          "probOverall": 0.28
-        },
-        "styrmir": {
-          "cvPattern": "cccccvc",
-          "count": 1,
-          "probByLength": 33.33,
-          "probOverall": 0.28
-        },
-        "tryggva": {
-          "cvPattern": "ccccccv",
-          "count": 1,
-          "probByLength": 33.33,
-          "probOverall": 0.28
-        }
-      },
-      "8": {
-        "brynjolf": {
-          "cvPattern": "cccccvcc",
-          "count": 1,
-          "probByLength": 33.33,
-          "probOverall": 0.28
-        },
-        "brynjulf": {
-          "cvPattern": "cccccvcc",
-          "count": 1,
-          "probByLength": 33.33,
-          "probOverall": 0.28
-        },
-        "sigtrygg": {
-          "cvPattern": "cvcccccc",
-          "count": 1,
-          "probByLength": 33.33,
+          "probByLength": 100,
           "probOverall": 0.28
         }
       }
@@ -3246,1108 +3203,1120 @@
         "o": {
           "cvPattern": "v",
           "count": 42,
-          "probByLength": 66.67,
-          "probOverall": 9.03
-        },
-        "i": {
-          "cvPattern": "v",
-          "count": 9,
-          "probByLength": 14.29,
-          "probOverall": 1.94
+          "probByLength": 80.77,
+          "probOverall": 9.84
         },
         "a": {
           "cvPattern": "v",
           "count": 6,
-          "probByLength": 9.52,
-          "probOverall": 1.29
-        },
-        "u": {
-          "cvPattern": "v",
-          "count": 3,
-          "probByLength": 4.76,
-          "probOverall": 0.65
+          "probByLength": 11.54,
+          "probOverall": 1.41
         },
         "e": {
           "cvPattern": "v",
           "count": 3,
-          "probByLength": 4.76,
-          "probOverall": 0.65
+          "probByLength": 5.77,
+          "probOverall": 0.7
+        },
+        "u": {
+          "cvPattern": "v",
+          "count": 1,
+          "probByLength": 1.92,
+          "probOverall": 0.23
         }
       },
       "2": {
-        "in": {
-          "cvPattern": "vc",
-          "count": 14,
-          "probByLength": 7.69,
-          "probOverall": 3.01
-        },
         "ro": {
           "cvPattern": "cv",
           "count": 12,
-          "probByLength": 6.59,
-          "probOverall": 2.58
-        },
-        "ir": {
-          "cvPattern": "vc",
-          "count": 11,
-          "probByLength": 6.04,
-          "probOverall": 2.37
-        },
-        "ge": {
-          "cvPattern": "cv",
-          "count": 10,
-          "probByLength": 5.49,
-          "probOverall": 2.15
+          "probByLength": 9.45,
+          "probOverall": 2.81
         },
         "ar": {
           "cvPattern": "vc",
           "count": 10,
-          "probByLength": 5.49,
-          "probOverall": 2.15
+          "probByLength": 7.87,
+          "probOverall": 2.34
         },
         "ra": {
           "cvPattern": "cv",
           "count": 8,
-          "probByLength": 4.4,
-          "probOverall": 1.72
-        },
-        "te": {
-          "cvPattern": "cv",
-          "count": 8,
-          "probByLength": 4.4,
-          "probOverall": 1.72
+          "probByLength": 6.3,
+          "probOverall": 1.87
         },
         "ga": {
           "cvPattern": "cv",
           "count": 7,
-          "probByLength": 3.85,
-          "probOverall": 1.51
-        },
-        "if": {
-          "cvPattern": "vc",
-          "count": 7,
-          "probByLength": 3.85,
-          "probOverall": 1.51
-        },
-        "la": {
-          "cvPattern": "cv",
-          "count": 7,
-          "probByLength": 3.85,
-          "probOverall": 1.51
+          "probByLength": 5.51,
+          "probOverall": 1.64
         },
         "na": {
           "cvPattern": "cv",
           "count": 6,
-          "probByLength": 3.3,
-          "probOverall": 1.29
+          "probByLength": 4.72,
+          "probOverall": 1.41
         },
         "el": {
           "cvPattern": "vc",
           "count": 6,
-          "probByLength": 3.3,
-          "probOverall": 1.29
+          "probByLength": 4.72,
+          "probOverall": 1.41
         },
-        "le": {
+        "va": {
           "cvPattern": "cv",
-          "count": 5,
-          "probByLength": 2.75,
-          "probOverall": 1.08
+          "count": 6,
+          "probByLength": 4.72,
+          "probOverall": 1.41
         },
         "al": {
           "cvPattern": "vc",
           "count": 5,
-          "probByLength": 2.75,
-          "probOverall": 1.08
+          "probByLength": 3.94,
+          "probOverall": 1.17
         },
         "li": {
           "cvPattern": "cv",
           "count": 5,
-          "probByLength": 2.75,
-          "probOverall": 1.08
-        },
-        "va": {
-          "cvPattern": "cv",
-          "count": 4,
-          "probByLength": 2.2,
-          "probOverall": 0.86
+          "probByLength": 3.94,
+          "probOverall": 1.17
         },
         "ta": {
           "cvPattern": "cv",
           "count": 4,
-          "probByLength": 2.2,
-          "probOverall": 0.86
+          "probByLength": 3.15,
+          "probOverall": 0.94
+        },
+        "la": {
+          "cvPattern": "cv",
+          "count": 4,
+          "probByLength": 3.15,
+          "probOverall": 0.94
         },
         "ne": {
           "cvPattern": "cv",
           "count": 3,
-          "probByLength": 1.65,
-          "probOverall": 0.65
+          "probByLength": 2.36,
+          "probOverall": 0.7
         },
         "ka": {
           "cvPattern": "cv",
           "count": 3,
-          "probByLength": 1.65,
-          "probOverall": 0.65
-        },
-        "ug": {
-          "cvPattern": "vc",
-          "count": 3,
-          "probByLength": 1.65,
-          "probOverall": 0.65
+          "probByLength": 2.36,
+          "probOverall": 0.7
         },
         "ma": {
           "cvPattern": "cv",
           "count": 3,
-          "probByLength": 1.65,
-          "probOverall": 0.65
+          "probByLength": 2.36,
+          "probOverall": 0.7
+        },
+        "in": {
+          "cvPattern": "vc",
+          "count": 3,
+          "probByLength": 2.36,
+          "probOverall": 0.7
         },
         "ni": {
           "cvPattern": "cv",
           "count": 2,
-          "probByLength": 1.1,
-          "probOverall": 0.43
+          "probByLength": 1.57,
+          "probOverall": 0.47
         },
         "vi": {
           "cvPattern": "cv",
           "count": 2,
-          "probByLength": 1.1,
-          "probOverall": 0.43
+          "probByLength": 1.57,
+          "probOverall": 0.47
         },
         "sa": {
           "cvPattern": "cv",
           "count": 2,
-          "probByLength": 1.1,
-          "probOverall": 0.43
+          "probByLength": 1.57,
+          "probOverall": 0.47
         },
         "su": {
           "cvPattern": "cv",
           "count": 2,
-          "probByLength": 1.1,
-          "probOverall": 0.43
+          "probByLength": 1.57,
+          "probOverall": 0.47
+        },
+        "fa": {
+          "cvPattern": "cv",
+          "count": 2,
+          "probByLength": 1.57,
+          "probOverall": 0.47
         },
         "ha": {
           "cvPattern": "cv",
           "count": 2,
-          "probByLength": 1.1,
-          "probOverall": 0.43
+          "probByLength": 1.57,
+          "probOverall": 0.47
         },
         "to": {
           "cvPattern": "cv",
           "count": 2,
-          "probByLength": 1.1,
-          "probOverall": 0.43
+          "probByLength": 1.57,
+          "probOverall": 0.47
         },
         "ri": {
           "cvPattern": "cv",
           "count": 2,
-          "probByLength": 1.1,
-          "probOverall": 0.43
+          "probByLength": 1.57,
+          "probOverall": 0.47
         },
         "ku": {
           "cvPattern": "cv",
           "count": 2,
-          "probByLength": 1.1,
-          "probOverall": 0.43
+          "probByLength": 1.57,
+          "probOverall": 0.47
         },
         "fu": {
           "cvPattern": "cv",
           "count": 2,
-          "probByLength": 1.1,
-          "probOverall": 0.43
+          "probByLength": 1.57,
+          "probOverall": 0.47
+        },
+        "le": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 0.79,
+          "probOverall": 0.23
         },
         "ur": {
           "cvPattern": "vc",
           "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
+          "probByLength": 0.79,
+          "probOverall": 0.23
         },
         "ja": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
+          "probByLength": 0.79,
+          "probOverall": 0.23
         },
         "gi": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
+          "probByLength": 0.79,
+          "probOverall": 0.23
         },
         "ki": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
+          "probByLength": 0.79,
+          "probOverall": 0.23
         },
         "bo": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
-        },
-        "uk": {
-          "cvPattern": "vc",
-          "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
-        },
-        "be": {
-          "cvPattern": "cv",
-          "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
+          "probByLength": 0.79,
+          "probOverall": 0.23
         },
         "ru": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
+          "probByLength": 0.79,
+          "probOverall": 0.23
         },
         "no": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
+          "probByLength": 0.79,
+          "probOverall": 0.23
         },
         "hi": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
+          "probByLength": 0.79,
+          "probOverall": 0.23
         },
         "mu": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
+          "probByLength": 0.79,
+          "probOverall": 0.23
         },
         "ti": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
+          "probByLength": 0.79,
+          "probOverall": 0.23
         },
         "an": {
           "cvPattern": "vc",
           "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
+          "probByLength": 0.79,
+          "probOverall": 0.23
         },
         "gu": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
+          "probByLength": 0.79,
+          "probOverall": 0.23
         },
         "da": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
+          "probByLength": 0.79,
+          "probOverall": 0.23
         },
         "he": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
+          "probByLength": 0.79,
+          "probOverall": 0.23
         },
         "et": {
           "cvPattern": "vc",
           "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
-        },
-        "fa": {
-          "cvPattern": "cv",
-          "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
-        },
-        "us": {
-          "cvPattern": "vc",
-          "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
+          "probByLength": 0.79,
+          "probOverall": 0.23
         },
         "di": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
+          "probByLength": 0.79,
+          "probOverall": 0.23
         },
         "go": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
+          "probByLength": 0.79,
+          "probOverall": 0.23
+        },
+        "ir": {
+          "cvPattern": "vc",
+          "count": 1,
+          "probByLength": 0.79,
+          "probOverall": 0.23
         },
         "am": {
           "cvPattern": "vc",
           "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
+          "probByLength": 0.79,
+          "probOverall": 0.23
+        },
+        "ge": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 0.79,
+          "probOverall": 0.23
         },
         "mo": {
           "cvPattern": "cv",
           "count": 1,
-          "probByLength": 0.55,
-          "probOverall": 0.22
+          "probByLength": 0.79,
+          "probOverall": 0.23
         }
       },
       "3": {
-        "hor": {
-          "cvPattern": "cvc",
-          "count": 10,
-          "probByLength": 6.85,
-          "probOverall": 2.15
-        },
         "mar": {
           "cvPattern": "cvc",
           "count": 9,
-          "probByLength": 6.16,
-          "probOverall": 1.94
+          "probByLength": 6.29,
+          "probOverall": 2.11
         },
         "nar": {
           "cvPattern": "cvc",
           "count": 9,
-          "probByLength": 6.16,
-          "probOverall": 1.94
+          "probByLength": 6.29,
+          "probOverall": 2.11
+        },
+        "hor": {
+          "cvPattern": "cvc",
+          "count": 9,
+          "probByLength": 6.29,
+          "probOverall": 2.11
         },
         "var": {
           "cvPattern": "cvc",
           "count": 8,
-          "probByLength": 5.48,
-          "probOverall": 1.72
+          "probByLength": 5.59,
+          "probOverall": 1.87
         },
         "rik": {
           "cvPattern": "cvc",
           "count": 5,
-          "probByLength": 3.42,
-          "probOverall": 1.08
-        },
-        "inn": {
-          "cvPattern": "vcc",
-          "count": 4,
-          "probByLength": 2.74,
-          "probOverall": 0.86
+          "probByLength": 3.5,
+          "probOverall": 1.17
         },
         "vin": {
           "cvPattern": "cvc",
           "count": 4,
-          "probByLength": 2.74,
-          "probOverall": 0.86
+          "probByLength": 2.8,
+          "probOverall": 0.94
         },
         "tar": {
           "cvPattern": "cvc",
           "count": 4,
-          "probByLength": 2.74,
-          "probOverall": 0.86
+          "probByLength": 2.8,
+          "probOverall": 0.94
         },
         "ngi": {
           "cvPattern": "ccv",
           "count": 4,
-          "probByLength": 2.74,
-          "probOverall": 0.86
+          "probByLength": 2.8,
+          "probOverall": 0.94
         },
         "gur": {
           "cvPattern": "cvc",
           "count": 4,
-          "probByLength": 2.74,
-          "probOverall": 0.86
+          "probByLength": 2.8,
+          "probOverall": 0.94
         },
         "jon": {
           "cvPattern": "cvc",
           "count": 3,
-          "probByLength": 2.05,
-          "probOverall": 0.65
+          "probByLength": 2.1,
+          "probOverall": 0.7
         },
         "dor": {
           "cvPattern": "cvc",
           "count": 3,
-          "probByLength": 2.05,
-          "probOverall": 0.65
+          "probByLength": 2.1,
+          "probOverall": 0.7
         },
         "dra": {
           "cvPattern": "ccv",
           "count": 2,
-          "probByLength": 1.37,
-          "probOverall": 0.43
+          "probByLength": 1.4,
+          "probOverall": 0.47
         },
         "rin": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 1.37,
-          "probOverall": 0.43
+          "probByLength": 1.4,
+          "probOverall": 0.47
         },
         "rim": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 1.37,
-          "probOverall": 0.43
+          "probByLength": 1.4,
+          "probOverall": 0.47
         },
         "dar": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 1.37,
-          "probOverall": 0.43
+          "probByLength": 1.4,
+          "probOverall": 0.47
         },
         "gil": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 1.37,
-          "probOverall": 0.43
+          "probByLength": 1.4,
+          "probOverall": 0.47
         },
         "far": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 1.37,
-          "probOverall": 0.43
+          "probByLength": 1.4,
+          "probOverall": 0.47
+        },
+        "mir": {
+          "cvPattern": "cvc",
+          "count": 2,
+          "probByLength": 1.4,
+          "probOverall": 0.47
         },
         "ver": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 1.37,
-          "probOverall": 0.43
+          "probByLength": 1.4,
+          "probOverall": 0.47
         },
         "kel": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 1.37,
-          "probOverall": 0.43
+          "probByLength": 1.4,
+          "probOverall": 0.47
         },
         "gna": {
           "cvPattern": "ccv",
           "count": 2,
-          "probByLength": 1.37,
-          "probOverall": 0.43
+          "probByLength": 1.4,
+          "probOverall": 0.47
         },
         "tan": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 1.37,
-          "probOverall": 0.43
+          "probByLength": 1.4,
+          "probOverall": 0.47
         },
         "tin": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 1.37,
-          "probOverall": 0.43
+          "probByLength": 1.4,
+          "probOverall": 0.47
         },
         "tur": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 1.37,
-          "probOverall": 0.43
+          "probByLength": 1.4,
+          "probOverall": 0.47
         },
         "tor": {
           "cvPattern": "cvc",
           "count": 2,
-          "probByLength": 1.37,
-          "probOverall": 0.43
+          "probByLength": 1.4,
+          "probOverall": 0.47
         },
         "dam": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "xan": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "der": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "fre": {
           "cvPattern": "ccv",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "dre": {
           "cvPattern": "ccv",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "ton": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "jot": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "nor": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "ron": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "unn": {
           "cvPattern": "vcc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "xel": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "mun": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "als": {
           "cvPattern": "vcc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "min": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
+        },
+        "jar": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "mil": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "oth": {
           "cvPattern": "vcc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "jof": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "bri": {
           "cvPattern": "ccv",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "org": {
           "cvPattern": "vcc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "rar": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "tav": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "sla": {
           "cvPattern": "ccv",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "taf": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "fli": {
           "cvPattern": "ccv",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
-        },
-        "mir": {
-          "cvPattern": "cvc",
-          "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "dan": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
+        },
+        "inn": {
+          "cvPattern": "vcc",
+          "count": 1,
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "dri": {
           "cvPattern": "ccv",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "nga": {
           "cvPattern": "ccv",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "kob": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "han": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "sef": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "kul": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "til": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "jan": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "fer": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "vik": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "gnu": {
           "cvPattern": "ccv",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "rel": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
+        },
+        "lyg": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "nir": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "bas": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "val": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "fan": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
-        },
-        "ing": {
-          "cvPattern": "vcc",
-          "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
-        },
-        "int": {
-          "cvPattern": "vcc",
-          "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "mon": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
+        },
+        "tyr": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "gar": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "sak": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
-        },
-        "sle": {
-          "cvPattern": "ccv",
-          "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "van": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "laf": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "kar": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "rir": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         },
         "lak": {
           "cvPattern": "cvc",
           "count": 1,
-          "probByLength": 0.68,
-          "probOverall": 0.22
+          "probByLength": 0.7,
+          "probOverall": 0.23
         }
       },
       "4": {
+        "geir": {
+          "cvPattern": "cvvc",
+          "count": 9,
+          "probByLength": 11.11,
+          "probOverall": 2.11
+        },
         "mund": {
           "cvPattern": "cvcc",
           "count": 5,
-          "probByLength": 9.09,
-          "probOverall": 1.08
+          "probByLength": 6.17,
+          "probOverall": 1.17
+        },
+        "leif": {
+          "cvPattern": "cvvc",
+          "count": 5,
+          "probByLength": 6.17,
+          "probOverall": 1.17
+        },
+        "tein": {
+          "cvPattern": "cvvc",
+          "count": 5,
+          "probByLength": 6.17,
+          "probOverall": 1.17
         },
         "bert": {
           "cvPattern": "cvcc",
           "count": 3,
-          "probByLength": 5.45,
-          "probOverall": 0.65
+          "probByLength": 3.7,
+          "probOverall": 0.7
         },
         "finn": {
           "cvPattern": "cvcc",
           "count": 3,
-          "probByLength": 5.45,
-          "probOverall": 0.65
+          "probByLength": 3.7,
+          "probOverall": 0.7
         },
         "mann": {
           "cvPattern": "cvcc",
           "count": 3,
-          "probByLength": 5.45,
-          "probOverall": 0.65
+          "probByLength": 3.7,
+          "probOverall": 0.7
+        },
+        "laug": {
+          "cvPattern": "cvvc",
+          "count": 3,
+          "probByLength": 3.7,
+          "probOverall": 0.7
         },
         "grim": {
           "cvPattern": "ccvc",
           "count": 3,
-          "probByLength": 5.45,
-          "probOverall": 0.65
+          "probByLength": 3.7,
+          "probOverall": 0.7
         },
         "berg": {
           "cvPattern": "cvcc",
           "count": 3,
-          "probByLength": 5.45,
-          "probOverall": 0.65
+          "probByLength": 3.7,
+          "probOverall": 0.7
         },
         "vald": {
           "cvPattern": "cvcc",
           "count": 3,
-          "probByLength": 5.45,
-          "probOverall": 0.65
+          "probByLength": 3.7,
+          "probOverall": 0.7
         },
         "bjar": {
           "cvPattern": "ccvc",
           "count": 2,
-          "probByLength": 3.64,
-          "probOverall": 0.43
+          "probByLength": 2.47,
+          "probOverall": 0.47
+        },
+        "jolf": {
+          "cvPattern": "cvcc",
+          "count": 2,
+          "probByLength": 2.47,
+          "probOverall": 0.47
+        },
+        "thor": {
+          "cvPattern": "ccvc",
+          "count": 2,
+          "probByLength": 2.47,
+          "probOverall": 0.47
         },
         "dolf": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "gnar": {
           "cvPattern": "ccvc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "nald": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "dikt": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "tmar": {
           "cvPattern": "ccvc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
+        },
+        "julf": {
+          "cvPattern": "cvcc",
+          "count": 1,
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "lert": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "lend": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "ling": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
-        },
-        "jolf": {
-          "cvPattern": "cvcc",
-          "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "vind": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "kalk": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
-        },
-        "thor": {
-          "cvPattern": "ccvc",
-          "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "rald": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "kuld": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "hann": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
+        },
+        "bein": {
+          "cvPattern": "cvvc",
+          "count": 1,
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "trek": {
           "cvPattern": "ccvc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "nolf": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "hvat": {
           "cvPattern": "ccvc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "gmar": {
           "cvPattern": "ccvc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "gurs": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "gurt": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "gnir": {
           "cvPattern": "ccvc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "helm": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "jalm": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "king": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "gust": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "gmun": {
           "cvPattern": "ccvc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "rinn": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "hall": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         },
         "rolf": {
           "cvPattern": "cvcc",
           "count": 1,
-          "probByLength": 1.82,
-          "probOverall": 0.22
+          "probByLength": 1.23,
+          "probOverall": 0.23
         }
       },
       "5": {
         "björn": {
           "cvPattern": "ccvcc",
           "count": 10,
-          "probByLength": 52.63,
-          "probOverall": 2.15
+          "probByLength": 41.67,
+          "probOverall": 2.34
+        },
+        "teinn": {
+          "cvPattern": "cvvcc",
+          "count": 3,
+          "probByLength": 12.5,
+          "probOverall": 0.7
         },
         "bjart": {
           "cvPattern": "ccvcc",
           "count": 2,
-          "probByLength": 10.53,
-          "probOverall": 0.43
+          "probByLength": 8.33,
+          "probOverall": 0.47
         },
         "brand": {
           "cvPattern": "ccvcc",
           "count": 1,
-          "probByLength": 5.26,
-          "probOverall": 0.22
+          "probByLength": 4.17,
+          "probOverall": 0.23
         },
         "ngolf": {
           "cvPattern": "ccvcc",
           "count": 1,
-          "probByLength": 5.26,
-          "probOverall": 0.22
+          "probByLength": 4.17,
+          "probOverall": 0.23
         },
         "tmann": {
           "cvPattern": "ccvcc",
           "count": 1,
-          "probByLength": 5.26,
-          "probOverall": 0.22
+          "probByLength": 4.17,
+          "probOverall": 0.23
         },
         "tmund": {
           "cvPattern": "ccvcc",
           "count": 1,
-          "probByLength": 5.26,
-          "probOverall": 0.22
+          "probByLength": 4.17,
+          "probOverall": 0.23
         },
         "trick": {
           "cvPattern": "ccvcc",
           "count": 1,
-          "probByLength": 5.26,
-          "probOverall": 0.22
+          "probByLength": 4.17,
+          "probOverall": 0.23
         },
         "gmund": {
           "cvPattern": "ccvcc",
           "count": 1,
-          "probByLength": 5.26,
-          "probOverall": 0.22
+          "probByLength": 4.17,
+          "probOverall": 0.23
+        },
+        "trygg": {
+          "cvPattern": "ccvcc",
+          "count": 1,
+          "probByLength": 4.17,
+          "probOverall": 0.23
         },
         "smund": {
           "cvPattern": "ccvcc",
           "count": 1,
-          "probByLength": 5.26,
-          "probOverall": 0.22
+          "probByLength": 4.17,
+          "probOverall": 0.23
+        },
+        "sleif": {
+          "cvPattern": "ccvvc",
+          "count": 1,
+          "probByLength": 4.17,
+          "probOverall": 0.23
         }
       }
     },
