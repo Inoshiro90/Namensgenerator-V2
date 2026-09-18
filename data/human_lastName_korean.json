@@ -1,0 +1,677 @@
+{
+  "_version": "2026-09-18/21-46-04",
+  "profile": "korean",
+  "nameCount": 28,
+  "names": [
+    "Ahn",
+    "Bae",
+    "Baek",
+    "Cho",
+    "Choi",
+    "Han",
+    "Hong",
+    "Hwang",
+    "Im",
+    "Jang",
+    "Jeon",
+    "Jeong",
+    "Jo",
+    "Jong",
+    "Jung",
+    "Kang",
+    "Kim",
+    "Kwon",
+    "Lee",
+    "Lim",
+    "Oh",
+    "Park",
+    "Seo",
+    "Shin",
+    "Song",
+    "Yim",
+    "Yoo",
+    "Yoon"
+  ],
+  "nameLengths": {
+    "2": {
+      "count": 3,
+      "probability": 10.71
+    },
+    "3": {
+      "count": 10,
+      "probability": 35.71
+    },
+    "4": {
+      "count": 13,
+      "probability": 46.43
+    },
+    "5": {
+      "count": 2,
+      "probability": 7.14
+    }
+  },
+  "cvPatterns": {
+    "2": {
+      "total": 3,
+      "patterns": {
+        "Vc": 66.67,
+        "Cv": 33.33
+      }
+    },
+    "3": {
+      "total": 10,
+      "patterns": {
+        "Cvv": 40,
+        "Cvc": 40,
+        "Vcc": 10,
+        "Ccv": 10
+      }
+    },
+    "4": {
+      "total": 13,
+      "patterns": {
+        "Cvcc": 53.85,
+        "Cvvc": 23.08,
+        "Ccvc": 15.38,
+        "Ccvv": 7.69
+      }
+    },
+    "5": {
+      "total": 2,
+      "patterns": {
+        "Ccvcc": 50,
+        "Cvvcc": 50
+      }
+    }
+  },
+  "vowelCombinations": {
+    "prefix": {
+      "1": {
+        "a": {
+          "cvPattern": "V",
+          "count": 1,
+          "probByLength": 25,
+          "probOverall": 25
+        },
+        "o": {
+          "cvPattern": "v",
+          "count": 1,
+          "probByLength": 25,
+          "probOverall": 25
+        },
+        "i": {
+          "cvPattern": "V",
+          "count": 1,
+          "probByLength": 25,
+          "probOverall": 25
+        },
+        "yoo": {
+          "cvPattern": "Cvv",
+          "count": 1,
+          "probByLength": 25,
+          "probOverall": 25
+        }
+      }
+    },
+    "infix": {
+      "1": {
+        "a": {
+          "cvPattern": "V",
+          "count": 4,
+          "probByLength": 23.53,
+          "probOverall": 23.53
+        },
+        "i": {
+          "cvPattern": "V",
+          "count": 4,
+          "probByLength": 23.53,
+          "probOverall": 23.53
+        },
+        "o": {
+          "cvPattern": "v",
+          "count": 3,
+          "probByLength": 17.65,
+          "probOverall": 17.65
+        },
+        "eo": {
+          "cvPattern": "vv",
+          "count": 2,
+          "probByLength": 11.76,
+          "probOverall": 11.76
+        },
+        "ae": {
+          "cvPattern": "vv",
+          "count": 1,
+          "probByLength": 5.88,
+          "probOverall": 5.88
+        },
+        "wa": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 5.88,
+          "probOverall": 5.88
+        },
+        "u": {
+          "cvPattern": "v",
+          "count": 1,
+          "probByLength": 5.88,
+          "probOverall": 5.88
+        },
+        "wo": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 5.88,
+          "probOverall": 5.88
+        }
+      }
+    },
+    "suffix": {
+      "1": {
+        "o": {
+          "cvPattern": "v",
+          "count": 2,
+          "probByLength": 33.33,
+          "probOverall": 33.33
+        },
+        "ae": {
+          "cvPattern": "vv",
+          "count": 1,
+          "probByLength": 16.67,
+          "probOverall": 16.67
+        },
+        "oi": {
+          "cvPattern": "vv",
+          "count": 1,
+          "probByLength": 16.67,
+          "probOverall": 16.67
+        },
+        "eo": {
+          "cvPattern": "vv",
+          "count": 1,
+          "probByLength": 16.67,
+          "probOverall": 16.67
+        },
+        "ee": {
+          "cvPattern": "vv",
+          "count": 1,
+          "probByLength": 16.67,
+          "probOverall": 16.67
+        }
+      }
+    }
+  },
+  "consonantCombinations": {
+    "prefix": {
+      "1": {
+        "j": {
+          "cvPattern": "C",
+          "count": 6,
+          "probByLength": 26.09,
+          "probOverall": 26.09
+        },
+        "k": {
+          "cvPattern": "c",
+          "count": 3,
+          "probByLength": 13.04,
+          "probOverall": 13.04
+        },
+        "h": {
+          "cvPattern": "C",
+          "count": 3,
+          "probByLength": 13.04,
+          "probOverall": 13.04
+        },
+        "b": {
+          "cvPattern": "C",
+          "count": 2,
+          "probByLength": 8.7,
+          "probOverall": 8.7
+        },
+        "ch": {
+          "cvPattern": "Cc",
+          "count": 2,
+          "probByLength": 8.7,
+          "probOverall": 8.7
+        },
+        "l": {
+          "cvPattern": "C",
+          "count": 2,
+          "probByLength": 8.7,
+          "probOverall": 8.7
+        },
+        "s": {
+          "cvPattern": "C",
+          "count": 2,
+          "probByLength": 8.7,
+          "probOverall": 8.7
+        },
+        "p": {
+          "cvPattern": "C",
+          "count": 1,
+          "probByLength": 4.35,
+          "probOverall": 4.35
+        },
+        "sh": {
+          "cvPattern": "Cc",
+          "count": 1,
+          "probByLength": 4.35,
+          "probOverall": 4.35
+        },
+        "y": {
+          "cvPattern": "C",
+          "count": 1,
+          "probByLength": 4.35,
+          "probOverall": 4.35
+        }
+      }
+    },
+    "infix": {},
+    "suffix": {
+      "1": {
+        "ng": {
+          "cvPattern": "cc",
+          "count": 8,
+          "probByLength": 42.11,
+          "probOverall": 38.1
+        },
+        "n": {
+          "cvPattern": "c",
+          "count": 5,
+          "probByLength": 26.32,
+          "probOverall": 23.81
+        },
+        "m": {
+          "cvPattern": "c",
+          "count": 4,
+          "probByLength": 21.05,
+          "probOverall": 19.05
+        },
+        "k": {
+          "cvPattern": "c",
+          "count": 1,
+          "probByLength": 5.26,
+          "probOverall": 4.76
+        },
+        "h": {
+          "cvPattern": "C",
+          "count": 1,
+          "probByLength": 5.26,
+          "probOverall": 4.76
+        }
+      },
+      "2": {
+        "hn": {
+          "cvPattern": "cc",
+          "count": 1,
+          "probByLength": 50,
+          "probOverall": 4.76
+        },
+        "rk": {
+          "cvPattern": "cc",
+          "count": 1,
+          "probByLength": 50,
+          "probOverall": 4.76
+        }
+      }
+    }
+  },
+  "syllables": {
+    "prefix": {
+      "2": {
+        "im": {
+          "cvPattern": "vc",
+          "count": 1,
+          "probByLength": 33.33,
+          "probOverall": 3.57
+        },
+        "jo": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 33.33,
+          "probOverall": 3.57
+        },
+        "oh": {
+          "cvPattern": "vc",
+          "count": 1,
+          "probByLength": 33.33,
+          "probOverall": 3.57
+        }
+      },
+      "3": {
+        "ahn": {
+          "cvPattern": "vcc",
+          "count": 1,
+          "probByLength": 10,
+          "probOverall": 3.57
+        },
+        "bae": {
+          "cvPattern": "cvv",
+          "count": 1,
+          "probByLength": 10,
+          "probOverall": 3.57
+        },
+        "cho": {
+          "cvPattern": "ccv",
+          "count": 1,
+          "probByLength": 10,
+          "probOverall": 3.57
+        },
+        "han": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 10,
+          "probOverall": 3.57
+        },
+        "kim": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 10,
+          "probOverall": 3.57
+        },
+        "lee": {
+          "cvPattern": "cvv",
+          "count": 1,
+          "probByLength": 10,
+          "probOverall": 3.57
+        },
+        "lim": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 10,
+          "probOverall": 3.57
+        },
+        "seo": {
+          "cvPattern": "cvv",
+          "count": 1,
+          "probByLength": 10,
+          "probOverall": 3.57
+        },
+        "yim": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 10,
+          "probOverall": 3.57
+        },
+        "yoo": {
+          "cvPattern": "cvv",
+          "count": 1,
+          "probByLength": 10,
+          "probOverall": 3.57
+        }
+      },
+      "4": {
+        "baek": {
+          "cvPattern": "cvvc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "choi": {
+          "cvPattern": "ccvv",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "hong": {
+          "cvPattern": "cvcc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "jang": {
+          "cvPattern": "cvcc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "jeon": {
+          "cvPattern": "cvvc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "jong": {
+          "cvPattern": "cvcc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "jung": {
+          "cvPattern": "cvcc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "kang": {
+          "cvPattern": "cvcc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "kwon": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "park": {
+          "cvPattern": "cvcc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "shin": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "song": {
+          "cvPattern": "cvcc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "yoon": {
+          "cvPattern": "cvvc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        }
+      },
+      "5": {
+        "hwang": {
+          "cvPattern": "ccvcc",
+          "count": 1,
+          "probByLength": 50,
+          "probOverall": 3.57
+        },
+        "jeong": {
+          "cvPattern": "cvvcc",
+          "count": 1,
+          "probByLength": 50,
+          "probOverall": 3.57
+        }
+      }
+    },
+    "infix": {},
+    "suffix": {
+      "2": {
+        "im": {
+          "cvPattern": "vc",
+          "count": 1,
+          "probByLength": 33.33,
+          "probOverall": 3.57
+        },
+        "jo": {
+          "cvPattern": "cv",
+          "count": 1,
+          "probByLength": 33.33,
+          "probOverall": 3.57
+        },
+        "oh": {
+          "cvPattern": "vc",
+          "count": 1,
+          "probByLength": 33.33,
+          "probOverall": 3.57
+        }
+      },
+      "3": {
+        "ahn": {
+          "cvPattern": "vcc",
+          "count": 1,
+          "probByLength": 10,
+          "probOverall": 3.57
+        },
+        "bae": {
+          "cvPattern": "cvv",
+          "count": 1,
+          "probByLength": 10,
+          "probOverall": 3.57
+        },
+        "cho": {
+          "cvPattern": "ccv",
+          "count": 1,
+          "probByLength": 10,
+          "probOverall": 3.57
+        },
+        "han": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 10,
+          "probOverall": 3.57
+        },
+        "kim": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 10,
+          "probOverall": 3.57
+        },
+        "lee": {
+          "cvPattern": "cvv",
+          "count": 1,
+          "probByLength": 10,
+          "probOverall": 3.57
+        },
+        "lim": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 10,
+          "probOverall": 3.57
+        },
+        "seo": {
+          "cvPattern": "cvv",
+          "count": 1,
+          "probByLength": 10,
+          "probOverall": 3.57
+        },
+        "yim": {
+          "cvPattern": "cvc",
+          "count": 1,
+          "probByLength": 10,
+          "probOverall": 3.57
+        },
+        "yoo": {
+          "cvPattern": "cvv",
+          "count": 1,
+          "probByLength": 10,
+          "probOverall": 3.57
+        }
+      },
+      "4": {
+        "baek": {
+          "cvPattern": "cvvc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "choi": {
+          "cvPattern": "ccvv",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "hong": {
+          "cvPattern": "cvcc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "jang": {
+          "cvPattern": "cvcc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "jeon": {
+          "cvPattern": "cvvc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "jong": {
+          "cvPattern": "cvcc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "jung": {
+          "cvPattern": "cvcc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "kang": {
+          "cvPattern": "cvcc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "kwon": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "park": {
+          "cvPattern": "cvcc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "shin": {
+          "cvPattern": "ccvc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "song": {
+          "cvPattern": "cvcc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        },
+        "yoon": {
+          "cvPattern": "cvvc",
+          "count": 1,
+          "probByLength": 7.69,
+          "probOverall": 3.57
+        }
+      },
+      "5": {
+        "hwang": {
+          "cvPattern": "ccvcc",
+          "count": 1,
+          "probByLength": 50,
+          "probOverall": 3.57
+        },
+        "jeong": {
+          "cvPattern": "cvvcc",
+          "count": 1,
+          "probByLength": 50,
+          "probOverall": 3.57
+        }
+      }
+    }
+  }
+}
