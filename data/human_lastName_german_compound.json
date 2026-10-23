@@ -21,6 +21,10 @@
         "als_zweit": [
           ""
         ]
+      },
+      "semantik": {
+        "primaer": "person.verwandtschaft",
+        "weitere": []
       }
     },
     "Kind": {
@@ -44,6 +48,10 @@
         "als_zweit": [
           ""
         ]
+      },
+      "semantik": {
+        "primaer": "person.verwandtschaft",
+        "weitere": []
       }
     },
     "Stein": {
@@ -66,6 +74,10 @@
         "als_zweit": [
           ""
         ]
+      },
+      "semantik": {
+        "primaer": "material.stein",
+        "weitere": []
       }
     },
     "Wolf": {
@@ -89,6 +101,10 @@
         "als_zweit": [
           ""
         ]
+      },
+      "semantik": {
+        "primaer": "kreatur.tier",
+        "weitere": []
       }
     }
   },
@@ -110,6 +126,10 @@
           "e"
         ],
         "als_zweit": null
+      },
+      "semantik": {
+        "primaer": "handlung",
+        "weitere": []
       }
     },
     "laufen": {
@@ -129,6 +149,10 @@
           "e"
         ],
         "als_zweit": null
+      },
+      "semantik": {
+        "primaer": "handlung",
+        "weitere": []
       }
     },
     "singen": {
@@ -148,6 +172,10 @@
           "e"
         ],
         "als_zweit": null
+      },
+      "semantik": {
+        "primaer": "handlung",
+        "weitere": []
       }
     }
   },
@@ -170,6 +198,10 @@
           "e"
         ],
         "als_zweit": null
+      },
+      "semantik": {
+        "primaer": "modifikator.sinne",
+        "weitere": []
       }
     },
     "groß": {
@@ -190,6 +222,10 @@
           "e"
         ],
         "als_zweit": null
+      },
+      "semantik": {
+        "primaer": "modifikator.form",
+        "weitere": []
       }
     },
     "schnell": {
@@ -335,6 +371,307 @@
           ""
         ],
         "als_zweit": null
+      }
+    }
+  },
+  "_taxonomie": {
+    "version": 1,
+    "knoten": {
+      "person": {
+        "name": "Person",
+        "parent": null
+      },
+      "person.beruf": {
+        "name": "Beruf & Handwerk",
+        "parent": "person"
+      },
+      "person.herrschaft": {
+        "name": "Herrschaft & Amt",
+        "parent": "person"
+      },
+      "person.gelehrte": {
+        "name": "Gelehrte & Kunst",
+        "parent": "person"
+      },
+      "person.kampf": {
+        "name": "Kampf & Wache",
+        "parent": "person"
+      },
+      "person.archetyp": {
+        "name": "Archetyp & Wesensart",
+        "parent": "person"
+      },
+      "person.aussenseiter": {
+        "name": "Außenseiter & Zustand",
+        "parent": "person"
+      },
+      "person.verwandtschaft": {
+        "name": "Verwandtschaft & Lebensphase",
+        "parent": "person"
+      },
+      "person.volk": {
+        "name": "Volk & Spezies",
+        "parent": "person"
+      },
+      "gruppe": {
+        "name": "Gruppe",
+        "parent": null
+      },
+      "gruppe.militaer": {
+        "name": "Militär",
+        "parent": "gruppe"
+      },
+      "gruppe.politik": {
+        "name": "Politik & Herrschaftsform",
+        "parent": "gruppe"
+      },
+      "gruppe.wirtschaft": {
+        "name": "Wirtschaft & Zunft",
+        "parent": "gruppe"
+      },
+      "gruppe.religion": {
+        "name": "Religion",
+        "parent": "gruppe"
+      },
+      "gruppe.bildung": {
+        "name": "Bildung & Kunst",
+        "parent": "gruppe"
+      },
+      "gruppe.abstammung": {
+        "name": "Abstammung & Gemeinschaft",
+        "parent": "gruppe"
+      },
+      "gruppe.untergrund": {
+        "name": "Untergrund",
+        "parent": "gruppe"
+      },
+      "gruppe.menge": {
+        "name": "Lose Menge",
+        "parent": "gruppe"
+      },
+      "kreatur": {
+        "name": "Kreatur",
+        "parent": null
+      },
+      "kreatur.tier": {
+        "name": "Tier",
+        "parent": "kreatur"
+      },
+      "kreatur.pflanze": {
+        "name": "Pflanze & Pilz",
+        "parent": "kreatur"
+      },
+      "kreatur.fabelwesen": {
+        "name": "Fabelwesen & Ungeheuer",
+        "parent": "kreatur"
+      },
+      "kreatur.himmlisch": {
+        "name": "Himmlisches & Unholdiges",
+        "parent": "kreatur"
+      },
+      "kreatur.geist": {
+        "name": "Geister & Konstrukte",
+        "parent": "kreatur"
+      },
+      "koerperteil": {
+        "name": "Körperteil",
+        "parent": null
+      },
+      "objekt": {
+        "name": "Objekt",
+        "parent": null
+      },
+      "objekt.waffe": {
+        "name": "Waffe",
+        "parent": "objekt"
+      },
+      "objekt.ruestung": {
+        "name": "Rüstung & Schutz",
+        "parent": "objekt"
+      },
+      "objekt.kleidung": {
+        "name": "Kleidung & Schmuck",
+        "parent": "objekt"
+      },
+      "objekt.behaelter": {
+        "name": "Behälter",
+        "parent": "objekt"
+      },
+      "objekt.werkzeug": {
+        "name": "Werkzeug & Gerät",
+        "parent": "objekt"
+      },
+      "objekt.instrument": {
+        "name": "Instrument",
+        "parent": "objekt"
+      },
+      "objekt.fahrzeug": {
+        "name": "Fahrzeug",
+        "parent": "objekt"
+      },
+      "objekt.schrift": {
+        "name": "Schrift & Wissen",
+        "parent": "objekt"
+      },
+      "objekt.spiel": {
+        "name": "Spiel",
+        "parent": "objekt"
+      },
+      "material": {
+        "name": "Material",
+        "parent": null
+      },
+      "material.metall": {
+        "name": "Metall & Erz",
+        "parent": "material"
+      },
+      "material.stein": {
+        "name": "Stein & Erde",
+        "parent": "material"
+      },
+      "material.edelstein": {
+        "name": "Edelstein",
+        "parent": "material"
+      },
+      "material.pflanzlich": {
+        "name": "Pflanzlicher Rohstoff",
+        "parent": "material"
+      },
+      "material.tierisch": {
+        "name": "Tierischer Rohstoff",
+        "parent": "material"
+      },
+      "material.faser": {
+        "name": "Faser & Textil",
+        "parent": "material"
+      },
+      "material.nahrung": {
+        "name": "Nahrung & Würze",
+        "parent": "material"
+      },
+      "material.chemie": {
+        "name": "Chemikalie & Brennstoff",
+        "parent": "material"
+      },
+      "material.baustoff": {
+        "name": "Baustoff & Bindemittel",
+        "parent": "material"
+      },
+      "ort": {
+        "name": "Ort",
+        "parent": null
+      },
+      "ort.landschaft": {
+        "name": "Landschaft & Biom",
+        "parent": "ort"
+      },
+      "ort.gewaesser": {
+        "name": "Gewässer & Küste",
+        "parent": "ort"
+      },
+      "ort.siedlung": {
+        "name": "Siedlung",
+        "parent": "ort"
+      },
+      "ort.bauwerk": {
+        "name": "Bauwerk & Anlage",
+        "parent": "ort"
+      },
+      "ereignis": {
+        "name": "Ereignis",
+        "parent": null
+      },
+      "ereignis.natur": {
+        "name": "Naturereignis",
+        "parent": "ereignis"
+      },
+      "ereignis.konflikt": {
+        "name": "Krieg & Konflikt",
+        "parent": "ereignis"
+      },
+      "ereignis.politik": {
+        "name": "Politik & Recht",
+        "parent": "ereignis"
+      },
+      "ereignis.fest": {
+        "name": "Fest & Ritual",
+        "parent": "ereignis"
+      },
+      "ereignis.lebenszyklus": {
+        "name": "Lebenszyklus",
+        "parent": "ereignis"
+      },
+      "ereignis.unglueck": {
+        "name": "Unglück",
+        "parent": "ereignis"
+      },
+      "handlung": {
+        "name": "Handlung",
+        "parent": null
+      },
+      "konzept": {
+        "name": "Konzept",
+        "parent": null
+      },
+      "konzept.farbe": {
+        "name": "Farbe",
+        "parent": "konzept"
+      },
+      "konzept.zeit": {
+        "name": "Himmel & Zeit",
+        "parent": "konzept"
+      },
+      "konzept.prinzip": {
+        "name": "Prinzip & Abstraktum",
+        "parent": "konzept"
+      },
+      "konzept.element": {
+        "name": "Element & Naturkraft",
+        "parent": "konzept"
+      },
+      "goettliches": {
+        "name": "Göttliches",
+        "parent": null
+      },
+      "goettliches.domaene": {
+        "name": "Domäne & Aspekt",
+        "parent": "goettliches"
+      },
+      "goettliches.beiname": {
+        "name": "Beiname & Archetyp",
+        "parent": "goettliches"
+      },
+      "modifikator": {
+        "name": "Modifikator",
+        "parent": null
+      },
+      "modifikator.charakter": {
+        "name": "Charakter & Haltung",
+        "parent": "modifikator"
+      },
+      "modifikator.koerper": {
+        "name": "Körper & Erscheinung",
+        "parent": "modifikator"
+      },
+      "modifikator.form": {
+        "name": "Oberfläche & Form",
+        "parent": "modifikator"
+      },
+      "modifikator.zustand": {
+        "name": "Zustand & Alter",
+        "parent": "modifikator"
+      },
+      "modifikator.sinne": {
+        "name": "Sinneseindruck",
+        "parent": "modifikator"
+      },
+      "modifikator.stil": {
+        "name": "Stil & Wertung",
+        "parent": "modifikator"
+      },
+      "modifikator.aehnlichkeit": {
+        "name": "Ähnlichkeit (-artig)",
+        "parent": "modifikator"
       }
     }
   }
