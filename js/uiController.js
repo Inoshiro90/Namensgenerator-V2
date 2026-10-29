@@ -3,7 +3,7 @@
  *
  * Verantwortlich für:
  *  - Initialisierung interaktiver Komponenten (Letter Picker, Tabs)
- *  - Befüllen von Dropdowns (Völker, Sprachfamilien)
+ *  - Befüllen von Dropdowns (Systeme, Völker, Sprachfamilien)
  *  - Auslesen aller Formularwerte → Config-Objekt
  *  - Rendern der generierten Namen (alphabetisch, gruppiert)
  *  - Zustands-Management (loading / empty / error / results)
@@ -19,7 +19,7 @@ import { VirtualList, VIRTUAL_THRESHOLD } from './virtualList.js';
 // Modul-interner State
 // ─────────────────────────────────────────────────
 let _favorites  = new Set(); // Set<string> — gespeicherte Favoriten
-let _history    = [];        // Array<{ names, config, timestamp }>
+let _history    = [];        // Array<{ names, requestedConfig, resolvedConfig, config, timestamp, count }>
 let _activeTab  = 'results';
 /** Buchstaben→Anzahl während chunkweiser Generierung */
 const _chunkedTotals = new Map();
@@ -132,44 +132,131 @@ export function getSelectedLetters() {
 }
 
 // ═══════════════════════════════════════════════════
-// VÖLKER / SPRACHFAMILIEN
+// SYSTEME / VÖLKER / SPRACHFAMILIEN
 // ═══════════════════════════════════════════════════
 
 /**
- * Befüllt den Völker-Select mit Einträgen aus der peoples.json.
- * Völker mit languageFamilies erhalten ein <optgroup>.
+ * Befüllt den System-Select. „Zufall“ steht immer an erster Stelle und ist
+ * Standard. Systeme ohne verwendbare Daten werden deaktiviert angezeigt.
+ * Eine gültige bisherige Auswahl bleibt erhalten; sonst → „Zufall“.
  *
- * @param {Array} peoples - Metadaten-Array
+ * @param {{id: string, label: string, disabled: boolean, title?: string}[]} systems
+ *        View-Modell aus selection.js → buildSystemOptions()
+ * @returns {string} die nach dem Befüllen aktive System-ID
  */
-export function populatePeoples(peoples) {
+export function populateSystems(systems) {
+  const select = document.getElementById('selectSystem');
+  if (!select) return 'random';
+
+  const previous = select.value || 'random';
+  select.innerHTML = '<option value="random">Zufall</option>';
+
+  for (const s of systems) {
+    const opt       = document.createElement('option');
+    opt.value       = s.id;
+    opt.textContent = s.label;
+    opt.disabled    = Boolean(s.disabled);
+    if (s.title) opt.title = s.title;
+    select.appendChild(opt);
+  }
+
+  const keep = systems.some(s => s.id === previous && !s.disabled);
+  select.value = keep ? previous : 'random';
+
+  const hint = document.getElementById('systemHint');
+  if (hint) {
+    const inactive = systems.filter(s => s.disabled).length;
+    hint.textContent = inactive > 0
+      ? 'Ausgegraute Systeme besitzen noch keine verwendbaren Namensdaten.'
+      : '';
+    hint.style.display = inactive > 0 ? '' : 'none';
+  }
+  return select.value;
+}
+
+/**
+ * Befüllt den Volk-Select für das aktuell gewählte System.
+ * Völker mit Untergruppen (languageFamilies) erhalten ein <optgroup>.
+ *
+ * - items === null → System steht auf „Zufall“: nur „Zufall“ wählbar,
+ *   das Volk wird innerhalb des zufällig bestimmten Systems ausgewählt.
+ * - Eine bisherige Auswahl bleibt erhalten, sofern sie im neuen System
+ *   existiert und nicht deaktiviert ist; andernfalls → „Zufall“.
+ *
+ * @param {Array|null} items - View-Modell aus selection.js → buildPeopleOptions()
+ * @param {{systemLabel?: string}} [opts]
+ * @returns {{value: string, corrected: boolean, previousLabel: string}}
+ */
+export function populatePeoples(items, { systemLabel = '' } = {}) {
   const select = document.getElementById('selectPeople');
-  if (!select) return;
+  if (!select) return { value: 'random', corrected: false, previousLabel: '' };
+
+  const previous      = select.value || 'random';
+  const previousLabel = select.selectedOptions?.[0]?.textContent ?? previous;
 
   // "Zufall"-Option beibehalten, Rest ersetzen
   select.innerHTML = '<option value="random">Zufall</option>';
 
-  for (const people of peoples) {
-    if (people.id === 'random') continue;
+  const enabledValues = new Set(['random']);
+  const makeOption = (o) => {
+    const opt       = document.createElement('option');
+    opt.value       = o.value;
+    opt.textContent = o.label;
+    opt.disabled    = Boolean(o.disabled);
+    if (o.title) opt.title = o.title;
+    if (!o.disabled) enabledValues.add(o.value);
+    return opt;
+  };
 
-    if (people.languageFamilies?.length > 0) {
+  for (const item of items ?? []) {
+    if (item.type === 'group') {
       // Mit Untergruppen → <optgroup>
       const group = document.createElement('optgroup');
-      group.label = people.label;
-
-      for (const lang of people.languageFamilies) {
-        const opt        = document.createElement('option');
-        opt.value        = lang.id;
-        opt.textContent  = lang.label;
-        group.appendChild(opt);
-      }
+      group.label = item.label;
+      item.options.forEach(o => group.appendChild(makeOption(o)));
       select.appendChild(group);
     } else {
-      const opt        = document.createElement('option');
-      opt.value        = people.id;
-      opt.textContent  = people.label;
-      select.appendChild(opt);
+      select.appendChild(makeOption(item));
     }
   }
+
+  const randomOnly = items === null;
+  select.disabled  = randomOnly;
+
+  const value     = enabledValues.has(previous) ? previous : 'random';
+  select.value    = value;
+  const corrected = previous !== 'random' && value !== previous;
+
+  const hint = document.getElementById('peopleHint');
+  if (hint) {
+    hint.textContent = randomOnly
+      ? 'Das Volk wird zufällig innerhalb des zufällig gewählten Systems bestimmt.'
+      : (items.length === 0 && systemLabel ? `Für „${systemLabel}“ sind noch keine Völker hinterlegt.` : '');
+    hint.style.display = hint.textContent ? '' : 'none';
+  }
+
+  return { value, corrected, previousLabel };
+}
+
+/**
+ * Liefert die sichtbare Bezeichnung einer Option aus einem Formular-Select
+ * (einzige Quelle für Anzeigenamen von Namensart, Geschlecht, Generierungsart).
+ */
+function _optionLabel(selectId, value) {
+  const sel = document.getElementById(selectId);
+  const opt = sel ? [...sel.options].find(o => o.value === value) : null;
+  return opt?.textContent?.trim() ?? null;
+}
+
+/** Anzeigename einer Namensart (z. B. 'fullName' → „Vor- & Nachname“). */
+export function getNameTypeLabel(nameType) {
+  return _optionLabel('selectNameType', nameType) ?? nameType;
+}
+
+/** Anzeigename eines Geschlechts; null → „Geschlechtsunabhängig“. */
+export function getGenderLabel(gender) {
+  if (!gender) return 'Geschlechtsunabhängig';
+  return _optionLabel('selectGender', gender) ?? gender;
 }
 
 // ═══════════════════════════════════════════════════
@@ -180,7 +267,8 @@ export function populatePeoples(peoples) {
  * Sammelt alle Formularwerte in ein einheitliches Config-Objekt.
  *
  * @returns {{
- *   peopleId:       string,
+ *   systemId:       string,   // 'random' oder System-ID
+ *   peopleId:       string,   // 'random', Volks-ID oder Untergruppen-ID (im gewählten System)
  *   gender:         string,
  *   nameType:       string,
  *   genMethod:      string,
@@ -214,6 +302,7 @@ export function getFormConfig() {
   };
 
   return {
+    systemId:         document.getElementById('selectSystem')?.value  || 'random',
     peopleId:         document.getElementById('selectPeople')?.value  ?? 'random',
     gender:           getField('gender')     ?? 'random',
     nameType:         getField('nameType')   ?? 'firstName',
@@ -507,16 +596,26 @@ export function getFavorites() {
 
 /**
  * Fügt einen Eintrag zum Verlauf hinzu.
+ *
+ * Angeforderte und tatsächlich verwendete Auswahl werden getrennt gespeichert:
+ *  - requestedConfig: Formularwerte inkl. „Zufall“ (Diagnose / erneute Ausführung)
+ *  - resolvedConfig:  Werte, mit denen geladen + generiert wurde
+ *                     (stammt direkt aus _loadDataForConfig, keine Neuberechnung)
+ *
  * @param {string[]} names
- * @param {object}   config
+ * @param {object}   requestedConfig
+ * @param {object}   [resolvedConfig]
  */
-export function addToHistory(names, config) {
+export function addToHistory(names, requestedConfig, resolvedConfig = null) {
+  const requested = { ...requestedConfig };
   const entry = {
-    id:        Date.now(),
-    names:     [...names],
-    config:    { ...config },
-    timestamp: new Date(),
-    count:     names.length,
+    id:              Date.now(),
+    names:           [...names],
+    requestedConfig: requested,
+    resolvedConfig:  resolvedConfig ? { ...resolvedConfig } : null,
+    config:          requested,   // Alias (bisheriges Feld)
+    timestamp:       new Date(),
+    count:           names.length,
   };
 
   _history.unshift(entry); // neueste zuerst
@@ -524,6 +623,25 @@ export function addToHistory(names, config) {
 
   _renderHistory();
   _setTabCount('tabHistCount', _history.length);
+}
+
+/**
+ * Überschrift eines Verlaufseintrags: „System · Volk · Geschlecht“
+ * aus den aufgelösten Werten (Fallback: angeforderte Werte).
+ */
+function _historyTitle(entry) {
+  const r = entry.resolvedConfig;
+  if (!r) {
+    const c = entry.requestedConfig ?? entry.config ?? {};
+    return [c.systemId, c.peopleId, c.gender].filter(Boolean).join(' · ');
+  }
+  const system = r.systemShortLabel || r.systemLabel || r.systemId;
+  const people = r.leafLabel || r.peopleLabel || r.leafId;
+  let gender   = getGenderLabel(r.gender);
+  if (r.gender && r.dataGender && r.dataGender !== r.gender) {
+    gender += ` (Daten: ${getGenderLabel(r.dataGender)})`;
+  }
+  return `${system} · ${people} · ${gender}`;
 }
 
 function _renderHistory() {
@@ -546,15 +664,45 @@ function _renderHistory() {
     const item = document.createElement('div');
     item.className = 'history-item';
 
+    const req = entry.requestedConfig ?? entry.config ?? {};
+    const res = entry.resolvedConfig;
+
     const preview = entry.names.slice(0, 6).join(', ') +
       (entry.names.length > 6 ? ` … +${entry.names.length - 6}` : '');
 
-    item.innerHTML = `
-      <div class="history-meta">
-        <div class="history-title">${entry.config.nameType} · ${entry.config.genMethod} · ${entry.config.peopleId}</div>
-        <div class="history-sub">${entry.timestamp.toLocaleTimeString('de-DE')} — ${formatNumber(entry.count)} Namen</div>
-        <div class="history-preview">${preview}</div>
-      </div>`;
+    // Welche Werte wurden zufällig bestimmt? (aus der angeforderten Config)
+    const randomParts = [];
+    if (req.systemId === 'random') randomParts.push('System');
+    if (req.peopleId === 'random') randomParts.push('Volk');
+    else if (res?.randomized?.subgroup) randomParts.push('Untergruppe');
+    if (req.gender === 'random') randomParts.push('Geschlecht');
+
+    const nameTypeLabel = getNameTypeLabel(req.nameType);
+    const genMethodSel  = document.getElementById('selectGenMethod');
+    const genMethodLbl  = [...(genMethodSel?.options ?? [])]
+      .find(o => o.value === req.genMethod)?.textContent?.trim() ?? req.genMethod;
+
+    // Textinhalte per textContent (Labels können aus Importen stammen)
+    const meta  = document.createElement('div');
+    meta.className = 'history-meta';
+
+    const title = document.createElement('div');
+    title.className   = 'history-title';
+    title.textContent = _historyTitle(entry);
+
+    const sub = document.createElement('div');
+    sub.className   = 'history-sub';
+    sub.textContent = `${entry.timestamp.toLocaleTimeString('de-DE')} — ${formatNumber(entry.count)} Namen · ` +
+      `${nameTypeLabel} · ${genMethodLbl}` +
+      (randomParts.length ? ` · zufällig: ${randomParts.join(', ')}` : '') +
+      (req.seed ? ` · Seed ${req.seed}` : '');
+
+    const prev = document.createElement('div');
+    prev.className   = 'history-preview';
+    prev.textContent = preview;
+
+    meta.append(title, sub, prev);
+    item.appendChild(meta);
 
     // Klick → Verlaufseintrag wiederherstellen
     item.addEventListener('click', () => {

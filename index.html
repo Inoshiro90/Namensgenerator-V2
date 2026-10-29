@@ -69,10 +69,19 @@
         <h2 class="options-section-title">Grundeinstellungen</h2>
 
         <div class="form-group">
+          <label class="form-label" for="selectSystem">System</label>
+          <select id="selectSystem" name="system" class="form-input form-select" aria-describedby="systemHint">
+            <option value="random" selected>Zufall</option>
+          </select>
+          <div class="form-hint" id="systemHint" style="display:none"></div>
+        </div>
+
+        <div class="form-group">
           <label class="form-label" for="selectPeople">Volk</label>
-          <select id="selectPeople" class="form-input form-select">
+          <select id="selectPeople" class="form-input form-select" aria-describedby="peopleHint">
             <option value="random">Zufall</option>
           </select>
+          <div class="form-hint" id="peopleHint" style="display:none"></div>
         </div>
 
         <div class="form-group">

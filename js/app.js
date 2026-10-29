@@ -5,7 +5,8 @@
  *  - Initialisierung aller Module beim DOM-Ready
  *  - Event-Wiring (Generate, Copy, Export, Theme, Import)
  *  - Orchestrierung des Datenflusses:
- *      Config lesen → Daten laden → Namen generieren → Anzeigen
+ *      Config lesen → Auswahl auflösen (System → Volk → Untergruppe → Geschlecht)
+ *      → Daten laden → Namen generieren → Anzeigen
  *  - RNG-Verwaltung (Seed / Math.random)
  *  - JSON-Import benutzereigener Datensätze
  *  - Theme-Toggle (Dark/Light)
@@ -13,6 +14,7 @@
  *
  * Abhängigkeiten:
  *  - js/dataLoader.js
+ *  - js/selection.js
  *  - js/generator.js
  *  - js/uiController.js
  *  - js/utils.js
@@ -20,23 +22,48 @@
 
 import {
 	loadPeoples,
+	loadSystems,
 	loadLinguisticData,
 	loadCompoundData,
 	loadUserFile,
 	registerUserData,
+	probeFiles,
 } from './dataLoader.js';
 
 import {generateNames, generateSyllableName} from './generator.js';
-import {initSpecialGenerators} from './specialGenerators.js';
+import {
+	initSpecialGenerators,
+	specialGenerators,
+	specialTypesWithBuiltInData,
+} from './specialGenerators.js';
 
-import {createSeededRNG, setRNG, resetRNG, randomPick, formatNumber} from './utils.js';
+import {
+	RANDOM,
+	CUSTOM_SYSTEM,
+	SelectionError,
+	CatalogValidationError,
+	createEmptyCatalog,
+	buildCatalog,
+	mergeIntoCatalog,
+	normalizeImportPayload,
+	collectDataPaths,
+	resolveSelection,
+	requiredParts,
+	resolveGenderedFileDetailed,
+	buildSystemOptions,
+	buildPeopleOptions,
+} from './selection.js';
+
+import {createSeededRNG, setRNG, resetRNG, formatNumber} from './utils.js';
 
 import {
 	initLetterPicker,
 	updateLetterPicker,
 	initTabs,
+	populateSystems,
 	populatePeoples,
 	getFormConfig,
+	getNameTypeLabel,
 	showLoading,
 	showEmpty,
 	showError,
@@ -58,8 +85,27 @@ import {
 // MODUL-STATE
 // ═══════════════════════════════════════════════════
 
-/** Geladene Völker-Metadaten (aus peoples.json) */
-let _peoples = [];
+/**
+ * Katalog aus Systemen + systemgebundenen Völkern (systems.json + peoples.json
+ * + Importe). Aufbau & Validierung: selection.js → buildCatalog().
+ */
+let _catalog = createEmptyCatalog();
+
+/** Ergebnis der Dateiprüfung: Pfad → 'ok' | 'missing' | 'unknown' */
+const _availability = new Map();
+
+/** Promise der laufenden Dateiprüfung — handleGenerate() wartet darauf. */
+let _availabilityReady = Promise.resolve();
+
+/**
+ * Angeforderte + tatsächlich aufgelöste Konfiguration der Generierung,
+ * aus der _lastNames stammen (für Export-Dateinamen).
+ * @type {{requestedConfig: object, resolvedConfig: object}|null}
+ */
+let _lastGeneration = null;
+
+/** Anzahl der seit dem Seeden gezogenen Zufallszahlen (für den Worker). */
+let _rngDraws = 0;
 
 /** Zuletzt generierte Namen — für Export/Copy */
 let _lastNames = [];
@@ -85,19 +131,30 @@ async function init() {
 	initThemeToggle();
 	initLengthModeUI();
 
-	// ── Völker laden & Dropdown befüllen ───────────
-	try {
-		_peoples = await loadPeoples();
-		populatePeoples(_peoples);
-	} catch (err) {
-		// Kein kritischer Fehler — die App läuft auch ohne peoples.json
-		// (nur rein zufällige Generierung möglich)
-		console.warn(
-			'[app] peoples.json konnte nicht geladen werden:',
-			err.message,
-			'— Nur zufällige Generierung verfügbar.',
-		);
+	// ── Systeme + Völker laden & Dropdowns befüllen ─
+	const [systemsRes, peoplesRes] = await Promise.allSettled([loadSystems(), loadPeoples()]);
+
+	if (peoplesRes.status === 'rejected') {
+		// Kein Absturz — ohne peoples.json gibt es aber keine Namensdaten.
+		console.warn('[app] peoples.json konnte nicht geladen werden:', peoplesRes.reason?.message);
+		showToast('⚠ Völkerdaten (peoples.json) konnten nicht geladen werden.', 5000);
 	}
+	if (systemsRes.status === 'rejected') {
+		console.warn('[app] systems.json konnte nicht geladen werden:', systemsRes.reason?.message);
+		showToast('⚠ Systemverzeichnis konnte nicht geladen werden — Systeme ohne Anzeigenamen.', 5000);
+	}
+
+	const {catalog, issues} = buildCatalog(
+		systemsRes.status === 'fulfilled' ? systemsRes.value : null,
+		peoplesRes.status === 'fulfilled' ? peoplesRes.value : null,
+	);
+	_catalog = catalog;
+	issues.forEach((msg) => console.warn('[app] Metadaten:', msg));
+
+	_refreshSelectionUI();
+
+	// Dateiprüfung im Hintergrund — Dropdowns werden danach aktualisiert.
+	_availabilityReady = _probeAvailability(collectDataPaths(_catalog));
 
 	// ── Event-Listener verdrahten ───────────────────
 	wireEvents();
@@ -149,7 +206,7 @@ function wireEvents() {
 	document.getElementById('exportPerLetterBtn')?.addEventListener('click', () => {
 		if (_lastNames.length > 0) {
 			// Buchstabe wird als Präfix vor den Standard-Dateinamen gesetzt:
-			// Ergebnis: A_human_de_male_firstname_syllable_weighted_probbylength_kein-seed_TIMESTAMP.txt
+			// Ergebnis: A_reality_human_german_male_firstname_syllable_weighted_probbylength_kein-seed_TIMESTAMP.txt
 			exportPerLetter(_lastNames, (letter) => `${letter}_${_buildExportFilename()}`);
 		}
 	});
@@ -161,6 +218,10 @@ function wireEvents() {
 
 	// ── JSON-Import ─────────────────────────────────
 	document.getElementById('importFile')?.addEventListener('change', handleImport);
+
+	// ── System-/Namensart-Wechsel → Volksauswahl aktualisieren ──
+	document.getElementById('selectSystem')?.addEventListener('change', () => _refreshSelectionUI(true));
+	document.getElementById('selectNameType')?.addEventListener('change', () => _refreshSelectionUI());
 
 	// ── "Alle Kombinationen"-Checkbox ───────────────
 	document.getElementById('generateAll')?.addEventListener('change', (e) => {
@@ -212,10 +273,18 @@ async function handleGenerate() {
 	const config = getFormConfig();
 
 	// ── RNG Setup ─────────────────────────────────────────────────────────
+	// Die Auflösung von System/Volk/Untergruppe/Geschlecht und die
+	// anschließende Namensgenerierung nutzen denselben Zufallsstrom.
 	if (config.seed !== null && config.seed !== '') {
 		const numSeed = parseInt(config.seed, 10);
-		setRNG(createSeededRNG(isNaN(numSeed) ? config.seed : numSeed));
+		const seeded = createSeededRNG(isNaN(numSeed) ? config.seed : numSeed);
+		_rngDraws = 0;
+		setRNG(() => {
+			_rngDraws++;
+			return seeded();
+		});
 	} else {
+		_rngDraws = 0;
 		resetRNG();
 	}
 
@@ -226,8 +295,12 @@ async function handleGenerate() {
 	await _tick(50);
 
 	try {
-		// ── Daten laden ─────────────────────────────────
-		const {linguisticData, compoundData, specialType} = await _loadDataForConfig(config);
+		// Dateiprüfung muss abgeschlossen sein, bevor ausgewählt wird
+		await _availabilityReady;
+
+		// ── Auswahl auflösen & Daten laden ──────────────
+		const {linguisticData, compoundData, specialType, resolvedConfig} =
+			await _loadDataForConfig(config);
 
 		// ── Letter-Picker dynamisch aktualisieren ───────────────────────────
 		const primaryData = linguisticData?.firstName ?? linguisticData;
@@ -244,9 +317,12 @@ async function handleGenerate() {
 			displayResults(names, genConfig.favoritesEnabled);
 		}
 
-		addToHistory(_lastNames, config);
+		_lastGeneration = {requestedConfig: config, resolvedConfig};
+		addToHistory(_lastNames, config, resolvedConfig);
 	} catch (err) {
-		console.error('[app] Generierungsfehler:', err);
+		// Ungültige/nicht bedienbare Auswahl ist ein erwarteter Fall → warn
+		if (err instanceof SelectionError) console.warn('[app] Auswahl nicht möglich:', err.code, err.message);
+		else console.error('[app] Generierungsfehler:', err);
 		const isNoMethodError = err.message?.includes('Keine geeignete Generierungsart');
 		const displayMessage = isNoMethodError
 			? 'Keine geeignete Generierungsart für die gewählten Einstellungen vorhanden:' + JSON.stringify(config)
@@ -262,98 +338,148 @@ async function handleGenerate() {
 // ═══════════════════════════════════════════════════
 
 /**
- * Lädt die benötigten JSON-Dateien anhand der aktuellen Konfiguration.
+ * Löst die Auswahl auf und lädt die benötigten JSON-Dateien.
  *
  * Gibt ein Objekt zurück:
  * {
  *   linguisticData: object|null   — Silben/Cluster-Daten
  *   compoundData:   object|null   — Verbindungsnamen-Daten
+ *   specialType:    string|null   — Sonderfall-Generator
+ *   resolvedConfig: object        — tatsächlich verwendete Werte
+ *                                   (System, Volk, Untergruppe, Geschlecht …)
  * }
  *
  * Für nameType === 'fullName' wird je ein firstName/lastName-Sub-Objekt
  * übergeben, damit generateNames() korrekt aufteilen kann.
  *
+ * Die Auswahl wird genau EINMAL aufgelöst (resolveSelection) — dieselben
+ * Werte steuern das Laden, die Generierung und den Verlaufseintrag.
+ *
  * @param {object} config - aus getFormConfig()
- * @returns {Promise<{linguisticData, compoundData}>}
+ * @returns {Promise<{linguisticData, compoundData, specialType, resolvedConfig}>}
+ * @throws {SelectionError} bei ungültiger oder nicht bedienbarer Auswahl
  */
 async function _loadDataForConfig(config) {
-	const {nameType, genMethod} = config;
+	const {nameType} = config;
 
-	// ── Volk / Sprachfamilie auflösen ───────────────
-	const resolvedPeopleId =
-		config.peopleId === 'random' ? _resolveRandomPeople() : config.peopleId;
-
-	const meta = _findPeopleMeta(resolvedPeopleId);
-
-	// Kein Datensatz gefunden → rein zufällige Generierung
-	if (!meta?.files) {
-		return {linguisticData: null, compoundData: null, specialType: null};
+	if (!['firstName', 'lastName', 'fullName'].includes(nameType)) {
+		throw new SelectionError(`Unbekannte Namensart „${nameType}“.`, 'UNKNOWN_NAME_TYPE');
 	}
 
-	// Sonderfall-Kennung aus den Metadaten übernehmen
-	const specialType = meta.specialType ?? null;
+	const ctx = _selectionContext();
 
-	// ── Geschlecht auflösen ─────────────────────────
-	const gender =
-		config.gender === 'random' ? randomPick(['male', 'female', 'neutral']) : config.gender;
+	// ── System → Volk → Untergruppe → Geschlecht (zentraler RNG) ──
+	const {resolved, leaf} = resolveSelection(
+		_catalog,
+		{
+			systemId: config.systemId ?? RANDOM,
+			peopleId: config.peopleId ?? RANDOM,
+			gender: config.gender ?? RANDOM,
+			nameType,
+		},
+		ctx,
+	);
 
-	const files = meta.files;
+	const specialType = resolved.specialType;
+	const files = leaf.files ?? {};
+	const gender = resolved.gender;
 
 	// ── Dateipfade ermitteln & laden ────────────────
+	let loaded;
 	if (nameType === 'fullName') {
-		return {...(await _loadFullNameData(files, gender)), specialType};
-	}
-
-	if (nameType === 'firstName') {
-		return {
-			...(await _loadSingleTypeData(files.firstName, files.compound?.firstName, gender)),
-			specialType,
+		loaded = await _loadFullNameData(files, gender, ctx.isAvailable);
+	} else {
+		loaded = await _loadSingleTypeData(files[nameType], files.compound?.[nameType], gender, ctx.isAvailable);
+		loaded = {
+			...loaded,
+			usedFiles: {[nameType]: loaded.usedFile},
+			dataGender: loaded.dataGender,
 		};
 	}
 
-	if (nameType === 'lastName') {
-		return {
-			...(await _loadSingleTypeData(files.lastName, files.compound?.lastName, gender)),
-			specialType,
-		};
+	// ── Sicherheitsnetz: Daten tatsächlich geladen? ─
+	// (Die Dateiprüfung kann z. B. bei Servern ohne HEAD-Unterstützung
+	// nichts aussagen.) Keine stille Ersatzquelle — klarer Fehler.
+	if (!(specialType && specialTypesWithBuiltInData.has(specialType))) {
+		const parts = requiredParts(nameType, specialType);
+		const missing = parts.filter((part) => {
+			const ling = nameType === 'fullName' ? loaded.linguisticData?.[part] : loaded.linguisticData;
+			const comp = nameType === 'fullName' ? loaded.compoundData?.[part] : loaded.compoundData;
+			return !ling && !comp;
+		});
+		if (missing.length > 0) {
+			for (const p of loaded.failedPaths) _availability.set(p, 'missing');
+			_refreshSelectionUI();
+			throw new SelectionError(
+				`Die Namensdaten für „${resolved.leafLabel}“ (${resolved.systemLabel}) konnten nicht geladen werden` +
+					(loaded.failedPaths.length ? `: ${loaded.failedPaths.join(', ')}` : '.'),
+				'LOAD_FAILED',
+			);
+		}
 	}
 
-	return {linguisticData: null, compoundData: null, specialType: null};
+	const resolvedConfig = {
+		...resolved,
+		/** Geschlechts-Schlüssel der tatsächlich geladenen Datei (Fallback-Kette) */
+		dataGender: loaded.dataGender ?? null,
+		files: loaded.usedFiles,
+	};
+
+	return {
+		linguisticData: loaded.linguisticData,
+		compoundData: loaded.compoundData,
+		specialType,
+		resolvedConfig,
+	};
 }
 
 /**
  * Lädt Daten für Vor- UND Nachname (nameType === 'fullName').
  * Gibt verschachtelte Objekte zurück, die generateNames() erwartet.
  */
-async function _loadFullNameData(files, gender) {
+async function _loadFullNameData(files, gender, isAvailable) {
+	const first = resolveGenderedFileDetailed(files.firstName, gender, isAvailable);
+	const last = resolveGenderedFileDetailed(files.lastName, gender, isAvailable);
+	const failedPaths = [];
+
 	// Verbindungsnamen werden immer geladen — der Generator entscheidet
 	// zur Laufzeit, ob und wie er sie einsetzt (Auto-Mix in generator.js).
 	const [firstNameLing, firstNameComp, lastNameLing, lastNameComp] = await Promise.all([
-		_loadLingSafe(_resolveGenderedFile(files.firstName, gender)),
-		_loadCompSafe(files.compound?.firstName),
-		_loadLingSafe(_resolveGenderedFile(files.lastName, gender)),
-		_loadCompSafe(files.compound?.lastName),
+		_loadLingSafe(first.path, failedPaths),
+		_loadCompSafe(_availableOrNull(files.compound?.firstName, isAvailable), failedPaths),
+		_loadLingSafe(last.path, failedPaths),
+		_loadCompSafe(_availableOrNull(files.compound?.lastName, isAvailable), failedPaths),
 	]);
 
 	return {
 		linguisticData: {firstName: firstNameLing, lastName: lastNameLing},
 		compoundData: {firstName: firstNameComp, lastName: lastNameComp},
+		usedFiles: {firstName: first.path, lastName: last.path},
+		dataGender: first.gender ?? last.gender,
+		failedPaths,
 	};
 }
 
 /**
  * Lädt Daten für einen einzelnen Namentyp (firstName oder lastName).
  */
-async function _loadSingleTypeData(filesForType, compoundFilePath, gender) {
+async function _loadSingleTypeData(filesForType, compoundFilePath, gender, isAvailable) {
 	// Verbindungsnamen werden immer mitgeladen, wenn ein Pfad angegeben ist.
-	const lingPath = _resolveGenderedFile(filesForType, gender);
+	const ling = resolveGenderedFileDetailed(filesForType, gender, isAvailable);
+	const failedPaths = [];
 
 	const [lingData, compData] = await Promise.all([
-		_loadLingSafe(lingPath),
-		_loadCompSafe(compoundFilePath), // immer laden — Auto-Mix im Generator
+		_loadLingSafe(ling.path, failedPaths),
+		_loadCompSafe(_availableOrNull(compoundFilePath, isAvailable), failedPaths), // Auto-Mix im Generator
 	]);
 
-	return {linguisticData: lingData, compoundData: compData};
+	return {
+		linguisticData: lingData,
+		compoundData: compData,
+		usedFile: ling.path,
+		dataGender: ling.gender,
+		failedPaths,
+	};
 }
 
 // ═══════════════════════════════════════════════════
@@ -361,97 +487,90 @@ async function _loadSingleTypeData(filesForType, compoundFilePath, gender) {
 // ═══════════════════════════════════════════════════
 
 /**
- * Löst einen geschlechtsspezifischen Dateipfad auf.
- * Akzeptiert sowohl ein Objekt { male, female, neutral }
- * als auch einen direkten String-Pfad (genderunabhängig).
- *
- * Fallback-Reihenfolge bei fehlendem Gender: neutral → male → female → String
- *
- * @param {string|object|undefined} filesForType
- * @param {string} gender - 'male' | 'female' | 'neutral'
- * @returns {string|null}
+ * Kontext für selection.js: Verfügbarkeit + Sondergenerator-Registry.
+ * Zufallsentscheidungen laufen über den Standard (randomPick → utils.rng).
  */
-function _resolveGenderedFile(filesForType, gender) {
-	if (!filesForType) return null;
+function _selectionContext() {
+	return {
+		isAvailable: (path) => _availability.get(path) !== 'missing',
+		hasSpecialGenerator: (type) => typeof specialGenerators[type] === 'function',
+		hasBuiltInData: (type) => specialTypesWithBuiltInData.has(type),
+		nameTypeLabel: getNameTypeLabel,
+	};
+}
 
-	// Direkter String-Pfad (kein Gender-Split)
-	if (typeof filesForType === 'string') return filesForType;
+/** Pfad nur zurückgeben, wenn er nicht als fehlend bekannt ist. */
+function _availableOrNull(path, isAvailable) {
+	return typeof path === 'string' && isAvailable(path) ? path : null;
+}
 
-	// Objekt mit Gender-Keys
-	return (
-		filesForType[gender] ??
-		filesForType.neutral ??
-		filesForType.male ??
-		filesForType.female ??
-		null
+/**
+ * Prüft die Erreichbarkeit der übergebenen Dateien und aktualisiert danach
+ * System- und Volksauswahl (nicht erreichbare Einträge werden deaktiviert).
+ *
+ * @param {string[]} paths
+ * @returns {Promise<void>}
+ */
+async function _probeAvailability(paths) {
+	if (paths.length === 0) return;
+	const result = await probeFiles(paths);
+	const missing = [];
+	for (const [path, status] of result) {
+		_availability.set(path, status);
+		if (status === 'missing') missing.push(path);
+	}
+	if (missing.length > 0) {
+		console.warn(`[app] ${missing.length} referenzierte Datendatei(en) nicht erreichbar:`, missing);
+	}
+	_refreshSelectionUI();
+}
+
+/**
+ * Baut System- und Volk-Dropdown aus dem Katalog neu auf.
+ * Gültige Auswahlen bleiben erhalten; ungültige werden auf „Zufall“ korrigiert.
+ *
+ * @param {boolean} [notifyCorrection=false] - Toast bei automatischer Korrektur
+ */
+function _refreshSelectionUI(notifyCorrection = false) {
+	const ctx = _selectionContext();
+	const nameType = document.getElementById('selectNameType')?.value ?? 'firstName';
+
+	const systemId = populateSystems(buildSystemOptions(_catalog, nameType, ctx));
+	const systemLabel = _catalog.systems.find((s) => s.id === systemId)?.label ?? '';
+	const {corrected, previousLabel} = populatePeoples(
+		systemId === RANDOM ? null : buildPeopleOptions(_catalog, systemId, ctx),
+		{systemLabel},
 	);
+
+	if (notifyCorrection && corrected) {
+		showToast(`„${previousLabel}“ gibt es in „${systemLabel}“ nicht — Volk auf Zufall gesetzt`, 3500);
+	}
 }
 
 /**
- * Findet Volk-Metadaten anhand einer ID.
- * Durchsucht auch languageFamilies-Untergruppen.
- *
- * @param {string|null} id
- * @returns {object|null}
+ * Lädt linguistische Daten; gibt bei Fehler null zurück (kein throw).
+ * @param {string|null} filePath
+ * @param {string[]} [failed] - sammelt fehlgeschlagene Pfade
  */
-function _findPeopleMeta(id) {
-	if (!id) return null;
-
-	for (const p of _peoples) {
-		if (p.id === id) return p;
-
-		// Sprachfamilien-Untergruppen durchsuchen
-		if (p.languageFamilies?.length) {
-			const sub = p.languageFamilies.find((l) => l.id === id);
-			if (sub) return sub;
-		}
-	}
-
-	return null;
-}
-
-/**
- * Wählt ein zufälliges Volk / eine Sprachfamilie aus den Metadaten.
- * Bevorzugt Blatt-Einträge (Sprachfamilien vor Obervölkern).
- *
- * @returns {string|null}
- */
-function _resolveRandomPeople() {
-	const ids = [];
-
-	for (const p of _peoples) {
-		if (p.id === 'random') continue;
-
-		if (p.languageFamilies?.length) {
-			// Sprachfamilien als wählbare Blätter
-			ids.push(...p.languageFamilies.map((l) => l.id));
-		} else if (p.files) {
-			ids.push(p.id);
-		}
-	}
-
-	if (ids.length === 0) return null;
-	return ids[Math.floor(Math.random() * ids.length)];
-}
-
-/** Lädt linguistische Daten; gibt bei Fehler null zurück (kein throw). */
-async function _loadLingSafe(filePath) {
+async function _loadLingSafe(filePath, failed = []) {
 	if (!filePath) return null;
 	try {
 		return await loadLinguisticData(filePath);
 	} catch (err) {
 		console.warn(`[app] Datei konnte nicht geladen werden: ${filePath}`, err.message);
+		failed.push(filePath);
 		return null;
 	}
 }
 
 /** Lädt Verbindungsnamen-Daten; gibt bei Fehler null zurück. */
-async function _loadCompSafe(filePath) {
+async function _loadCompSafe(filePath, failed = []) {
 	if (!filePath) return null;
 	try {
 		return await loadCompoundData(filePath);
 	} catch (err) {
 		console.warn(`[app] Compound-Datei konnte nicht geladen werden: ${filePath}`, err.message);
+		failed.push(filePath);
 		return null;
 	}
 }
@@ -615,7 +734,10 @@ async function _generateWithWorker(linguisticData, compoundData, config, letters
         .then(resolve).catch(reject);
     };
 
-    worker.postMessage({ type: 'generate', linguisticData, compoundData, config, letters });
+    // rngSkip: Der Worker seedet neu und überspringt die bereits für die
+    // Auswahlauflösung gezogenen Zufallszahlen → derselbe Zufallsstrom.
+    const workerConfig = { ...config, rngSkip: config.seed ? _rngDraws : 0 };
+    worker.postMessage({ type: 'generate', linguisticData, compoundData, config: workerConfig, letters });
   });
 }
 
@@ -693,9 +815,17 @@ function _extractDataLetters(linguisticData) {
   return sorted.length > 0 ? sorted : 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 }
 
-/** Erzeugt einen Dateinamen für den Export basierend auf der Config. */
+/**
+ * Erzeugt einen Dateinamen für den Export.
+ *
+ * Grundlage ist die Generierung, aus der die exportierten Namen stammen:
+ * System, Volk/Untergruppe und Geschlecht werden mit den TATSÄCHLICH
+ * verwendeten (aufgelösten) Werten benannt — nicht mit „zufall“ und nicht
+ * mit einer inzwischen geänderten Formularauswahl.
+ */
 function _buildExportFilename() {
-	const config = getFormConfig();
+	const config = _lastGeneration?.requestedConfig ?? getFormConfig();
+	const resolved = _lastGeneration?.resolvedConfig ?? null;
 
 	// ── Hilfsfunktionen ─────────────────────────────────────────────────
 	/** ISO-Timestamp ohne Doppelpunkte, geeignet als Dateiname. */
@@ -712,8 +842,11 @@ function _buildExportFilename() {
 	}
 
 	// ── Parameter sammeln ───────────────────────────────────────────────
-	const race      = _slug(config.peopleId !== 'random' ? config.peopleId : 'zufall');
-	const gender    = _slug(config.gender   !== 'random' ? config.gender   : 'zufall');
+	const system    = _slug(resolved?.systemId ?? (config.systemId && config.systemId !== 'random' ? config.systemId : 'zufall'));
+	const race      = _slug(resolved?.leafId   ?? (config.peopleId !== 'random' ? config.peopleId : 'zufall'));
+	const gender    = _slug(resolved
+		? (resolved.gender ?? 'unabhaengig')
+		: (config.gender !== 'random' ? config.gender : 'zufall'));
 	const nameType  = _slug(config.nameType,  'vorname');
 	const genType   = _slug(config.genMethod, 'silben');
 	const lengthMod = _slug(config.lengthMode, 'gewichtet');
@@ -721,7 +854,7 @@ function _buildExportFilename() {
 	const seed      = config.seed ? _slug(config.seed) : 'kein-seed';
 	const ts        = _getTimestamp();
 
-	return `${race}_${gender}_${nameType}_${genType}_${lengthMod}_${syllMod}_${seed}_${ts}.txt`;
+	return `${system}_${race}_${gender}_${nameType}_${genType}_${lengthMod}_${syllMod}_${seed}_${ts}.txt`;
 }
 
 /** Gibt einen Promise zurück, der nach `ms` Millisekunden resolved. */
@@ -826,11 +959,16 @@ function initLengthModeUI() {
  * Verarbeitet einen vom Benutzer hochgeladenen JSON-Import.
  *
  * Zwei Verwendungsfälle werden automatisch erkannt:
- * 1. Völker-Metadaten (Array mit { id, label, files })
- *    → wird in das Völker-Dropdown eingetragen
+ * 1. Völker-Metadaten
+ *    a) bisheriges Format: Array mit { id, label, files | languageFamilies, system? }
+ *    b) neues Format:      { systems?: [...], peoples: [...] }
+ *    → werden validiert und in System-/Volksauswahl eingetragen.
+ *      Einträge ohne „system“ landen im System „Eigene Daten (Import)“.
+ *      Doppelte IDs oder unbekannte Systeme → Import wird vollständig
+ *      abgelehnt (nichts wird überschrieben oder teilweise übernommen).
  * 2. Linguistische Daten / Verbindungsnamen
- *    → werden mit einem virtuellen Key gecacht; der Nutzer
- *      kann sie manuell referenzieren (künftiger Plugin-Modus)
+ *    → werden mit einem virtuellen Key (user://<Dateiname>) gecacht und
+ *      können von importierten Völkern über diesen Pfad referenziert werden.
  *
  * @param {Event} e - change-Event des File-Inputs
  */
@@ -841,38 +979,54 @@ async function handleImport(e) {
 	try {
 		const data = await loadUserFile(file);
 		const key = `user://${file.name}`;
-		registerUserData(key, data);
+		const payload = normalizeImportPayload(data);
 
-		// Heuristik: Ist es eine Völker-Metadaten-Datei?
-		if (_isPeoplesData(data)) {
-			const newPeoples = Array.isArray(data) ? data : [data];
-			_peoples = [..._peoples, ...newPeoples];
-			populatePeoples(_peoples);
-			showToast(`✓ ${newPeoples.length} Volk/Völker aus „${file.name}" hinzugefügt`, 3500);
+		if (payload) {
+			// Strikt: jedes Problem → CatalogValidationError, Katalog bleibt unverändert
+			const {catalog, added, notes} = mergeIntoCatalog(_catalog, payload, {
+				strict: true,
+				defaultSystemId: CUSTOM_SYSTEM.id,
+			});
+			registerUserData(key, data);
+			_catalog = catalog;
+			_refreshSelectionUI();
+
+			// Neue Datenreferenzen prüfen (spätere Generierungen warten darauf)
+			const probe = _probeAvailability(collectDataPaths(_catalog, added.peoples));
+			_availabilityReady = Promise.all([_availabilityReady, probe]).then(() => {});
+			await probe;
+
+			const systemNames = [...new Set(added.peoples.map(
+				(p) => _catalog.systems.find((s) => s.id === p.systemId)?.label ?? p.systemId,
+			))].join(', ');
+			const extra = notes.length ? ` (${notes.join(' ')})` : '';
+			showToast(
+				`✓ ${added.peoples.length} Volk/Völker aus „${file.name}“ hinzugefügt → ${systemNames}${extra}`,
+				4500,
+			);
 		} else {
-			showToast(`✓ „${file.name}" importiert — key: ${key}`, 3500);
+			registerUserData(key, data);
+			// Bereits importierte Völker können auf diesen Key verweisen
+			if (_availability.get(key) === 'missing') {
+				_availability.set(key, 'ok');
+				_refreshSelectionUI();
+			}
+			showToast(`✓ „${file.name}“ importiert — key: ${key}`, 3500);
 		}
 	} catch (err) {
-		showToast(`⚠ Import fehlgeschlagen: ${err.message}`, 4000);
-		console.error('[app] Import-Fehler:', err);
+		if (err instanceof CatalogValidationError) {
+			const shown = err.problems.slice(0, 2).join(' · ');
+			const more = err.problems.length > 2 ? ` (+${err.problems.length - 2} weitere)` : '';
+			showToast(`⚠ Import abgelehnt: ${shown}${more}`, 7000);
+			console.warn('[app] Import-Validierung fehlgeschlagen:', err.problems);
+		} else {
+			showToast(`⚠ Import fehlgeschlagen: ${err.message}`, 4000);
+			console.error('[app] Import-Fehler:', err);
+		}
 	}
 
 	// Input zurücksetzen → dieselbe Datei kann erneut importiert werden
 	e.target.value = '';
-}
-
-/**
- * Einfache Heuristik: Ist das ein Völker-Metadaten-Array?
- * @param {any} data
- * @returns {boolean}
- */
-function _isPeoplesData(data) {
-	if (!Array.isArray(data)) return false;
-	if (data.length === 0) return false;
-	const first = data[0];
-	return (
-		typeof first === 'object' && typeof first.id === 'string' && typeof first.label === 'string'
-	);
 }
 
 // ═══════════════════════════════════════════════════

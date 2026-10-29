@@ -27,6 +27,17 @@ import {normalizeName, randomPick, randomInt} from './utils.js';
  */
 export const specialGenerators = {};
 
+/**
+ * Sonderfall-Typen, die ihre Namen vollständig aus eingebauten Pools
+ * erzeugen können und daher auch ohne geladene JSON-Dateien verwendbar sind.
+ * Wird von der Verfügbarkeitsprüfung (selection.js) genutzt — Typen, die
+ * hier NICHT stehen (z. B. 'apostrophe'), gelten nur dann als verwendbar,
+ * wenn ihre referenzierten Namensdaten tatsächlich vorhanden sind.
+ *
+ * @type {Set<string>}
+ */
+export const specialTypesWithBuiltInData = new Set();
+
 // ═══════════════════════════════════════════════════
 // HILFSFUNKTIONEN
 // ═══════════════════════════════════════════════════
@@ -152,6 +163,7 @@ function generateWarforgedName(linguisticData, compoundData, options = {}) {
 }
 
 specialGenerators['warforged'] = generateWarforgedName;
+specialTypesWithBuiltInData.add('warforged'); // Wort-Pool + Seriennummer eingebaut
 
 // ═══════════════════════════════════════════════════
 // SONDERFALL 2: Autognome
@@ -248,6 +260,7 @@ export function initSpecialGenerators(generators) {
 }
 
 specialGenerators['autognome'] = generateAutognomeName;
+specialTypesWithBuiltInData.add('autognome'); // AUTOGNOME_FALLBACK_NAMES eingebaut
 
 // ═══════════════════════════════════════════════════
 // ERWEITERUNGSPUNKT

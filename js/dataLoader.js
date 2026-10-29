@@ -89,6 +89,76 @@ export async function loadPeoples() {
 }
 
 /**
+ * Lädt das Systemverzeichnis (data/systems.json).
+ *
+ * Struktur:
+ * [
+ *   { id: "dnd",     label: "Dungeons & Dragons", shortLabel: "D&D" },
+ *   { id: "reality", label: "Realität" }
+ * ]
+ *
+ * Die Zuordnung Volk → System steht ausschließlich in peoples.json
+ * (Feld "system"); systems.json enthält nur die Systemmetadaten.
+ *
+ * @returns {Promise<Array>}
+ */
+export async function loadSystems() {
+  return loadJSON('data/systems.json');
+}
+
+/**
+ * Prüft, ob eine Datendatei erreichbar ist, OHNE sie vollständig zu laden.
+ *
+ * - Bereits gecachte Dateien und importierte Daten (user://…) → 'ok'
+ * - Nicht registrierte user://-Keys → 'missing'
+ * - Sonst HEAD-Request:
+ *     2xx (kein HTML)  → 'ok'
+ *     404 / 410        → 'missing'
+ *     2xx mit HTML     → 'missing' (SPA-/Fehlerseiten-Fallback des Servers)
+ *     405 / 501 / Netzwerkfehler → 'unknown' (Server unterstützt HEAD nicht;
+ *                         die Datei wird dann beim Laden geprüft)
+ *
+ * @param {string} path
+ * @returns {Promise<'ok'|'missing'|'unknown'>}
+ */
+export async function probeFile(path) {
+  if (cache.has(path)) return 'ok';
+  if (path.startsWith('user://')) return 'missing';
+
+  try {
+    const response = await fetch(path, { method: 'HEAD' });
+    if (response.ok) {
+      const type = response.headers.get('content-type') ?? '';
+      return type.includes('text/html') ? 'missing' : 'ok';
+    }
+    if (response.status === 404 || response.status === 410) return 'missing';
+    return 'unknown';
+  } catch {
+    return 'unknown';
+  }
+}
+
+/**
+ * Prüft mehrere Dateien parallel (begrenzte Parallelität).
+ *
+ * @param {string[]} paths
+ * @param {number} [concurrency=12]
+ * @returns {Promise<Map<string, 'ok'|'missing'|'unknown'>>}
+ */
+export async function probeFiles(paths, concurrency = 12) {
+  const result = new Map();
+  const queue  = [...new Set(paths)];
+  const worker = async () => {
+    while (queue.length > 0) {
+      const p = queue.shift();
+      result.set(p, await probeFile(p));
+    }
+  };
+  await Promise.all(Array.from({ length: Math.min(concurrency, queue.length) }, worker));
+  return result;
+}
+
+/**
  * Lädt linguistische Daten (Silben, Cluster, CV-Patterns, Wahrscheinlichkeiten).
  *
  * @param {string} filePath - z. B. "data/dwarf_firstName_male.json"

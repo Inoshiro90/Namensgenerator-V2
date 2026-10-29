@@ -8,6 +8,7 @@
  *
  *   Main → Worker:
  *     { type: 'generate', linguisticData, compoundData, config, letters: string[] }
+ *       config.rngSkip: Anzahl bereits gezogener Zufallszahlen (Seed-Modus)
  *     { type: 'abort' }
  *
  *   Worker → Main:
@@ -18,7 +19,7 @@
  */
 
 import { generateNames, generateSyllableName } from './generator.js';
-import { setRNG, resetRNG, createSeededRNG }   from './utils.js';
+import { setRNG, resetRNG, createSeededRNG, rng } from './utils.js';
 import { initSpecialGenerators }                from './specialGenerators.js';
 
 // Special Generators benötigen generateSyllableName — einmalig injizieren
@@ -65,6 +66,10 @@ async function _runGeneration({ linguisticData, compoundData, config, letters })
     if (config.seed !== null && config.seed !== '') {
       const numSeed = parseInt(config.seed, 10);
       setRNG(createSeededRNG(isNaN(numSeed) ? config.seed : numSeed));
+      // Bereits im Haupt-Thread (Auswahl von System/Volk/Geschlecht)
+      // gezogene Zufallszahlen überspringen → derselbe Zufallsstrom.
+      const skip = Number.isInteger(config.rngSkip) ? config.rngSkip : 0;
+      for (let i = 0; i < skip; i++) rng();
     } else {
       resetRNG();
     }
