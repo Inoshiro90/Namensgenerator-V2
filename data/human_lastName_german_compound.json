@@ -375,7 +375,7 @@
     }
   },
   "_taxonomie": {
-    "version": 1,
+    "version": 2,
     "knoten": {
       "person": {
         "name": "Person",
@@ -629,17 +629,13 @@
         "name": "Element & Naturkraft",
         "parent": "konzept"
       },
-      "goettliches": {
-        "name": "Göttliches",
-        "parent": null
-      },
-      "goettliches.domaene": {
+      "konzept.domaene_aspekt": {
         "name": "Domäne & Aspekt",
-        "parent": "goettliches"
+        "parent": "konzept"
       },
-      "goettliches.beiname": {
-        "name": "Beiname & Archetyp",
-        "parent": "goettliches"
+      "namensgebung": {
+        "name": "Namensgebung",
+        "parent": null
       },
       "modifikator": {
         "name": "Modifikator",
